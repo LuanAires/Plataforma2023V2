@@ -5,6 +5,7 @@ using UnityEngine;
 public class VidaInimigo : MonoBehaviour
 {
     public int vidaInicial = 100; // Quantidade inicial de vida do inimigo
+    public GameObject almaPrefab; // Prefab da alma que será dropada
     private int vidaAtual; // Vida atual do inimigo
 
     void Start()
@@ -24,10 +25,17 @@ public class VidaInimigo : MonoBehaviour
         }
     }
 
-    // Método para destruir o inimigo quando a vida chega a 0
+    // Método para destruir o inimigo quando a vida chega a 0 e dropar uma alma
     void Morrer()
     {
+        DroparAlma();
         Destroy(gameObject);
+    }
+
+    // Método para dropar uma alma quando o inimigo morrer
+    void DroparAlma()
+    {
+        Instantiate(almaPrefab, transform.position, Quaternion.identity);
     }
 }
 

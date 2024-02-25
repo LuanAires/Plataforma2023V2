@@ -43,10 +43,7 @@ public class Personagem : MonoBehaviour
     {
         GameObject Tiro = Instantiate(Carta, PontoDeOrigem.transform.position, Quaternion.identity);
         Destroy(Tiro, 3f);
-        /*if(transform.localScale.x == 1)
-        {
-            //Não Preciso Fazer Nada
-        }*/
+       
         if(transform.localScale.x == -1)
         {
             Tiro.GetComponent<AtaqueDistancia>().MudaVelocidade(-5);

@@ -8,19 +8,17 @@ public class Inimigo : MonoBehaviour
     public GameObject Espada;
     public GameObject Heroi;
     public Animator Animador;
-
+    public GameObject almaPrefab; // Prefab da alma que será dropada
 
     private void Start()
     {
         Heroi = GameObject.FindGameObjectWithTag("Player");
         Animador = GetComponent<Animator>();
-
     }
+
     private void Update()
     {
-        //Debug.Log(Vector3.Distance(Heroi.transform.position, transform.position));
-        //Debug.Log(Vector3.Distance(Heroi.transform.position, transform.position));
-        if(Vector3.Distance(Heroi.transform.position, transform.position) < 5)
+        if (Vector3.Distance(Heroi.transform.position, transform.position) < 5)
         {
             Animador.SetTrigger("Proximo");
         }
@@ -36,10 +34,9 @@ public class Inimigo : MonoBehaviour
         Espada.SetActive(false);
     }
 
-
     private void OnTriggerEnter2D(Collider2D tocar)
     {
-        if(tocar.gameObject.tag == "Atk")
+        if (tocar.gameObject.tag == "Atk")
         {
             Morrer();
         }
@@ -47,6 +44,7 @@ public class Inimigo : MonoBehaviour
 
     public void Morrer()
     {
-        Destroy(this.gameObject);
+        // Acessa o componente de VidaInimigo e aplica dano suficiente para matar o inimigo
+        GetComponent<VidaInimigo>().AplicarDano(GetComponent<VidaInimigo>().vidaInicial);
     }
 }
