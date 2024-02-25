@@ -10,7 +10,7 @@ public class Personagem : MonoBehaviour
     public int qtd_pulos = 2;
     public float velExtra = 0;
     //Ataque Distancia
-    public GameObject Flecha;
+    public GameObject Carta;
     public GameObject PontoDeOrigem;
     //Ataque Perto
     public GameObject Espada;
@@ -22,50 +22,26 @@ public class Personagem : MonoBehaviour
         Corpo = GetComponent<Rigidbody2D>();
         Animador = GetComponent<Animator>();
     }
-
     void Update()
     {
         if (hp > 0)
         {
             Mover();
             AtaqueDistancia();
-            AtaquePerto();
-        }
-        
+            
+        }      
     }
-    void AtaquePerto()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            Animador.SetTrigger("Proximo");
-        }
-    }
-
-    public void AtivaEspada()
-    {
-        Espada.SetActive(true);
-    }
-
-    public void DesativaEspada()
-    {
-        Espada.SetActive(false);
-    }
-
-
     void AtaqueDistancia()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             
             Animador.SetTrigger("Disparo");
         }
     }
-
-
-
     public void Disparo()
     {
-        GameObject Tiro = Instantiate(Flecha, PontoDeOrigem.transform.position, Quaternion.identity);
+        GameObject Tiro = Instantiate(Carta, PontoDeOrigem.transform.position, Quaternion.identity);
         Destroy(Tiro, 3f);
         /*if(transform.localScale.x == 1)
         {
@@ -135,7 +111,6 @@ public class Personagem : MonoBehaviour
         {
             if (hp > 0)
             {
-
 
                 Animador.SetTrigger("Dano");
             }
