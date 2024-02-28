@@ -28,14 +28,14 @@ public class VidaInimigo : MonoBehaviour
     // Método para destruir o inimigo quando a vida chega a 0 e dropar uma alma
     void Morrer()
     {
-        DroparAlma();
+       /* DroparAlma();*/
         Destroy(gameObject);
     }
 
     // Método para dropar uma alma quando o inimigo morrer
-    void DroparAlma()
+    /*void DroparAlma()
     {
         Instantiate(almaPrefab, transform.position, Quaternion.identity);
-    }
+    }*/
 }
 
