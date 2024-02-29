@@ -30,6 +30,7 @@ public class Personagem : MonoBehaviour
             AtaqueDistancia();
             
         }      
+
     }
     void AtaqueDistancia()
     {

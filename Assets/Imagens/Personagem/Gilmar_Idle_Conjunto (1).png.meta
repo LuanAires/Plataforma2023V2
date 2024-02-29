@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7f003681f228e65448adc66583cbfb54
+guid: 9cbe4c1fcaa084b4f919dfe458fc3b51
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,12 +123,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gilmar_Idle_Conjunto_0
+      name: Gilmar_Idle_Conjunto (1)_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 649
-        width: 136
+        x: 12
+        y: 650
+        width: 137
         height: 310
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -137,41 +137,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bfddea9ff8b04b448134a7ae108779f
-      internalID: -938834495
+      spriteID: e808d954fbffa874faf020b98f1333f1
+      internalID: 760014826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gilmar_Idle_Conjunto_1
+      name: Gilmar_Idle_Conjunto (1)_1
       rect:
         serializedVersion: 2
-        x: 216
+        x: 176
+        y: 648
+        width: 152
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b32b60257c985454b93fcb82f9859b8d
+      internalID: 1752385784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gilmar_Idle_Conjunto (1)_3
+      rect:
+        serializedVersion: 2
+        x: 394
         y: 651
-        width: 147
-        height: 299
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 165
+        height: 298
+      alignment: 9
+      pivot: {x: 0.5045914, y: 0.48302528}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de76959556a986b4ab9c08d4cf8b51e1
-      internalID: -1403500430
+      spriteID: 219e4c80d49b18f40a604b2252cb963b
+      internalID: -758467014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gilmar_Idle_Conjunto_2
+      name: Gilmar_Idle_Conjunto (1)_4
       rect:
         serializedVersion: 2
-        x: 414
-        y: 643
-        width: 162
-        height: 301
+        x: 629
+        y: 636
+        width: 165
+        height: 310
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,41 +200,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75d258b61273a81469d19ec34951ba40
-      internalID: 1141584208
+      spriteID: 2726acfbb8896674bb36a0e22fa8150d
+      internalID: -1002187508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gilmar_Idle_Conjunto_4
-      rect:
-        serializedVersion: 2
-        x: 583
-        y: 643
-        width: 187
-        height: 281
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8179f55d8b8880146928f8c8dfdc539d
-      internalID: 529916899
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gilmar_Idle_Conjunto_5
+      name: Gilmar_Idle_Conjunto (1)_6
       rect:
         serializedVersion: 2
         x: 802
-        y: 627
+        y: 643
+        width: 189
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c1dfd92c9c81d140b8b8df89b516ed9
+      internalID: -538607494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gilmar_Idle_Conjunto (1)_16
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 215
         width: 155
-        height: 315
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d80a30549f04f24419781bf026c5bd71
-      internalID: -1769225873
+      spriteID: 885b4ee3732fad4488064c9113a37912
+      internalID: 157692206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gilmar_Idle_Conjunto_15
+      name: Gilmar_Idle_Conjunto (1)_17
       rect:
         serializedVersion: 2
-        x: 30
-        y: 201
-        width: 157
-        height: 368
+        x: 272
+        y: 206
+        width: 148
+        height: 312
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00ca5c19ec6d44247a82a6789bb9ab33
-      internalID: -988470620
+      spriteID: 7ab3935e0acaf734e9b3251a2da6a523
+      internalID: 1041611743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gilmar_Idle_Conjunto_17
+      name: Gilmar_Idle_Conjunto (1)_19
       rect:
         serializedVersion: 2
-        x: 308
-        y: 199
-        width: 152
-        height: 370
+        x: 524
+        y: 203
+        width: 133
+        height: 302
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0edc92b24457e534fa58a45fd83f8541
-      internalID: -702560206
+      spriteID: aac796fb53837db4bba7a5150854404b
+      internalID: -1214848048
       vertices: []
       indices: 
       edges: []
@@ -280,28 +301,32 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gilmar_Idle_Conjunto_0: -938834495
-      Gilmar_Idle_Conjunto_1: -1403500430
-      Gilmar_Idle_Conjunto_10: 570679477
-      Gilmar_Idle_Conjunto_11: 517553983
-      Gilmar_Idle_Conjunto_12: 799084046
-      Gilmar_Idle_Conjunto_13: -267154712
-      Gilmar_Idle_Conjunto_14: 1808727161
-      Gilmar_Idle_Conjunto_15: -988470620
-      Gilmar_Idle_Conjunto_16: 1314341648
-      Gilmar_Idle_Conjunto_17: -702560206
-      Gilmar_Idle_Conjunto_18: 397882287
-      Gilmar_Idle_Conjunto_19: -1953644690
-      Gilmar_Idle_Conjunto_2: 1141584208
-      Gilmar_Idle_Conjunto_20: 1349601174
-      Gilmar_Idle_Conjunto_21: 1811835351
-      Gilmar_Idle_Conjunto_3: 231868976
-      Gilmar_Idle_Conjunto_4: 529916899
-      Gilmar_Idle_Conjunto_5: -1769225873
-      Gilmar_Idle_Conjunto_6: 1017670122
-      Gilmar_Idle_Conjunto_7: -850725322
-      Gilmar_Idle_Conjunto_8: -1166905488
-      Gilmar_Idle_Conjunto_9: 186295436
+      Gilmar_Idle_Conjunto (1)_0: 760014826
+      Gilmar_Idle_Conjunto (1)_1: 1752385784
+      Gilmar_Idle_Conjunto (1)_10: 1451950302
+      Gilmar_Idle_Conjunto (1)_11: 1230416897
+      Gilmar_Idle_Conjunto (1)_12: -1145890415
+      Gilmar_Idle_Conjunto (1)_13: 1522837576
+      Gilmar_Idle_Conjunto (1)_14: -1224900411
+      Gilmar_Idle_Conjunto (1)_15: 1530552012
+      Gilmar_Idle_Conjunto (1)_16: 157692206
+      Gilmar_Idle_Conjunto (1)_17: 1041611743
+      Gilmar_Idle_Conjunto (1)_18: -1531184126
+      Gilmar_Idle_Conjunto (1)_19: -1214848048
+      Gilmar_Idle_Conjunto (1)_2: -1659345864
+      Gilmar_Idle_Conjunto (1)_20: -630956069
+      Gilmar_Idle_Conjunto (1)_21: -119213315
+      Gilmar_Idle_Conjunto (1)_22: 468610500
+      Gilmar_Idle_Conjunto (1)_23: -1355376740
+      Gilmar_Idle_Conjunto (1)_24: -619826058
+      Gilmar_Idle_Conjunto (1)_25: 1405534610
+      Gilmar_Idle_Conjunto (1)_3: -758467014
+      Gilmar_Idle_Conjunto (1)_4: -1002187508
+      Gilmar_Idle_Conjunto (1)_5: -1770829295
+      Gilmar_Idle_Conjunto (1)_6: -538607494
+      Gilmar_Idle_Conjunto (1)_7: -208318328
+      Gilmar_Idle_Conjunto (1)_8: 320124502
+      Gilmar_Idle_Conjunto (1)_9: -1741304039
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
