@@ -36,7 +36,7 @@ public class Personagem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            
+            Disparo();
             Animador.SetTrigger("Disparo");
         }
     }

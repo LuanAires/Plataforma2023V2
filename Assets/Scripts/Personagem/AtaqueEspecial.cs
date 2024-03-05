@@ -20,12 +20,8 @@ public class AtaqueEspecial : MonoBehaviour
             // Coleta a alma do inimigo
             ColetarAlma();
             // Aplica dano ao inimigo
-            other.GetComponent<VidaInimigo>().AplicarDano(ObterDanoAtual());
+            other.GetComponent<Inimigo>().AplicarDano(ObterDanoAtual());
             // Destroi o inimigo se a vida for menor ou igual a 0
-            if (other.GetComponent<VidaInimigo>().vidaInicial <= 0)
-            {
-                Destroy(other.gameObject);
-            }
         }
     }
 
