@@ -301,7 +301,7 @@ MonoBehaviour:
   velExtra: 0
   Carta: {fileID: 5229489917348295320, guid: 1af511bdd00703c46b7574a5986335aa, type: 3}
   PontoDeOrigem: {fileID: 504688731}
-  Espada: {fileID: 0}
+  Alma: {fileID: 0}
   hp: 10
 --- !u!95 &119333546
 Animator:
@@ -4562,6 +4562,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -80.399
       objectReference: {fileID: 0}
+    - target: {fileID: 2011471719558414926, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2425348362899534289, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.4399996
@@ -4991,7 +4995,7 @@ PrefabInstance:
     - target: {fileID: 6622536482743380931, guid: 6dc5f0e664a14534f8123010f5a9e460, type: 3}
       propertyPath: dropPrefab
       value: 
-      objectReference: {fileID: 4044473792911865880, guid: c43558eb6fe2dc146a0043c90ae75b7f, type: 3}
+      objectReference: {fileID: 8078959313337667677, guid: 56fd5bc1766b6b64590518166533b8a4, type: 3}
     - target: {fileID: 8728574103428936898, guid: 6dc5f0e664a14534f8123010f5a9e460, type: 3}
       propertyPath: m_Size.x
       value: 2.7739954
@@ -5010,11 +5014,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9049583621534467369, guid: 6dc5f0e664a14534f8123010f5a9e460, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.99
+      value: -46.04
       objectReference: {fileID: 0}
     - target: {fileID: 9049583621534467369, guid: 6dc5f0e664a14534f8123010f5a9e460, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 9049583621534467369, guid: 6dc5f0e664a14534f8123010f5a9e460, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5129,7 +5133,7 @@ Transform:
   m_GameObject: {fileID: 2065200436}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -1.186, z: 0}
+  m_LocalPosition: {x: -0.45, y: -1.31, z: 0}
   m_LocalScale: {x: 2.82, y: 2.495495, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

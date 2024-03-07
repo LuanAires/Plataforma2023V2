@@ -13,7 +13,7 @@ public class Personagem : MonoBehaviour
     public GameObject Carta;
     public GameObject PontoDeOrigem;
     //Ataque Perto
-    public GameObject Espada;
+    public GameObject Alma;
     //Quantidade de Sangue
     public int hp = 10;
 
@@ -112,18 +112,27 @@ public class Personagem : MonoBehaviour
 
                 Animador.SetTrigger("Dano");
             }
-            
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            CollectItem();
         }
     }
 
-    
+    private void CollectItem()
+    {
+        Debug.Log("Item coletado!");
+        Destroy(gameObject);
+    }
     public void Dano()
     {
         hp--;
         if(hp <= 0)
         {
-            Animador.SetBool("Morreu", true);
-            
+            Animador.SetBool("Morreu", true);         
         }
     }
 

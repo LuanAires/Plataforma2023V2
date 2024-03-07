@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class Inimigo : MonoBehaviour
     public GameObject Espada;
     public GameObject Heroi;
     public Animator Animador;
-    public GameObject dropPrefab; // Prefab da alma que será dropada
+    public GameObject dropPrefab;
 
     private int hpMax;
 
@@ -26,17 +27,6 @@ public class Inimigo : MonoBehaviour
             Animador.SetTrigger("Proximo");
         }
     }
-
-    public void AtivaEspada()
-    {
-        Espada.SetActive(true);
-    }
-
-    public void DesativaEspada()
-    {
-        Espada.SetActive(false);
-    }
-
     private void OnTriggerEnter2D(Collider2D tocar)
     {
         if (tocar.gameObject.tag == "Atk")
@@ -44,13 +34,17 @@ public class Inimigo : MonoBehaviour
             AplicarDano(1);
         }
     }
-
     public void Morrer()
     {
-        // Acessa o componente de VidaInimigo e aplica dano suficiente para matar o inimigo
+        
         DroparAlma();
         Destroy(gameObject);
     }
+    void DroparAlma()
+    {
+        Instantiate(dropPrefab, transform.position, Quaternion.identity);
+    }
+
 
     public void AplicarDano(int dano)
     {
@@ -61,11 +55,6 @@ public class Inimigo : MonoBehaviour
         {
             Morrer();
         }
-    }
-
-    void DroparAlma()
-    {
-        Instantiate(dropPrefab, transform.position, Quaternion.identity);
     }
 
 
