@@ -30,12 +30,13 @@ public class Personagem : MonoBehaviour
             AtaqueDistancia();
             
         }      
+
     }
     void AtaqueDistancia()
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            
+            Disparo();
             Animador.SetTrigger("Disparo");
         }
     }

@@ -8,10 +8,13 @@ public class Inimigo : MonoBehaviour
     public GameObject Espada;
     public GameObject Heroi;
     public Animator Animador;
-    public GameObject almaPrefab; // Prefab da alma que será dropada
+    public GameObject dropPrefab; // Prefab da alma que será dropada
+
+    private int hpMax;
 
     private void Start()
     {
+        hpMax = hp;
         Heroi = GameObject.FindGameObjectWithTag("Player");
         Animador = GetComponent<Animator>();
     }
@@ -38,13 +41,32 @@ public class Inimigo : MonoBehaviour
     {
         if (tocar.gameObject.tag == "Atk")
         {
-            Morrer();
+            AplicarDano(1);
         }
     }
 
     public void Morrer()
     {
         // Acessa o componente de VidaInimigo e aplica dano suficiente para matar o inimigo
-        GetComponent<VidaInimigo>().AplicarDano(GetComponent<VidaInimigo>().vidaInicial);
+        DroparAlma();
+        Destroy(gameObject);
     }
+
+    public void AplicarDano(int dano)
+    {
+        hp -= dano;
+
+        // Verifica se o inimigo está morto
+        if (hp <= 0)
+        {
+            Morrer();
+        }
+    }
+
+    void DroparAlma()
+    {
+        Instantiate(dropPrefab, transform.position, Quaternion.identity);
+    }
+
+
 }
