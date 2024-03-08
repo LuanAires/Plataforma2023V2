@@ -762,8 +762,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 181
-      width: 150
-      height: 160
+      width: 159
+      height: 159
     spriteID: 12ba739830a0b9546a477effc8db8ffa
     spriteBone:
     - name: "bone_Cabe\xE7a"
@@ -1082,14 +1082,14 @@ ScriptedImporter:
     spritePosition: {x: 707, y: 415}
   - name: corpo
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.59055316, y: 0.49795184}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 169
       y: 148
-      width: 103
+      width: 107
       height: 144
     spriteID: b19e23c302cf1dc41af819a46cc3b34d
     spriteBone:
@@ -1764,9 +1764,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
-      width: 157
-      height: 169
+      y: 5
+      width: 159
+      height: 166
     spriteID: 9c6da9a61072f8d49943cd51d7b425cc
     spriteBone:
     - name: bone_7
@@ -2093,7 +2093,7 @@ ScriptedImporter:
       x: 169
       y: 4
       width: 146
-      height: 136
+      height: 142
     spriteID: cd7a33cc8f6652240940c5ce2d30d824
     spriteBone:
     - name: bone_9
@@ -2702,8 +2702,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 349
-      width: 149
-      height: 157
+      width: 159
+      height: 155
     spriteID: 583ace77da54c4a4bb78234202d756a0
     spriteBone:
     - name: bone_8
@@ -3553,7 +3553,43 @@ ScriptedImporter:
     characterGroups: []
     pivot: {x: 0, y: 0}
     boneReadOnly: 0
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   characterMode: 1
   documentPivot: {x: 0.5, y: 0}
@@ -3685,7 +3721,13 @@ ScriptedImporter:
     isImported: 0
     isVisible: 0
   sharedRigPSDLayers: []
-  pSDLayerImportSetting: []
+  pSDLayerImportSetting:
+  - spriteId: 9c6da9a61072f8d49943cd51d7b425cc
+    name: "cabe\xE7a fechada"
+    layerId: 12
+    flatten: 0
+    isGroup: 0
+    importLayer: 1
   importFileNodeState: 1
   platformSettingsDirtyTick: 0
   spriteSizeExpandChanged: 0

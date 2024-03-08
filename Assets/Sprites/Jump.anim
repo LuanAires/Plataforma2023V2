@@ -826,17 +826,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 1.1666666
         value: {x: 3.275775, y: 4.1590285, z: 0}
-        inSlope: {x: 0.9744687, y: -0.051389694, z: 0}
-        outSlope: {x: 0.9744687, y: -0.051389694, z: 0}
+        inSlope: {x: 1.0427413, y: -0.051389694, z: 0}
+        outSlope: {x: 1.0427413, y: -0.051389694, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1.3333334
-        value: {x: 3.7356024, y: 4.111754, z: 0}
-        inSlope: {x: 0.8913115, y: -0.23240086, z: 0}
-        outSlope: {x: 0.8913115, y: -0.23240086, z: 0}
+        value: {x: 3.7811174, y: 4.0952024, z: 0}
+        inSlope: {x: 0.34513083, y: -0.16369055, z: 0}
+        outSlope: {x: 0.34513083, y: -0.16369055, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -1589,6 +1589,27 @@ AnimationClip:
     classID: 212
     script: {fileID: 0}
     flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_SortingOrder
+    path: "bra\xE7o atras"
+    classID: 212
+    script: {fileID: 0}
+    flags: 0
   m_PPtrCurves:
   - serializedVersion: 2
     curve:
@@ -1783,6 +1804,15 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3738695630
+      attribute: 3762991556
+      script: {fileID: 0}
+      typeID: 212
+      customType: 26
+      isPPtrCurve: 0
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
@@ -2638,17 +2668,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 1.1666666
         value: 3.275775
-        inSlope: 0.9744687
-        outSlope: 0.9744687
+        inSlope: 1.0427413
+        outSlope: 1.0427413
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.3333334
-        value: 3.7356024
-        inSlope: 0.8913115
-        outSlope: 0.8913115
+        value: 3.7811174
+        inSlope: 0.34513083
+        outSlope: 0.34513083
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -2757,9 +2787,9 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.3333334
-        value: 4.111754
-        inSlope: -0.23240086
-        outSlope: -0.23240086
+        value: 4.0952024
+        inSlope: -0.16369055
+        outSlope: -0.16369055
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -6553,6 +6583,27 @@ AnimationClip:
     attribute: m_LocalScale.z
     path: "bone_Cabe\xE7a"
     classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_SortingOrder
+    path: "bra\xE7o atras"
+    classID: 212
     script: {fileID: 0}
     flags: 0
   m_EulerEditorCurves:
