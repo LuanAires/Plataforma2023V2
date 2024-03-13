@@ -5722,12 +5722,24 @@ PrefabInstance:
       value: 'Sapo Cuspidor '
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: b62e557abb54abd4aa218b76a61954a4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.64645
+      objectReference: {fileID: 0}
+    - target: {fileID: -7552582706839291426, guid: b62e557abb54abd4aa218b76a61954a4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.64645
+      objectReference: {fileID: 0}
+    - target: {fileID: -7552582706839291426, guid: b62e557abb54abd4aa218b76a61954a4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.64645
+      objectReference: {fileID: 0}
+    - target: {fileID: -7552582706839291426, guid: b62e557abb54abd4aa218b76a61954a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.19
+      value: 6.19
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: b62e557abb54abd4aa218b76a61954a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.92
+      value: -0.103
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: b62e557abb54abd4aa218b76a61954a4, type: 3}
       propertyPath: m_LocalPosition.z
