@@ -6,7 +6,7 @@ public class Personagem : MonoBehaviour
 {
 
     private Rigidbody2D Corpo;
-    private Animator Animador;
+    [SerializeField] private Animator Animador;
     public int qtd_pulos = 2;
     public float velExtra = 0;
     //Ataque Distancia
@@ -16,21 +16,28 @@ public class Personagem : MonoBehaviour
     public GameObject Alma;
     //Quantidade de Sangue
     public int hp = 10;
+    private Vector3 originalScale;
 
     void Start()
     {
+        
         Corpo = GetComponent<Rigidbody2D>();
-        Animador = GetComponent<Animator>();
+        Animador = GetComponentInChildren<Animator>();
     }
     void Update()
     {
         if (hp > 0)
         {
             Mover();
+            originalScale = transform.localScale;
             AtaqueDistancia();
-            
-        }      
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Pular();
+        }
 
+        Debug.Log(qtd_pulos);
     }
     void AtaqueDistancia()
     {
@@ -44,66 +51,62 @@ public class Personagem : MonoBehaviour
     {
         GameObject Tiro = Instantiate(Carta, PontoDeOrigem.transform.position, Quaternion.identity);
         Destroy(Tiro, 3f);
-       
-        if(transform.localScale.x == -1)
+
+        if (transform.localScale.x == -1)
         {
             Tiro.GetComponent<AtaqueDistancia>().MudaVelocidade(-5);
         }
     }
-   
+
     void Mover()
     {
-        float velX = Input.GetAxis("Horizontal") * (4+velExtra);
+        float velX = 0;
+        if (Input.GetKey(KeyCode.A))
+            velX = -1 * (4 + velExtra);
+       
+        else if (Input.GetKey(KeyCode.D))
+            velX = 1 * (4 + velExtra);
+
         float vely = Corpo.velocity.y;
         Corpo.velocity = new Vector2(velX, vely);
 
-        
-        if(velX > 0)
+        if (velX > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
             Animador.SetBool("Correndo", true);
-        }else if (velX < 0)
+            
+        }
+        else if (velX < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
             Animador.SetBool("Correndo", true);
+
         }
         else
         {
             Animador.SetBool("Correndo", false);
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Pular();
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            velExtra += 0.01f;
+    }
+    void Pular()
+    {
+        if (qtd_pulos > 0)
+        {            
+            Corpo.AddForce(Vector3.up * 350);
+            Animador.SetBool("Jump", true);
         }
         else
         {
-            velExtra = 0;
+            Animador.SetBool("Jump", false);
         }
-    }
 
-    void Pular()
-    {
-        if(qtd_pulos > 0)
-        {
-            qtd_pulos--;
-            Corpo.AddForce(Vector3.up * 350);
-        }
-        
+        qtd_pulos--;
     }
-
     private void OnTriggerEnter2D(Collider2D tocou)
     {
-        
-
-        if(tocou.gameObject.tag == "Solo")
+        if (tocou.gameObject.tag == "Solo")
         {
             qtd_pulos = 2;
+            Animador.SetBool("Jump", false);
         }
         if (tocou.gameObject.tag == "Atk_inimigo")
         {
@@ -130,9 +133,9 @@ public class Personagem : MonoBehaviour
     public void Dano()
     {
         hp--;
-        if(hp <= 0)
+        if (hp <= 0)
         {
-            Animador.SetBool("Morreu", true);         
+            Animador.SetBool("Morreu", true);
         }
     }
 
@@ -141,3 +144,4 @@ public class Personagem : MonoBehaviour
         Destroy(this.gameObject);
     }
 }
+    
