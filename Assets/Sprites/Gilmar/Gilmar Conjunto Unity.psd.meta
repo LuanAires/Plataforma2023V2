@@ -3543,7 +3543,11 @@ ScriptedImporter:
       order: 0
     dimension: {x: 0, y: 0}
     characterGroups: []
+<<<<<<< Updated upstream
     pivot: {x: 0.7769178, y: 0.2751607}
+=======
+    pivot: {x: 0.78720367, y: 0.21440768}
+>>>>>>> Stashed changes
     boneReadOnly: 0
   sharedRigSpriteImportData: []
   sharedRigCharacterData:
@@ -3590,10 +3594,27 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   characterMode: 1
+<<<<<<< Updated upstream
   documentPivot: {x: 0.7769178, y: 0.2751607}
   documentAlignment: 9
+=======
+  documentPivot: {x: 0.78720367, y: 0.21440768}
+  documentAlignment: 0
+>>>>>>> Stashed changes
   importHiddenLayers: 0
   layerMappingOption: 2
   generatePhysicsShape: 0
