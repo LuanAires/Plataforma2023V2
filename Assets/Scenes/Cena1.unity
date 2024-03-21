@@ -185,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6084842408034610745, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.72224057
+      value: 0.84810215
       objectReference: {fileID: 0}
     - target: {fileID: -6084842408034610745, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
       propertyPath: m_LocalRotation.x
@@ -197,11 +197,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6084842408034610745, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.6916419
+      value: -0.5298327
       objectReference: {fileID: 0}
     - target: {fileID: -6084842408034610745, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -87.52
+      value: -63.988
       objectReference: {fileID: 0}
     - target: {fileID: -5604452891325493078, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
       propertyPath: m_IsActive
@@ -5508,13 +5508,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572247447}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.78872657, w: 0.61474425}
-  m_LocalPosition: {x: 0.004, y: 1.144, z: 0}
+  m_LocalRotation: {x: 0.0025982175, y: 0.0050468277, z: -0.85748893, w: -0.5144711}
+  m_LocalPosition: {x: 0.36600113, y: 1.223, z: -0.004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 109741629}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -104.133}
+  m_LocalEulerAnglesHint: {x: 0.343, y: -0.553, z: -241.927}
 --- !u!212 &1572247449
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5555,8 +5555,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
-  m_Sprite: {fileID: 334230773823776788, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -5666252399537063459, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
