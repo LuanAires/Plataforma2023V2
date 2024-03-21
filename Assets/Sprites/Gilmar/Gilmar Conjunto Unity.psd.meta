@@ -110,7 +110,7 @@ ScriptedImporter:
       y: 4
       width: 128
       height: 50
-    spriteID: cf52308bb555f2b46b3ecae579622d41
+    spriteID: 78f77a54bc2059f419814ab3d57c4397
     spriteBone:
     - name: "bone_Bra\xE7oAtras"
       guid: 56dc331317396b5418db8012e2f022d1
@@ -426,7 +426,7 @@ ScriptedImporter:
       y: 409
       width: 125
       height: 52
-    spriteID: 9a83ea5383a29f641bebe75422cd1eb1
+    spriteID: 5655e4c78cff1e64f94320dd941ff5dd
     spriteBone:
     - name: "bone_Bra\xE7oFrente"
       guid: a7bf8bf221d03944b9612cc3899a5c7b
@@ -762,9 +762,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 181
-      width: 159
-      height: 159
-    spriteID: 12ba739830a0b9546a477effc8db8ffa
+      width: 150
+      height: 160
+    spriteID: 440e6102b58352b4eb0e07105faae44f
     spriteBone:
     - name: "bone_Cabe\xE7a"
       guid: 96087c7e26de2274e8eea30ac0ce4d2a
@@ -1082,16 +1082,16 @@ ScriptedImporter:
     spritePosition: {x: 707, y: 415}
   - name: corpo
     originalName: 
-    pivot: {x: 0.59055316, y: 0.49795184}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 169
       y: 148
-      width: 107
+      width: 103
       height: 144
-    spriteID: b19e23c302cf1dc41af819a46cc3b34d
+    spriteID: 953d4a536769916478c681e7221e9318
     spriteBone:
     - name: bone_1
       guid: f8188937a1d9e7045b78eeca54b9a4a0
@@ -1429,7 +1429,7 @@ ScriptedImporter:
       y: 62
       width: 54
       height: 58
-    spriteID: 494575023582700428185e69b30b007f
+    spriteID: 56018ac6197b7474ebce84f0f6d65369
     spriteBone:
     - name: bone_PernaFrente
       guid: 6af81173bcdb4d24cbf0c2e4d6a8e0ec
@@ -1764,10 +1764,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 5
-      width: 159
-      height: 166
-    spriteID: 9c6da9a61072f8d49943cd51d7b425cc
+      y: 4
+      width: 157
+      height: 169
+    spriteID: e2a1d22b7494c904493ae025d2f8dfb7
     spriteBone:
     - name: bone_7
       guid: 4358529a3fa11a947891718488d29ab3
@@ -2093,8 +2093,8 @@ ScriptedImporter:
       x: 169
       y: 4
       width: 146
-      height: 142
-    spriteID: cd7a33cc8f6652240940c5ce2d30d824
+      height: 136
+    spriteID: 1519971ad623ae548abe6dfd5241acfb
     spriteBone:
     - name: bone_9
       guid: 6bf15f990f55946479b811f11049e6bf
@@ -2399,7 +2399,7 @@ ScriptedImporter:
       y: 300
       width: 142
       height: 101
-    spriteID: 47911a02143d2234990f78a68d1c80a7
+    spriteID: 942d8ae35a1ce114fb3f61e97901841b
     spriteBone:
     - name: bone_10
       guid: 03ff46973683e7e48a2954b0374742ab
@@ -2702,9 +2702,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 349
-      width: 159
-      height: 155
-    spriteID: 583ace77da54c4a4bb78234202d756a0
+      width: 149
+      height: 157
+    spriteID: 29dd8d587ccebde4f86fea5d6d547c04
     spriteBone:
     - name: bone_8
       guid: e9fce27d533a83946990d2e27bd36351
@@ -3042,7 +3042,7 @@ ScriptedImporter:
       y: 128
       width: 52
       height: 55
-    spriteID: 9c4510156d8ea6e458d1661d202cd7b4
+    spriteID: a04817ac287593f4f8cf4e33c0cebe92
     spriteBone:
     - name: bone_PernaAtras
       guid: 563c5a44dfe57834a81481be0a8f7ddc
@@ -3456,7 +3456,7 @@ ScriptedImporter:
         y: 359
         width: 128
         height: 50
-      spriteId: cf52308bb555f2b46b3ecae579622d41
+      spriteId: 78f77a54bc2059f419814ab3d57c4397
       bones: 03000000
       parentGroup: 0
       order: 0
@@ -3465,25 +3465,25 @@ ScriptedImporter:
         y: 354
         width: 125
         height: 52
-      spriteId: 9a83ea5383a29f641bebe75422cd1eb1
+      spriteId: 5655e4c78cff1e64f94320dd941ff5dd
       bones: 02000000
       parentGroup: 0
       order: 0
     - spritePosition:
         x: 707
         y: 415
-        width: 159
-        height: 159
-      spriteId: 12ba739830a0b9546a477effc8db8ffa
+        width: 150
+        height: 160
+      spriteId: 440e6102b58352b4eb0e07105faae44f
       bones: 01000000
       parentGroup: 0
       order: 0
     - spritePosition:
         x: 735
         y: 271
-        width: 107
+        width: 103
         height: 144
-      spriteId: b19e23c302cf1dc41af819a46cc3b34d
+      spriteId: 953d4a536769916478c681e7221e9318
       bones: 00000000
       parentGroup: 0
       order: 0
@@ -3492,16 +3492,16 @@ ScriptedImporter:
         y: 209
         width: 54
         height: 58
-      spriteId: 494575023582700428185e69b30b007f
+      spriteId: 56018ac6197b7474ebce84f0f6d65369
       bones: 04000000
       parentGroup: 0
       order: 0
     - spritePosition:
         x: 473
         y: 664
-        width: 159
-        height: 166
-      spriteId: 9c6da9a61072f8d49943cd51d7b425cc
+        width: 157
+        height: 169
+      spriteId: e2a1d22b7494c904493ae025d2f8dfb7
       bones: 06000000
       parentGroup: 0
       order: 0
@@ -3509,8 +3509,8 @@ ScriptedImporter:
         x: 273
         y: 627
         width: 146
-        height: 142
-      spriteId: cd7a33cc8f6652240940c5ce2d30d824
+        height: 136
+      spriteId: 1519971ad623ae548abe6dfd5241acfb
       bones: 08000000
       parentGroup: 0
       order: 0
@@ -3519,16 +3519,16 @@ ScriptedImporter:
         y: 721
         width: 142
         height: 101
-      spriteId: 47911a02143d2234990f78a68d1c80a7
+      spriteId: 942d8ae35a1ce114fb3f61e97901841b
       bones: 09000000
       parentGroup: 0
       order: 0
     - spritePosition:
         x: 662
         y: 666
-        width: 159
-        height: 155
-      spriteId: 583ace77da54c4a4bb78234202d756a0
+        width: 149
+        height: 157
+      spriteId: 29dd8d587ccebde4f86fea5d6d547c04
       bones: 07000000
       parentGroup: 0
       order: 0
@@ -3537,17 +3537,13 @@ ScriptedImporter:
         y: 211
         width: 52
         height: 55
-      spriteId: 9c4510156d8ea6e458d1661d202cd7b4
+      spriteId: a04817ac287593f4f8cf4e33c0cebe92
       bones: 05000000
       parentGroup: 0
       order: 0
     dimension: {x: 0, y: 0}
     characterGroups: []
-<<<<<<< Updated upstream
-    pivot: {x: 0.7769178, y: 0.2751607}
-=======
-    pivot: {x: 0.78720367, y: 0.21440768}
->>>>>>> Stashed changes
+    pivot: {x: 0.5, y: 0}
     boneReadOnly: 0
   sharedRigSpriteImportData: []
   sharedRigCharacterData:
@@ -3557,64 +3553,11 @@ ScriptedImporter:
     characterGroups: []
     pivot: {x: 0, y: 0}
     boneReadOnly: 0
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Server
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Android
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   mosaicLayers: 1
   characterMode: 1
-<<<<<<< Updated upstream
-  documentPivot: {x: 0.7769178, y: 0.2751607}
-  documentAlignment: 9
-=======
-  documentPivot: {x: 0.78720367, y: 0.21440768}
-  documentAlignment: 0
->>>>>>> Stashed changes
+  documentPivot: {x: 0.5, y: 0}
+  documentAlignment: 7
   importHiddenLayers: 0
   layerMappingOption: 2
   generatePhysicsShape: 0
@@ -3635,7 +3578,7 @@ ScriptedImporter:
     spriteName: "bra\xE7o atras"
     isGroup: 0
     parentIndex: -1
-    spriteID: cf52308bb555f2b46b3ecae579622d41
+    spriteID: 78f77a54bc2059f419814ab3d57c4397
     layerID: 10
     mosaicPosition: {x: 323, y: 4}
     flatten: 0
@@ -3645,7 +3588,7 @@ ScriptedImporter:
     spriteName: "bra\xE7o esquerdo"
     isGroup: 0
     parentIndex: -1
-    spriteID: 9a83ea5383a29f641bebe75422cd1eb1
+    spriteID: 5655e4c78cff1e64f94320dd941ff5dd
     layerID: 7
     mosaicPosition: {x: 169, y: 409}
     flatten: 0
@@ -3655,7 +3598,7 @@ ScriptedImporter:
     spriteName: "cabe\xE7a"
     isGroup: 0
     parentIndex: -1
-    spriteID: 12ba739830a0b9546a477effc8db8ffa
+    spriteID: 440e6102b58352b4eb0e07105faae44f
     layerID: 6
     mosaicPosition: {x: 4, y: 181}
     flatten: 0
@@ -3665,7 +3608,7 @@ ScriptedImporter:
     spriteName: corpo
     isGroup: 0
     parentIndex: -1
-    spriteID: b19e23c302cf1dc41af819a46cc3b34d
+    spriteID: 953d4a536769916478c681e7221e9318
     layerID: 5
     mosaicPosition: {x: 169, y: 148}
     flatten: 0
@@ -3675,7 +3618,7 @@ ScriptedImporter:
     spriteName: perna frente
     isGroup: 0
     parentIndex: -1
-    spriteID: 494575023582700428185e69b30b007f
+    spriteID: 56018ac6197b7474ebce84f0f6d65369
     layerID: 4
     mosaicPosition: {x: 323, y: 62}
     flatten: 0
@@ -3685,7 +3628,7 @@ ScriptedImporter:
     spriteName: "cabe\xE7a fechada"
     isGroup: 0
     parentIndex: -1
-    spriteID: 9c6da9a61072f8d49943cd51d7b425cc
+    spriteID: e2a1d22b7494c904493ae025d2f8dfb7
     layerID: 12
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
@@ -3695,7 +3638,7 @@ ScriptedImporter:
     spriteName: "cabe\xE7a sem chapeu"
     isGroup: 0
     parentIndex: -1
-    spriteID: cd7a33cc8f6652240940c5ce2d30d824
+    spriteID: 1519971ad623ae548abe6dfd5241acfb
     layerID: 15
     mosaicPosition: {x: 169, y: 4}
     flatten: 0
@@ -3705,7 +3648,7 @@ ScriptedImporter:
     spriteName: chapeu
     isGroup: 0
     parentIndex: -1
-    spriteID: 47911a02143d2234990f78a68d1c80a7
+    spriteID: 942d8ae35a1ce114fb3f61e97901841b
     layerID: 14
     mosaicPosition: {x: 169, y: 300}
     flatten: 0
@@ -3715,7 +3658,7 @@ ScriptedImporter:
     spriteName: "Cabe\xE7a meio fechada"
     isGroup: 0
     parentIndex: -1
-    spriteID: 583ace77da54c4a4bb78234202d756a0
+    spriteID: 29dd8d587ccebde4f86fea5d6d547c04
     layerID: 11
     mosaicPosition: {x: 4, y: 349}
     flatten: 0
@@ -3725,7 +3668,7 @@ ScriptedImporter:
     spriteName: perna atras
     isGroup: 0
     parentIndex: -1
-    spriteID: 9c4510156d8ea6e458d1661d202cd7b4
+    spriteID: a04817ac287593f4f8cf4e33c0cebe92
     layerID: 3
     mosaicPosition: {x: 323, y: 128}
     flatten: 0
@@ -3735,20 +3678,14 @@ ScriptedImporter:
     spriteName: 
     isGroup: 0
     parentIndex: -1
-    spriteID: 4fd254e07c8bbd14d8ffadda0b7d9089
+    spriteID: e223ffc8f51f3054cb5acff34bb6e18a
     layerID: 2
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
     isVisible: 0
   sharedRigPSDLayers: []
-  pSDLayerImportSetting:
-  - spriteId: 9c6da9a61072f8d49943cd51d7b425cc
-    name: "cabe\xE7a fechada"
-    layerId: 12
-    flatten: 0
-    isGroup: 0
-    importLayer: 1
+  pSDLayerImportSetting: []
   importFileNodeState: 1
   platformSettingsDirtyTick: 0
   spriteSizeExpandChanged: 0
