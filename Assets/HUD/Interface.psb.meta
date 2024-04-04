@@ -71,18 +71,18 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   spriteImportData:
-  - name: 
+  - name: Interface_1
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 0
-      height: 0
-    spriteID: 
+      width: 1024
+      height: 1024
+    spriteID: c1cf6b295c1fbb74f805a651d87dfcad
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -94,7 +94,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: barra Especial
+  - name: Interface_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -105,7 +105,7 @@ ScriptedImporter:
       y: 529
       width: 540
       height: 85
-    spriteID: a4b4dbb75dd37d746aa86951a35a7488
+    spriteID: f2b0789b48c707641a078999a94fa708
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -114,8 +114,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 529}
-    spritePosition: {x: 379, y: 581}
-  - name: Barra hp
+    spritePosition: {x: 0, y: 0}
+  - name: Interface_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -126,7 +126,7 @@ ScriptedImporter:
       y: 439
       width: 596
       height: 82
-    spriteID: 1cd3fbe0165369944bf4086e346d30e3
+    spriteID: 57dc530ad74eed1419451b9bea4baf43
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -135,8 +135,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 439}
-    spritePosition: {x: 381, y: 660}
-  - name: interface
+    spritePosition: {x: 0, y: 0}
+  - name: Interface_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -145,9 +145,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 908
-      height: 427
-    spriteID: f21e3af58e30c854c92eadfd4569c85b
+      width: 907
+      height: 426
+    spriteID: 1e970cb4e98e00645af3b637dcca31c5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -156,7 +156,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 98, y: 468}
+    spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
     parts: []
@@ -172,7 +172,55 @@ ScriptedImporter:
     characterGroups: []
     pivot: {x: 0, y: 0}
     boneReadOnly: 0
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   characterMode: 1
   documentPivot: {x: 0, y: 0}
