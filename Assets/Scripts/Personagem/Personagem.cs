@@ -45,6 +45,7 @@ public class Personagem : MonoBehaviour
         {
             Disparo();
             Animador.SetTrigger("Disparo");
+            Debug.Log("atirei");
         }
     }
     public void Disparo()
