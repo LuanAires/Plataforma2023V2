@@ -7,8 +7,14 @@ public class Personagem : MonoBehaviour
 
     private Rigidbody2D Corpo;
     [SerializeField] private Animator Animador;
+
+    [SerializeField] float velocidade;
+
     public int qtd_pulos = 2;
     public float velExtra = 0;
+
+
+
     //Ataque Distancia
     public GameObject Carta;
     public GameObject PontoDeOrigem;
@@ -29,7 +35,7 @@ public class Personagem : MonoBehaviour
         if (hp > 0)
         {
             Mover();
-            originalScale = transform.localScale;
+            //  originalScale = transform.localScale;
             AtaqueDistancia();
         }
         if (Input.GetKeyDown(KeyCode.Space))
@@ -61,14 +67,13 @@ public class Personagem : MonoBehaviour
 
     void Mover()
     {
-        float velX = 0;
-        if (Input.GetKey(KeyCode.A))
-            velX = -1 * (4 + velExtra);
-       
-        else if (Input.GetKey(KeyCode.D))
-            velX = 1 * (4 + velExtra);
+
+        float hAxis = Input.GetAxis("Horizontal");
+
+        float velX = hAxis * Time.deltaTime * (velocidade + velExtra);
 
         float vely = Corpo.velocity.y;
+
         Corpo.velocity = new Vector2(velX, vely);
 
         if (velX > 0)
@@ -88,6 +93,7 @@ public class Personagem : MonoBehaviour
             Animador.SetBool("Correndo", false);
         }
     }
+
     void Pular()
     {
         if (qtd_pulos > 0)
