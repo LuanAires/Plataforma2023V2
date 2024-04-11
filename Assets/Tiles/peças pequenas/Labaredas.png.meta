@@ -121,7 +121,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Labaredas_0
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 993
+        width: 261
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e5a87cc4a5e6f428fda37547abeeda
+      internalID: 218171686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Labaredas_1
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 995
+        width: 482
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df5e0dda6b88f884dbd2db65095a1500
+      internalID: 240885014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Labaredas_2
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 1006
+        width: 249
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8c083caac79cb445b4960367d94e97c
+      internalID: 1891896120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +195,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Labaredas_0: 218171686
+      Labaredas_1: 240885014
+      Labaredas_2: 1891896120
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
