@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Background_do_jogo_Trip_camada_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 259
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 960b534b8f9479748b89963a8001cd91
+      internalID: 1869998901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_do_jogo_Trip_camada_1_1
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 260
+        width: 95
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ed394aaf5fc4e448c5874218d62ddb
+      internalID: -634137574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_do_jogo_Trip_camada_1_2
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 261
+        width: 134
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cea286d24f270db4fbc3cdc5602977d4
+      internalID: -1393639315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_do_jogo_Trip_camada_1_3
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 272
+        width: 94
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc5209a5e8dca141a9fe8ae4b8da789
+      internalID: -1536536460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_do_jogo_Trip_camada_1_4
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 268
+        width: 113
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a837fc0823d229341afbdd6fd78d63a3
+      internalID: -1337660064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_do_jogo_Trip_camada_1_5
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 0
+        width: 101
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c363501bb91e749a1b3bc97e7b6e60
+      internalID: -319187529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +258,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Background_do_jogo_Trip_camada_1_0: 1869998901
+      Background_do_jogo_Trip_camada_1_1: -634137574
+      Background_do_jogo_Trip_camada_1_2: -1393639315
+      Background_do_jogo_Trip_camada_1_3: -1536536460
+      Background_do_jogo_Trip_camada_1_4: -1337660064
+      Background_do_jogo_Trip_camada_1_5: -319187529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
