@@ -43,7 +43,7 @@ public class Personagem : MonoBehaviour
             Pular();
         }
 
-        
+        Debug.Log(qtd_pulos);
     }
     void AtaqueDistancia()
     {
@@ -51,7 +51,7 @@ public class Personagem : MonoBehaviour
         {
             Disparo();
             Animador.SetTrigger("Disparo");
-            
+            Debug.Log("atirei");
         }
     }
     public void Disparo()
