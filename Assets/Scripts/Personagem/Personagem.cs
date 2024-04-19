@@ -41,9 +41,7 @@ public class Personagem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Pular();
-        }
-
-        Debug.Log(qtd_pulos);
+        }      
     }
     void AtaqueDistancia()
     {
