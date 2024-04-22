@@ -7,22 +7,29 @@ public class Personagem : MonoBehaviour
 
     private Rigidbody2D Corpo;
     [SerializeField] private Animator Animador;
-
     [SerializeField] float velocidade;
+    [SerializeField] private float jumpForce = 350f;
+    [SerializeField] LayerMask segredoLayer;
 
     public int qtd_pulos = 2;
     public float velExtra = 0;
 
-
-
-    //Ataque Distancia
+  //Ataque Distancia
     public GameObject Carta;
     public GameObject PontoDeOrigem;
     //Ataque Perto
+    public GameObject CaixaCorreio;
     public GameObject Alma;
     //Quantidade de Sangue
-    public int hp = 10;
+    public int hp = 100;
     private Vector3 originalScale;
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, 1);
+        Gizmos.DrawWireSphere(new Vector2(transform.position.x, transform.position.y + 3), 1);
+        
+    }
 
     void Start()
     {
@@ -42,9 +49,8 @@ public class Personagem : MonoBehaviour
         {
             Pular();
         }
-
-        Debug.Log(qtd_pulos);
     }
+    #region ataque
     void AtaqueDistancia()
     {
         if (Input.GetKeyDown(KeyCode.K))
@@ -64,29 +70,45 @@ public class Personagem : MonoBehaviour
             Tiro.GetComponent<AtaqueDistancia>().MudaVelocidade(-5);
         }
     }
+    #endregion
 
     void Mover()
     {
-
         float hAxis = Input.GetAxis("Horizontal");
-
+        float vAxis = Input.GetAxis("Vertical");
         float velX = hAxis * Time.deltaTime * (velocidade + velExtra);
+        float velY = Corpo.velocity.y;
 
-        float vely = Corpo.velocity.y;
+        RaycastHit2D hitDown = Physics2D.CircleCast(transform.position, 1, Vector2.down, 0, segredoLayer);
 
-        Corpo.velocity = new Vector2(velX, vely);
+        RaycastHit2D hitUp = Physics2D.CircleCast(new Vector2(transform.position.x, transform.position.y + 3), 1, Vector2.up, 0, segredoLayer);
+
+        if (hitDown) 
+        {
+            if (vAxis < 0 && qtd_pulos < 2) 
+            {
+                Collider2D plataformaCollider = hitDown.collider;
+                StartCoroutine("TriggerPlataformaSecreta",plataformaCollider);
+            }
+        }
+
+        if(hitUp) 
+        {
+            Collider2D plataformaCollider = hitUp.collider;
+            StartCoroutine("TriggerPlataformaSecreta", plataformaCollider);
+        }
+
+        Corpo.velocity = new Vector2(velX, velY);
 
         if (velX > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
             Animador.SetBool("Correndo", true);
-            
         }
         else if (velX < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
             Animador.SetBool("Correndo", true);
-
         }
         else
         {
@@ -94,18 +116,14 @@ public class Personagem : MonoBehaviour
         }
     }
 
+
     void Pular()
     {
         if (qtd_pulos > 0)
         {            
-            Corpo.AddForce(Vector3.up * 350);
+            Corpo.AddForce(Vector3.up * jumpForce);
             Animador.SetBool("Jump", true);
         }
-        else
-        {
-            Animador.SetBool("Jump", false);
-        }
-
         qtd_pulos--;
     }
     private void OnTriggerEnter2D(Collider2D tocou)
@@ -113,13 +131,13 @@ public class Personagem : MonoBehaviour
         if (tocou.gameObject.tag == "Solo")
         {
             qtd_pulos = 2;
+            jumpForce = 500;
             Animador.SetBool("Jump", false);
         }
         if (tocou.gameObject.tag == "Atk_inimigo")
         {
             if (hp > 0)
             {
-
                 Animador.SetTrigger("Dano");
             }
         }
@@ -134,7 +152,7 @@ public class Personagem : MonoBehaviour
 
     private void CollectItem()
     {
-        Debug.Log("Item coletado!");
+        
         Destroy(gameObject);
     }
     public void Dano()
@@ -150,5 +168,13 @@ public class Personagem : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+
+    IEnumerator TriggerPlataformaSecreta(Collider2D colliderPlataforma) 
+    {
+        colliderPlataforma.isTrigger= true;
+        yield return new WaitForSeconds(0.5f);
+        colliderPlataforma.isTrigger = false;
+    }
+
 }
     

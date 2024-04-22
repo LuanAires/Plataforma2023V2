@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class AtaqueEspecial : MonoBehaviour
 {
-    public int almasNecessariasNivel1 = 5; // Quantidade de almas necessárias para ativar o ataque especial no nível 1
-    public int almasNecessariasNivel2 = 10; // Quantidade de almas necessárias para ativar o ataque especial no nível 2
-    private int almasColetadas = 0; // Quantidade de almas coletadas até o momento
-    public GameObject efeitoAtaqueEspecial; // Efeito visual do ataque especial
-    public int danoDoAtaqueNivel1 = 50; // Dano causado pelo ataque especial no nível 1
-    public int danoDoAtaqueNivel2 = 100; // Dano causado pelo ataque especial no nível 2
-    public GameObject fissuraPrefab; // Prefab da fissura
+    public int almasNecessariasNivel1 = 5; 
+    public int almasNecessariasNivel2 = 10; 
+    private int almasColetadas = 0; 
+    public GameObject efeitoAtaqueEspecial; 
+    public int danoDoAtaqueNivel1 = 50; 
+    public int danoDoAtaqueNivel2 = 100; 
+    public GameObject fissuraPrefab; 
 
     void OnTriggerEnter(Collider other)
     {

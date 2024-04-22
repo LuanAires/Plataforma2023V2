@@ -24,7 +24,7 @@ public class Inimigo : MonoBehaviour
     {
         if (Vector3.Distance(Heroi.transform.position, transform.position) < 5)
         {
-            Animador.SetTrigger("Proximo");
+            
         }
     }
     private void OnTriggerEnter2D(Collider2D tocar)

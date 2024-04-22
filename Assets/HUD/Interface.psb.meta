@@ -94,48 +94,6 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: barra Especial
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 529
-      width: 540
-      height: 85
-    spriteID: a4b4dbb75dd37d746aa86951a35a7488
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 529}
-    spritePosition: {x: 379, y: 581}
-  - name: Barra hp
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 439
-      width: 596
-      height: 82
-    spriteID: 1cd3fbe0165369944bf4086e346d30e3
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 439}
-    spritePosition: {x: 381, y: 660}
   - name: interface
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -145,9 +103,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 908
-      height: 427
-    spriteID: f21e3af58e30c854c92eadfd4569c85b
+      width: 263
+      height: 315
+    spriteID: aca898072e17cc14aa9bfefdac3364eb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -156,7 +114,49 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 98, y: 468}
+    spritePosition: {x: 96, y: 464}
+  - name: barra HP
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 552
+      width: 605
+      height: 82
+    spriteID: aaf6e7c5506656b4082ac9a2eb28a51f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 552}
+    spritePosition: {x: 377, y: 661}
+  - name: barra XP
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 437
+      width: 555
+      height: 107
+    spriteID: 53391e714796d194cb00c99f81dc0f4b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 437}
+    spritePosition: {x: 376, y: 561}
   characterData:
     bones: []
     parts: []
@@ -193,33 +193,33 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: barra Especial
-    spriteName: barra Especial
-    isGroup: 0
-    parentIndex: -1
-    spriteID: a4b4dbb75dd37d746aa86951a35a7488
-    layerID: 4
-    mosaicPosition: {x: 4, y: 529}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Barra hp
-    spriteName: Barra hp
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 1cd3fbe0165369944bf4086e346d30e3
-    layerID: 3
-    mosaicPosition: {x: 4, y: 439}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
   - name: interface
     spriteName: interface
     isGroup: 0
     parentIndex: -1
-    spriteID: f21e3af58e30c854c92eadfd4569c85b
-    layerID: 2
+    spriteID: aca898072e17cc14aa9bfefdac3364eb
+    layerID: 40
     mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: barra HP
+    spriteName: barra HP
+    isGroup: 0
+    parentIndex: -1
+    spriteID: aaf6e7c5506656b4082ac9a2eb28a51f
+    layerID: 19
+    mosaicPosition: {x: 4, y: 552}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: barra XP
+    spriteName: barra XP
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 53391e714796d194cb00c99f81dc0f4b
+    layerID: 20
+    mosaicPosition: {x: 4, y: 437}
     flatten: 0
     isImported: 1
     isVisible: 1
