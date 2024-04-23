@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Personagem : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Personagem : MonoBehaviour
     public int qtd_pulos = 2;
     public float velExtra = 0;
 
+    bool pode_dano;
+
   //Ataque Distancia
     public GameObject Carta;
     public GameObject PontoDeOrigem;
@@ -22,6 +25,7 @@ public class Personagem : MonoBehaviour
     public GameObject Alma;
     //Quantidade de Sangue
     public int hp = 100;
+    public int perderHp;
     private Vector3 originalScale;
 
     private void OnDrawGizmos()
@@ -114,6 +118,7 @@ public class Personagem : MonoBehaviour
         {
             Animador.SetBool("Correndo", false);
         }
+
     }
 
 
@@ -141,6 +146,16 @@ public class Personagem : MonoBehaviour
                 Animador.SetTrigger("Dano");
             }
         }
+        if (gameObject.tag == "Morte")
+        {
+            if (pode_dano == true)
+            {
+                pode_dano = false;
+                //hp = hp - 3;
+                PerderHp(1);
+                SceneManager.LoadScene(2);
+            }
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -151,8 +166,7 @@ public class Personagem : MonoBehaviour
     }
 
     private void CollectItem()
-    {
-        
+    {       
         Destroy(gameObject);
     }
     public void Dano()
@@ -163,7 +177,24 @@ public class Personagem : MonoBehaviour
             Animador.SetBool("Morreu", true);
         }
     }
-
+    public void PerderHp(int quantidade)
+    {
+        if (hp > 0)
+        {
+            hp -= quantidade; 
+            if (hp <= 0)
+            {
+              Morrer();
+            }
+            else
+            {
+                if (Animador != null)
+                {
+                    Animador.SetTrigger("Dano");
+                }
+            }
+        }
+    }
     public void Morrer()
     {
         Destroy(this.gameObject);
@@ -175,6 +206,5 @@ public class Personagem : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         colliderPlataforma.isTrigger = false;
     }
-
 }
     
