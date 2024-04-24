@@ -8,42 +8,26 @@ public class piranha : MonoBehaviour
 
     public int hp = 10; // Pontos de vida da piranha
     public int dano = 1; // Dano causado pela piranha
-    public GameObject player; // Referência ao GameObject do player
+    public Personagem player; // Referência ao GameObject do player
     public Animator animador; // Referência ao Animator da piranha
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Personagem>();
         animador = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        // Verifica se o jogador está próximo o suficiente
-        if (Vector3.Distance(player.transform.position, transform.position) < 1.5f)
-        {
-            // Se estiver próximo, aplica dano
-            AplicarDanoAoHeroi();
-        }
-    }
 
-    private void AplicarDanoAoHeroi()
-    {
-        // Verifica se o player tem o script PerderVida anexado
-        /*PerderVida perderVidaScript = player.GetComponent<PerderVida>();
-        if (perderVidaScript != null)
-        {
-            // Chama a função PerderHp do script PerderVida
-            perderVidaScript.PerderHp(dano);
-        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Atk"))
+        if (other.gameObject.CompareTag("Player"))
         {
             // Se a piranha entrar em colisão com um objeto com a tag "Atk", aplica dano
-            AplicarDano(dano);
+            player.PerderHp(dano);
         }
     }
 

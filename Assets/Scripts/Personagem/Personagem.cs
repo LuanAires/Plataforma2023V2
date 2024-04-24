@@ -146,24 +146,18 @@ public class Personagem : MonoBehaviour
                 Animador.SetTrigger("Dano");
             }
         }
-        if (gameObject.tag == "Morte")
+        if (tocou.tag == "Morte")
         {
-            if (pode_dano == true)
-            {
-                pode_dano = false;
-                //hp = hp - 3;
-                PerderHp(1);
-                SceneManager.LoadScene(2);
-            }
+            PerderHp(1);
+            SceneManager.LoadScene(2);
         }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        if (tocou.CompareTag("Player"))
         {
             CollectItem();
         }
+
     }
+
 
     private void CollectItem()
     {       
