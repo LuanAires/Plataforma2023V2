@@ -30,12 +30,12 @@ public class piranha : MonoBehaviour
     private void AplicarDanoAoHeroi()
     {
         // Verifica se o player tem o script PerderVida anexado
-        PerderVida perderVidaScript = player.GetComponent<PerderVida>();
+        /*PerderVida perderVidaScript = player.GetComponent<PerderVida>();
         if (perderVidaScript != null)
         {
             // Chama a função PerderHp do script PerderVida
             perderVidaScript.PerderHp(dano);
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D other)
