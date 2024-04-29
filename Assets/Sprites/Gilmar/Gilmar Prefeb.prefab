@@ -893,7 +893,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
       propertyPath: m_Name
-      value: Gilmar Conjunto Unity
+      value: Gilmar Prefeb
       objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
       propertyPath: m_TagString
@@ -1277,12 +1277,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animador: {fileID: 0}
+  velocidade: 0
+  jumpForce: 350
+  segredoLayer:
+    serializedVersion: 2
+    m_Bits: 0
   qtd_pulos: 2
   velExtra: 0
   Carta: {fileID: 5229489917348295320, guid: 1af511bdd00703c46b7574a5986335aa, type: 3}
   PontoDeOrigem: {fileID: 0}
+  CaixaCorreio: {fileID: 0}
   Alma: {fileID: 8078959313337667677, guid: 56fd5bc1766b6b64590518166533b8a4, type: 3}
   hp: 10
+  perderHp: 0
 --- !u!4 &4534708793578314315 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
