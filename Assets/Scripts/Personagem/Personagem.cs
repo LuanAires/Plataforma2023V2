@@ -149,7 +149,7 @@ public class Personagem : MonoBehaviour
         if (tocou.tag == "Morte")
         {
             PerderHp(1);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
         if (tocou.CompareTag("Player"))
         {
