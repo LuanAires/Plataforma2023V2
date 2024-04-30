@@ -28,24 +28,8 @@ public class CabecaBoss : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(Heroi.transform.position, transform.position) < 5)
-        {
-            // Escolher aleatoriamente qual ataque executar
-            int escolhaAtaque = Random.Range(0, 2);
-
-            switch (escolhaAtaque)
-            {
-                case 0:
-                    Cuspir();
-                    break;
-                case 1:
-                    Avancar();
-                    break;
-                case 2:
-                    LancarCartola();
-                    break;              
-            }
-        }
+                   
+         
     }
 
     private void OnTriggerEnter2D(Collider2D tocar)
