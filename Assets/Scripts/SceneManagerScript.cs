@@ -12,9 +12,12 @@ public class SceneManagerScript : MonoBehaviour
 
     public void CarregarCena(int indice)
     {
-        SceneManager.LoadScene(indice);
+        SceneManager.LoadScene(0);
     }
-
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        SceneManager.LoadScene(2);
+    }
     public void ReiniciarCena()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
