@@ -2134,23 +2134,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2599438283171113958, guid: 00cdbd3c2f19a9541a0e77600b1b3119, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.77019
+      value: 0.38216057
       objectReference: {fileID: 0}
     - target: {fileID: 2599438283171113958, guid: 00cdbd3c2f19a9541a0e77600b1b3119, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.77019
+      value: 0.38216057
       objectReference: {fileID: 0}
     - target: {fileID: 2599438283171113958, guid: 00cdbd3c2f19a9541a0e77600b1b3119, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.77019
+      value: 0.38216057
       objectReference: {fileID: 0}
     - target: {fileID: 2599438283171113958, guid: 00cdbd3c2f19a9541a0e77600b1b3119, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -81.49
+      value: -81.47
       objectReference: {fileID: 0}
     - target: {fileID: 2599438283171113958, guid: 00cdbd3c2f19a9541a0e77600b1b3119, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -26.03
+      value: -25.21
       objectReference: {fileID: 0}
     - target: {fileID: 2599438283171113958, guid: 00cdbd3c2f19a9541a0e77600b1b3119, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8480,6 +8480,83 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &862358208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 862358209}
+  - component: {fileID: 862358210}
+  m_Layer: 0
+  m_Name: Piso Conti (3)
+  m_TagString: Solo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &862358209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862358208}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 131.6, y: -3.5, z: 0}
+  m_LocalScale: {x: 3.42, y: 1.0442, z: 1.0442}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2145623731}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &862358210
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862358208}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.48854685, y: -0.70589197}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.3224154, y: 0.72821593}
+  m_EdgeRadius: 0
 --- !u!1 &872890574
 GameObject:
   m_ObjectHideFlags: 0
@@ -19412,6 +19489,7 @@ Transform:
   - {fileID: 360102454}
   - {fileID: 1785615804}
   - {fileID: 1803246581}
+  - {fileID: 862358209}
   - {fileID: 444287557}
   - {fileID: 1498084263}
   - {fileID: 615436911}
@@ -19754,7 +19832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9004898210538987762, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       propertyPath: velocidade
-      value: 2500
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 9004898210538987762, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       propertyPath: segredoLayer.m_Bits
