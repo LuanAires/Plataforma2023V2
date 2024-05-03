@@ -79,7 +79,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Cuspindo
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7874215804608325108}
   m_Solo: 0
@@ -236,7 +239,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Cuspindo
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2429024525736079070}
   m_Solo: 0
@@ -330,7 +336,7 @@ AnimatorStateMachine:
     m_Position: {x: 430, y: 100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3389285351650129734}
-    m_Position: {x: -400, y: 290, z: 0}
+    m_Position: {x: -270, y: 250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1511027898269724769}
     m_Position: {x: 113.15643, y: -93.524796, z: 0}
