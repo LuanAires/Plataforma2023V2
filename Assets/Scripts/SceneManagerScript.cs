@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,6 +15,14 @@ public class SceneManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene(indice);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (Collision.
+        {
+        
+        
+        }
+    }
 
     public void ReiniciarCena()
     {
@@ -26,3 +35,4 @@ public class SceneManagerScript : MonoBehaviour
         Application.Quit();
     }
 }
+ 
