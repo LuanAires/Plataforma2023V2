@@ -28,6 +28,7 @@ public class Personagem : MonoBehaviour
     public int perderHp;
     private Vector3 originalScale;
 
+    float hAxis, vAxis, velX, velY;
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, 1);
@@ -76,12 +77,19 @@ public class Personagem : MonoBehaviour
     }
     #endregion
 
+    private void FixedUpdate()
+    {
+        velX = hAxis * Time.fixedDeltaTime * (velocidade + velExtra);
+        velY = Corpo.velocity.y;
+
+        Corpo.velocity = new Vector2(velX, velY);
+    }
+
     void Mover()
     {
-        float hAxis = Input.GetAxis("Horizontal");
-        float vAxis = Input.GetAxis("Vertical");
-        float velX = hAxis * Time.deltaTime * (velocidade + velExtra);
-        float velY = Corpo.velocity.y;
+        hAxis = Input.GetAxis("Horizontal");
+        vAxis = Input.GetAxis("Vertical");
+
 
         RaycastHit2D hitDown = Physics2D.CircleCast(transform.position, 1, Vector2.down, 0, segredoLayer);
 
@@ -101,8 +109,6 @@ public class Personagem : MonoBehaviour
             Collider2D plataformaCollider = hitUp.collider;
             StartCoroutine("TriggerPlataformaSecreta", plataformaCollider);
         }
-
-        Corpo.velocity = new Vector2(velX, velY);
 
         if (velX > 0)
         {
