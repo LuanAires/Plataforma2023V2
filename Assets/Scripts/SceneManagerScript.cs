@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,13 +16,11 @@ public class SceneManagerScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (other.gameObject.CompareTag("Player")) 
         {
-        
-        
+            SceneManager.LoadScene(2);       
         }
     }
-
     public void ReiniciarCena()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
