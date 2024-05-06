@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChamadaTiro : MonoBehaviour
 {
 
-    [SerializeField] private Personagem person;
+    [SerializeField] private Gilmar person;
     // Start is called before the first frame update
     void Start()
     {

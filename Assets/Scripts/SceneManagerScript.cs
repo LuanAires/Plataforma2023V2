@@ -14,13 +14,7 @@ public class SceneManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene(indice);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (other.gameObject.CompareTag("Player")) 
-        {
-            SceneManager.LoadScene(2);       
-        }
-    }
+    
     public void ReiniciarCena()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

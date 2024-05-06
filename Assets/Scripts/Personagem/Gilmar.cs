@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Personagem : MonoBehaviour
+public class Gilmar : MonoBehaviour
 {
 
     private Rigidbody2D Corpo;

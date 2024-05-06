@@ -8,12 +8,12 @@ public class piranha : MonoBehaviour
 
     public int hp = 10; // Pontos de vida da piranha
     public int dano = 1; // Dano causado pela piranha
-    public Personagem player; // Referência ao GameObject do player
+    public Gilmar player; // Referência ao GameObject do player
     public Animator animador; // Referência ao Animator da piranha
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Personagem>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Gilmar>();
         animador = GetComponent<Animator>();
     }
 

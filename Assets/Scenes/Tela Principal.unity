@@ -3046,24 +3046,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.16599083}
   m_EdgeRadius: 0
---- !u!114 &243393278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243393268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eccb0b90c845da54e9e713b853c1eda5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  almasNecessariasNivel1: 5
-  almasNecessariasNivel2: 10
-  efeitoAtaqueEspecial: {fileID: 0}
-  danoDoAtaqueNivel1: 50
-  danoDoAtaqueNivel2: 100
-  fissuraPrefab: {fileID: 0}
 --- !u!1001 &293533933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7029,7 +7011,7 @@ MonoBehaviour:
   velocidade: 1
   distanciaDeAtaque: 2
   danoDoAtaque: 10
-  jogador: {fileID: 0}
+  hp: 50
   animador: {fileID: 0}
 --- !u!50 &721870142
 Rigidbody2D:
@@ -9561,7 +9543,7 @@ Transform:
   m_GameObject: {fileID: 901140374}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.816475, y: -18.038967, z: -11.84}
+  m_LocalPosition: {x: 278.5527, y: -17.897758, z: -11.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11369,6 +11351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1109960680}
   - component: {fileID: 1109960681}
+  - component: {fileID: 1109960682}
   m_Layer: 0
   m_Name: Proxima Fase
   m_TagString: Untagged
@@ -11420,7 +11403,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.9439392, y: 2.4064069}
@@ -11436,6 +11419,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3029175, y: 13.417596}
   m_EdgeRadius: 0
+--- !u!114 &1109960682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109960679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37522849e243a0b41a960868acfb9fd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1111281926
 GameObject:
   m_ObjectHideFlags: 0
@@ -12265,7 +12260,7 @@ MonoBehaviour:
   velocidade: 1
   distanciaDeAtaque: 2
   danoDoAtaque: 10
-  jogador: {fileID: 243393268}
+  hp: 50
   animador: {fileID: 1474230729}
 --- !u!61 &1186423565
 BoxCollider2D:
@@ -15930,7 +15925,7 @@ Transform:
   m_GameObject: {fileID: 1577979799}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.817425, y: -19.5754, z: -11.84}
+  m_LocalPosition: {x: 286.51743, y: -19.5754, z: -11.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -17415,6 +17410,83 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1771858511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1771858512}
+  - component: {fileID: 1771858513}
+  m_Layer: 0
+  m_Name: Piso Conti (5)
+  m_TagString: Solo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1771858512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771858511}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 349.02, y: -3.5, z: 0}
+  m_LocalScale: {x: 3.42, y: 1.0442, z: 1.0442}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2145623731}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1771858513
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771858511}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 4.0218773, y: -0.70589197}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 12.343264, y: 0.72821593}
+  m_EdgeRadius: 0
 --- !u!1 &1779167181 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8891468486172372362, guid: 00cdbd3c2f19a9541a0e77600b1b3119, type: 3}
@@ -21656,8 +21728,9 @@ Transform:
   - {fileID: 360102454}
   - {fileID: 1785615804}
   - {fileID: 1803246581}
-  - {fileID: 862358209}
+  - {fileID: 1771858512}
   - {fileID: 1296043302}
+  - {fileID: 862358209}
   - {fileID: 444287557}
   - {fileID: 1498084263}
   - {fileID: 615436911}
@@ -21922,7 +21995,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 858036877970385155, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.4
+      value: 278.1
       objectReference: {fileID: 0}
     - target: {fileID: 858036877970385155, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22024,11 +22097,8 @@ PrefabInstance:
       addedObject: {fileID: 1456581192}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5111933223308220464, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 243393273}
-    - targetCorrespondingSourceObject: {fileID: 5111933223308220464, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 243393278}
+      addedObject: {fileID: 243393273}
     - targetCorrespondingSourceObject: {fileID: 3097355050602865391, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2662410065176307708}
