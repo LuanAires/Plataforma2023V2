@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4329c4465eb37f84ba2845c5bfa5156b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
+  hp: 20
   Heroi: {fileID: 243393268}
   Animador: {fileID: 655520672}
   dropPrefab: {fileID: 8078959313337667677, guid: 56fd5bc1766b6b64590518166533b8a4, type: 3}
@@ -2400,7 +2400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4329c4465eb37f84ba2845c5bfa5156b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 10
   Heroi: {fileID: 243393268}
   Animador: {fileID: 1971127844}
   dropPrefab: {fileID: 8078959313337667677, guid: 56fd5bc1766b6b64590518166533b8a4, type: 3}
@@ -3346,10 +3346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed79ead35cbca584f9d5d7d60f10e73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
-  Heroi: {fileID: 0}
-  Animador: {fileID: 0}
-  dropPrefab: {fileID: 0}
+  hp: 20
+  Heroi: {fileID: 243393268}
+  Animador: {fileID: 1337290019}
+  dropPrefab: {fileID: 8078959313337667677, guid: 56fd5bc1766b6b64590518166533b8a4, type: 3}
 --- !u!50 &328132253
 Rigidbody2D:
   serializedVersion: 4
@@ -9543,7 +9543,7 @@ Transform:
   m_GameObject: {fileID: 901140374}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 278.5527, y: -17.897758, z: -11.84}
+  m_LocalPosition: {x: -38.078888, y: -18.28916, z: -11.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10771,7 +10771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4329c4465eb37f84ba2845c5bfa5156b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 10
   Heroi: {fileID: 243393268}
   Animador: {fileID: 1971127844}
   dropPrefab: {fileID: 8078959313337667677, guid: 56fd5bc1766b6b64590518166533b8a4, type: 3}
@@ -11537,133 +11537,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1138068779
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1138068783}
-  - component: {fileID: 1138068782}
-  - component: {fileID: 1138068781}
-  - component: {fileID: 1138068780}
-  m_Layer: 0
-  m_Name: "Cabe\xE7a Do Boss"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1138068780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138068779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41b68db89435f9644954b8a5431acfca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 150
-  danoCuspe: 1
-  danoAvanco: 1
-  danoCartola: 1
-  velocidadeAvanco: 5
-  Heroi: {fileID: 0}
-  Animador: {fileID: 0}
-  dropPrefab: {fileID: 8078959313337667677, guid: 56fd5bc1766b6b64590518166533b8a4, type: 3}
-  CartolaPrefab: {fileID: 0}
---- !u!50 &1138068781
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138068779}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &1138068782
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138068779}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.42060852, y: 0.100403786}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.080017, y: 2.3079586}
-  m_EdgeRadius: 0
---- !u!4 &1138068783
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138068779}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -143.45883, y: -24.509583, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1147343813
 GameObject:
   m_ObjectHideFlags: 0
@@ -13971,6 +13844,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6144430993326879869, guid: 310f1725c974c1d41b590d76b0de862b, type: 3}
   m_PrefabInstance: {fileID: 1337290017}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1337290019 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7739558054916418391, guid: 310f1725c974c1d41b590d76b0de862b, type: 3}
+  m_PrefabInstance: {fileID: 1337290017}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1347360877
 GameObject:
   m_ObjectHideFlags: 0
@@ -15923,7 +15801,7 @@ Transform:
   m_GameObject: {fileID: 1577979799}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 286.51743, y: -19.5754, z: -11.84}
+  m_LocalPosition: {x: -38.082577, y: -19.5754, z: -11.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -16268,7 +16146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4329c4465eb37f84ba2845c5bfa5156b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 10
   Heroi: {fileID: 243393268}
   Animador: {fileID: 1971127844}
   dropPrefab: {fileID: 8078959313337667677, guid: 56fd5bc1766b6b64590518166533b8a4, type: 3}
@@ -18817,7 +18695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4329c4465eb37f84ba2845c5bfa5156b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 10
   Heroi: {fileID: 243393268}
   Animador: {fileID: 1971127844}
   dropPrefab: {fileID: 8078959313337667677, guid: 56fd5bc1766b6b64590518166533b8a4, type: 3}
@@ -18847,7 +18725,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!61 &1872591699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21105,7 +20983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4329c4465eb37f84ba2845c5bfa5156b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 10
   Heroi: {fileID: 243393268}
   Animador: {fileID: 1971127844}
   dropPrefab: {fileID: 8078959313337667677, guid: 56fd5bc1766b6b64590518166533b8a4, type: 3}
@@ -21993,7 +21871,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 858036877970385155, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 278.1
+      value: -46.5
       objectReference: {fileID: 0}
     - target: {fileID: 858036877970385155, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22270,7 +22148,6 @@ SceneRoots:
   - {fileID: 2065089}
   - {fileID: 55490435}
   - {fileID: 493203626}
-  - {fileID: 1138068783}
   - {fileID: 328132251}
   - {fileID: 1186423563}
   - {fileID: 721870146}

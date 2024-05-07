@@ -397,7 +397,7 @@ Transform:
   m_GameObject: {fileID: 291927931}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 191.78864, y: 0.23011017, z: -11.84}
+  m_LocalPosition: {x: 194.70859, y: 0.21660423, z: -11.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -520,7 +520,7 @@ Transform:
   m_GameObject: {fileID: 325039927}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 191.76685, y: -4.4802, z: -11.84}
+  m_LocalPosition: {x: 194.68686, y: -4.4802, z: -11.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1224,6 +1224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbbd2825d593a644b669feb15ec5632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Animation: {fileID: 0}
   Parede: {fileID: 2050360108}
 --- !u!61 &837572891
 BoxCollider2D:
@@ -1331,7 +1332,7 @@ Transform:
   m_GameObject: {fileID: 837572889}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 198.88, y: -0.31, z: 0}
+  m_LocalPosition: {x: 198.88, y: 0.49, z: 0}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3022,7 +3023,7 @@ GameObject:
   - component: {fileID: 2050360110}
   - component: {fileID: 2050360109}
   m_Layer: 0
-  m_Name: ParedeBoss
+  m_Name: Parede
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3134,7 +3135,7 @@ Transform:
   m_GameObject: {fileID: 2050360108}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 190.72, y: 0.82, z: 0}
+  m_LocalPosition: {x: 183.91, y: 0.82, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3150,7 +3151,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 858036877970385155, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 184.9
+      value: 187.82
       objectReference: {fileID: 0}
     - target: {fileID: 858036877970385155, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       propertyPath: m_LocalPosition.y

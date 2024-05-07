@@ -71,11 +71,8 @@ public class CabecaBoss : MonoBehaviour
     {
         Animador.SetBool("LancarCartola", true);
     }
-
-
     void AtaqueAleatorio()
-    {
-        // Escolhe aleatoriamente um ataque para executar
+    {   
         int ataqueSelecionado = Random.Range(0, 3);
 
         switch (ataqueSelecionado)
@@ -94,8 +91,7 @@ public class CabecaBoss : MonoBehaviour
         }
     }
     void AtaqueAleatorioV()
-    {
-        // Escolhe aleatoriamente um ataque para executar
+    {       
         int ataqueSelecionado = Random.Range(0, 3);
 
         switch (ataqueSelecionado)
@@ -113,7 +109,6 @@ public class CabecaBoss : MonoBehaviour
                 break;
         }
     }
-
     public void Morrer()
     {
         DroparAlma();
