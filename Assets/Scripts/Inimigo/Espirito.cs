@@ -56,7 +56,6 @@ public class Espirito : MonoBehaviour
             }
         }
     }
-
     private void Morrer()
     {
        
