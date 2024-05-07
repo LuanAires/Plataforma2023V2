@@ -512,7 +512,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: hp
-    m_EventTreshold: 50
+    m_EventTreshold: 75
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8938407258871661443}
   m_Solo: 0
@@ -733,10 +733,10 @@ AnimatorStateMachine:
     m_Position: {x: 50, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -695206957135941111}
-    m_Position: {x: 410, y: -140, z: 0}
+    m_Position: {x: 440, y: -140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -455457389600882395}
-    m_Position: {x: 790, y: -60, z: 0}
+    m_Position: {x: 810, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2297058113723854857}
     m_Position: {x: 770, y: 550, z: 0}
@@ -754,7 +754,7 @@ AnimatorStateMachine:
     m_Position: {x: 50, y: -50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9045961100480793517}
-    m_Position: {x: 85, y: 15, z: 0}
+    m_Position: {x: -300, y: -110, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
