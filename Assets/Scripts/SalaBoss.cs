@@ -6,25 +6,34 @@ public class SalaBoss : MonoBehaviour
 {
     public Animator Animation;
     public GameObject Parede;
-    // Start is called before the first frame update
+    public AudioClip Impacto; 
+    private AudioSource audioSource; 
     void Start()
     {
-        
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Inicialize o AudioSource
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            // Adicione o componente se não estiver presente
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        // Atribua o áudio ao AudioSource
+        audioSource.clip = Impacto;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            
+            // Ative a parede
             Parede.SetActive(true);
             Debug.Log("Chegou");
-            Destroy(this.gameObject);
+            // Reproduza o áudio
+            if (audioSource != null && Impacto != null)
+            {
+                audioSource.Play();
+            }
+            // Destrua este objeto
+            Destroy(gameObject);
         }
     }
-
 }
