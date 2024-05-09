@@ -20,6 +20,6 @@ public class ChamadaTiro : MonoBehaviour
 
     public void ChamadaDisparo()
     { 
-     person.Disparo();
+        person.Disparo();
     }
 }

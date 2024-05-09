@@ -4,6 +4,8 @@ public class Espirito : MonoBehaviour
 {
     public float amplitude = 0.5f; // Amplitude do movimento de flutuação
     public float velocidade = 1.0f; // Velocidade do movimento de flutuação
+    public GameObject fantas;
+    public GameObject PontoDeOrigem;
     public float distanciaDeAtaque = 2.0f; // Distância de ataque do inimigo
     public int danoDoAtaque = 10; // Dano causado pelo ataque do inimigo
     public int hp = 50; // Pontos de vida do inimigo
@@ -37,10 +39,19 @@ public class Espirito : MonoBehaviour
             }
         }
     }
-
-    public void SofrerDano(int quantidade)
+    public void Disparo()
     {
-        hp -= quantidade;
+        GameObject Tiro = Instantiate(fantas, PontoDeOrigem.transform.position, Quaternion.identity);
+        Destroy(Tiro, 3f);
+
+        if (transform.localScale.x == -1)
+        {
+            Tiro.GetComponent<AtaqueDistancia>().MudaVelocidade(-5);
+        }
+    }
+    public void SofrerDano(int quantidade)
+        {
+         hp -= quantidade;
 
         // Verifica se o inimigo está morto
         if (hp <= 0)

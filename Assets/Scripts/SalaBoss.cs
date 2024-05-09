@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,9 @@ public class SalaBoss : MonoBehaviour
 {
     public Animator Animation;
     public GameObject Parede;
-    public AudioClip Impacto; 
-    private AudioSource audioSource; 
+    public AudioClip ImpactoPilastra;
+    public CinemachineVirtualCamera vmCam;
+    [SerializeField]private AudioSource audioSource; 
     void Start()
     {
         // Inicialize o AudioSource
@@ -18,7 +20,7 @@ public class SalaBoss : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
         }
         // Atribua o áudio ao AudioSource
-        audioSource.clip = Impacto;
+        audioSource.clip = ImpactoPilastra;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,14 +28,17 @@ public class SalaBoss : MonoBehaviour
         {
             // Ative a parede
             Parede.SetActive(true);
-            Debug.Log("Chegou");
+            
+            //Pega o componente camerashake e inicia o tremilique da camera
+            vmCam.GetComponent<CameraShake>().StartShake();
+            
             // Reproduza o áudio
-            if (audioSource != null && Impacto != null)
+            if (audioSource != null && ImpactoPilastra != null)
             {
                 audioSource.Play();
             }
             // Destrua este objeto
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

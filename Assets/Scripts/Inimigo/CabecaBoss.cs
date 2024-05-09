@@ -6,6 +6,8 @@ public class CabecaBoss : MonoBehaviour
 {
     public int hp = 1;
     private int hpMax;
+    public GameObject Cuspe;
+    public GameObject PontoDeOrigem;
     public int danoCuspe = 9;
     public int danoAvanco = 13;
     public int danoCartola = 10;
@@ -40,7 +42,16 @@ public class CabecaBoss : MonoBehaviour
             AplicarDano(rand);
         }
     }
+    public void Disparo()
+    {
+        GameObject Tiro = Instantiate(Cuspe, PontoDeOrigem.transform.position, Quaternion.identity);
+        Destroy(Tiro, 3f);
 
+        if (transform.localScale.x == -1)
+        {
+            Tiro.GetComponent<AtaqueDistancia>().MudaVelocidade(-5);
+        }
+    }
     void Cuspir()
     {
         Animador.SetBool("cuspe", true);

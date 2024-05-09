@@ -61,8 +61,7 @@ public class Gilmar : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             Disparo();
-            Animador.SetTrigger("Disparo");
-            Debug.Log("atirei");
+            Animador.SetBool("Disparo", true);            
         }
     }
     public void Disparo()
@@ -72,7 +71,7 @@ public class Gilmar : MonoBehaviour
 
         if (transform.localScale.x == -1)
         {
-            Tiro.GetComponent<AtaqueDistancia>().MudaVelocidade(-5);
+            Tiro.GetComponent<AtaqueDistancia>().MudaVelocidade(5);
         }
     }
     #endregion
@@ -147,10 +146,7 @@ public class Gilmar : MonoBehaviour
         }
         if (tocou.gameObject.tag == "Atk_inimigo")
         {
-            if (hp > 0)
-            {
-                Animador.SetTrigger("Dano");
-            }
+           
         }
         if (tocou.tag == "Morte")
         {
@@ -190,7 +186,7 @@ public class Gilmar : MonoBehaviour
             {
                 if (Animador != null)
                 {
-                    Animador.SetTrigger("Dano");
+                    //Animador.SetBoll("Dano");
                 }
             }
         }

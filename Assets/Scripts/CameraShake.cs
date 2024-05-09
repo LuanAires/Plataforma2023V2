@@ -7,11 +7,10 @@ using Unity.VisualScripting;
 public class CameraShake : MonoBehaviour
 {
     private CinemachineVirtualCamera CinemachineVirtualcamera;
-    private float ShakeIntensity = 1.0f;
-    private float ShakeTime = 0.2f;
+    [SerializeField] private float ShakeIntensity = 1.0f;
+    [SerializeField] private float ShakeTime = 0.2f;
     private float timer;
     private CinemachineBasicMultiChannelPerlin _cbmcp;
-    private SalaBoss sala;
 
 
     private void Awake()
@@ -31,24 +30,24 @@ public class CameraShake : MonoBehaviour
     private void StopShake()
     {
         CinemachineBasicMultiChannelPerlin _cbmcp = CinemachineVirtualcamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        _cbmcp.m_AmplitudeGain -= 0f;
+        _cbmcp.m_AmplitudeGain = 0f;
         timer = 0;
     }
+
+    public void StartShake() 
+    {
+        StartCoroutine(CountShake());
+    }
+
+    IEnumerator CountShake() 
+    { 
+        ShakeCamera();
+        yield return new WaitForSeconds(ShakeTime);
+        StopShake();
+    }
+
     void Update()
     {
-       if(Input.GetKeyDown(KeyCode.Escape)) 
-       {
-            ShakeCamera();
-       }
-        if (timer > 0) 
-        {
-          timer -= Time.deltaTime;
 
-            if(timer <= 0)  
-            {
-              StopShake();
-            
-            }
-        }
     }
 }
