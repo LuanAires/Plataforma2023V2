@@ -38,7 +38,7 @@ public class SalaBoss : MonoBehaviour
                 audioSource.Play();
             }
             // Destrua este objeto
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }

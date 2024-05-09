@@ -22,7 +22,7 @@ public class CabecaBoss : MonoBehaviour
     {
         hpMax = hp;
         Heroi = GameObject.FindGameObjectWithTag("Player");
-        //Animador = GetComponent<Animator>();
+        Animador = GetComponent<Animator>();
 
         // Iniciar um ataque aleatório quando o chefe é iniciado
         InvokeRepeating("AtaqueAleatorio", 2f, 3f);
@@ -30,7 +30,8 @@ public class CabecaBoss : MonoBehaviour
 
     private void Update()
     {
-        Animador.SetFloat("hp", hp);
+        
+        
         // Se necessário, você pode adicionar lógica de movimento ou comportamento aqui
     }
 
@@ -52,38 +53,8 @@ public class CabecaBoss : MonoBehaviour
             Tiro.GetComponent<AtaqueDistancia>().MudaVelocidade(-5);
         }
     }
-    void Cuspir()
-    {
-        Animador.SetBool("cuspe", true);
-    }
-
-    void Avancar()
-    {
-        Animador.SetBool("Avancar", true);
-    }
-
-    void LancarCartola()
-    {
-        Animador.SetBool("LancarCartola", true);
-    }
-
-
-    void CuspirV()
-    {
-        Animador.SetBool("cuspe", true);
-    }
-
-    void AvancarV()
-    {
-        Animador.SetBool("Avancar", true);
-    }
-
-    void LancarCartolaV()
-    {
-        Animador.SetBool("LancarCartola", true);
-    }
     void AtaqueAleatorio()
-    {   
+    {
         int ataqueSelecionado = Random.Range(0, 3);
 
         switch (ataqueSelecionado)
@@ -100,6 +71,32 @@ public class CabecaBoss : MonoBehaviour
             default:
                 break;
         }
+    }
+    void Cuspir()
+    {
+        Animador.SetBool("cuspe", true);
+    }
+
+    void Avancar()
+    {
+        Animador.SetBool("Avancar", true);
+    }
+
+    void LancarCartola()
+    {
+        Animador.SetBool("LancarCartola", true);
+    }
+    void CuspirV()
+    {
+        Animador.SetBool("cuspeV", true);
+    }
+    void AvancarV()
+    {
+        Animador.SetBool("AvancarV", true);
+    }
+    void LancarCartolaV()
+    {
+        Animador.SetBool("LancarCartolaV", true);
     }
     void AtaqueAleatorioV()
     {       
@@ -139,6 +136,11 @@ public class CabecaBoss : MonoBehaviour
         {
             Animador.SetTrigger("Morrer");
             Morrer();
+        }
+        if (hp <= 75)
+        {
+            Animador.SetTrigger("MetadeHP");
+            
         }
     }
 }
