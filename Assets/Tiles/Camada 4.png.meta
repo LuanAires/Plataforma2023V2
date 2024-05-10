@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 074c32bbb68d5f74983a9296501a4e10
+guid: d3617682d35411240ba95af09acdd4c3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Pedra que a r\xE3 cospe_0"
+      name: Camada 4_0
       rect:
         serializedVersion: 2
-        x: 266
-        y: 134
-        width: 180
-        height: 205
+        x: 0
+        y: 0
+        width: 828
+        height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dbc7fa5dd1e7144181f46b46a4835a9
-      internalID: 1083019651
+      spriteID: b16eb75386a944443b54ac464c6fd8da
+      internalID: 433910236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camada 4_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 269
+        width: 828
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef710d17f2339ef49b27d4bac247bb4b
+      internalID: -113342800
       vertices: []
       indices: 
       edges: []
@@ -154,7 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "Pedra que a r\xE3 cospe_0": 1083019651
+      Camada 4_0: 433910236
+      Camada 4_1: -113342800
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
