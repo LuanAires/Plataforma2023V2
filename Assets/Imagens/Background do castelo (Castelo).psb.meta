@@ -96,16 +96,16 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: "Parte de cima do port\xE3o"
     originalName: 
-    pivot: {x: 0.49291882, y: 0.040862937}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 726
-      y: 4
-      width: 166
-      height: 192
-    spriteID: 1c62a06f13d7c4443a7b205e5c9e8e14
+      x: 4
+      y: 1100
+      width: 368
+      height: 610
+    spriteID: 0e8e6c0bd4f4f4e4f8df6fa35dc710a2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -113,20 +113,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 726, y: 3}
-    spritePosition: {x: 1029, y: 227}
-  - name: "Port\xE3o"
+    uvTransform: {x: 4, y: 1100}
+    spritePosition: {x: 1202, y: 0}
+  - name: Fundo do castelo
     originalName: 
-    pivot: {x: 0.47150508, y: 0.0736922}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 726
-      y: 204
-      width: 165
-      height: 193
-    spriteID: d1f1dd1b009fb6a46ab09ca6f9806d98
+      x: 380
+      y: 1100
+      width: 331
+      height: 572
+    spriteID: 8d62739185298744680817636bda664d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -134,20 +134,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 718, y: 204}
-    spritePosition: {x: 1036, y: 225}
-  - name: Castelo
+    uvTransform: {x: 380, y: 1100}
+    spritePosition: {x: 1215, y: 2}
+  - name: Layer1
     originalName: 
-    pivot: {x: 0.4720145, y: 0.011109426}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 714
-      height: 916
-    spriteID: 06bab256f9ba94344ae864884db7e11a
+      width: 1865
+      height: 1088
+    spriteID: ee60dc1af9efd0040a04f6ea9d390f59
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -156,7 +156,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 671, y: 226}
+    spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
     parts: []
@@ -197,27 +197,27 @@ ScriptedImporter:
     spriteName: "Parte de cima do port\xE3o"
     isGroup: 0
     parentIndex: -1
-    spriteID: 1c62a06f13d7c4443a7b205e5c9e8e14
-    layerID: 10
-    mosaicPosition: {x: 726, y: 4}
+    spriteID: 0e8e6c0bd4f4f4e4f8df6fa35dc710a2
+    layerID: 4
+    mosaicPosition: {x: 4, y: 1100}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: "Port\xE3o"
-    spriteName: "Port\xE3o"
+  - name: Fundo do castelo
+    spriteName: Fundo do castelo
     isGroup: 0
     parentIndex: -1
-    spriteID: d1f1dd1b009fb6a46ab09ca6f9806d98
+    spriteID: 8d62739185298744680817636bda664d
     layerID: 5
-    mosaicPosition: {x: 726, y: 204}
+    mosaicPosition: {x: 380, y: 1100}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Castelo
-    spriteName: Castelo
+  - name: Layer1
+    spriteName: Layer1
     isGroup: 0
     parentIndex: -1
-    spriteID: 06bab256f9ba94344ae864884db7e11a
+    spriteID: ee60dc1af9efd0040a04f6ea9d390f59
     layerID: 2
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
