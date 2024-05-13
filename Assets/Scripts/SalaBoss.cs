@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SalaBoss : MonoBehaviour
 {
+    [SerializeField] CabecaBoss boss;
     public Animator Animation;
     public GameObject Parede;
     public AudioClip ImpactoPilastra;
@@ -37,6 +38,9 @@ public class SalaBoss : MonoBehaviour
             {
                 audioSource.Play();
             }
+
+            boss.BossAp();
+
             // Destrua este objeto
             Destroy(gameObject);
         }

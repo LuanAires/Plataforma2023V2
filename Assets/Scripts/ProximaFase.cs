@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ProximaFase : MonoBehaviour
 {
+    [SerializeField] int proximaFase;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class ProximaFase : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+            SceneManager.LoadScene(proximaFase);
             
         }
     }

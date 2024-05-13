@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CabecaBoss : MonoBehaviour
 {
+    [SerializeField] public SalaBoss gatilho;
     public int hp = 1;
     private int hpMax;
     public GameObject Cuspe;
@@ -22,7 +23,7 @@ public class CabecaBoss : MonoBehaviour
     {
         hpMax = hp;
         Heroi = GameObject.FindGameObjectWithTag("Player");
-        Animador = GetComponent<Animator>();
+        //Animador = GetComponent<Animator>();
 
         // Iniciar um ataque aleatório quando o chefe é iniciado
         InvokeRepeating("AtaqueAleatorio", 2f, 3f);
@@ -32,7 +33,7 @@ public class CabecaBoss : MonoBehaviour
     {
         
         
-        // Se necessário, você pode adicionar lógica de movimento ou comportamento aqui
+        
     }
 
     private void OnTriggerEnter2D(Collider2D tocar)
@@ -55,6 +56,8 @@ public class CabecaBoss : MonoBehaviour
     }
     void AtaqueAleatorio()
     {
+        DesativarAnimacoes();
+
         int ataqueSelecionado = Random.Range(0, 3);
 
         switch (ataqueSelecionado)
@@ -71,10 +74,23 @@ public class CabecaBoss : MonoBehaviour
             default:
                 break;
         }
+
     }
+
+    void DesativarAnimacoes() 
+    {
+        Animador.SetBool("Cuspir", false);
+        Animador.SetBool("Avancar", false);
+        Animador.SetBool("LancarCartola", false);
+        //desativa animações do modo vermelho
+        Animador.SetBool("CuspirV", false);
+        Animador.SetBool("AvancarV", false);
+        Animador.SetBool("LancarCartolaV", false);
+    }
+
     void Cuspir()
     {
-        Animador.SetBool("cuspe", true);
+        Animador.SetBool("Cuspir", true);
     }
 
     void Avancar()
@@ -88,7 +104,7 @@ public class CabecaBoss : MonoBehaviour
     }
     void CuspirV()
     {
-        Animador.SetBool("cuspeV", true);
+        Animador.SetBool("CuspirV", true);
     }
     void AvancarV()
     {
@@ -98,8 +114,13 @@ public class CabecaBoss : MonoBehaviour
     {
         Animador.SetBool("LancarCartolaV", true);
     }
+    public void BossAp()
+    {
+ Animador.SetTrigger("BossAP");
+    }
     void AtaqueAleatorioV()
     {       
+        DesativarAnimacoes();
         int ataqueSelecionado = Random.Range(0, 3);
 
         switch (ataqueSelecionado)
