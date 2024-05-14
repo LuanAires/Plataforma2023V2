@@ -17,9 +17,11 @@ public class Gilmar : MonoBehaviour
 
     bool pode_dano;
 
-  //Ataque Distancia
+    //Ataque Distancia
+    public float meuTempoTiro = 0;
     public GameObject Carta;
     public GameObject PontoDeOrigem;
+    public bool pode_atirar = true;
     //Ataque Perto
     public GameObject CaixaCorreio;
     public GameObject Alma;
@@ -66,7 +68,8 @@ public class Gilmar : MonoBehaviour
     }
     public void Disparo()
     {
-        GameObject Tiro = Instantiate(Carta, PontoDeOrigem.transform.position, Quaternion.identity);
+        Vector3 PontoDeOrigem = new Vector3(transform.position.x + 0.3f, transform.position.z);
+        GameObject Carta= Instantiate(Carta, PontoDeOrigem.transform.position, Quaternion.identity);
         Destroy(Tiro, 3f);
 
         if (transform.localScale.x == -1)
