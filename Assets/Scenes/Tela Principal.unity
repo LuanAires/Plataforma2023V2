@@ -11388,6 +11388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37522849e243a0b41a960868acfb9fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  proximaFase: 0
 --- !u!1 &1111281926
 GameObject:
   m_ObjectHideFlags: 0
@@ -21980,10 +21981,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6004879050448794313, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
+      propertyPath: m_TagString
+      value: Atk
+      objectReference: {fileID: 0}
     - target: {fileID: 6648270804093188338, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       propertyPath: m_GravityScale
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9004898210538987762, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
+      propertyPath: MeuAtkD
+      value: 
+      objectReference: {fileID: 5229489917348295320, guid: 1af511bdd00703c46b7574a5986335aa, type: 3}
     - target: {fileID: 9004898210538987762, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       propertyPath: Animador
       value: 

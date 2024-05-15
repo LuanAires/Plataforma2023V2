@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7158472201968661324}
   - component: {fileID: 224680327198758808}
   - component: {fileID: 1282502336523980722}
+  - component: {fileID: 2337602284679540300}
   - component: {fileID: 8232224503503596249}
-  - component: {fileID: 3012600716412567991}
   m_Layer: 0
   m_Name: MeuAtkD
   m_TagString: Atk
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 14b491a27c0d47440af66ce32ed2ff59, type: 3}
-  m_Color: {r: 0.7075472, g: 0.0033374948, b: 0.01819568, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 5349c7fb47e2a7d4ea86d0bcdd917584, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 8.28, y: 4.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -122,6 +122,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2337602284679540300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5229489917348295320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de3c3e723230604b841d52046cb30b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade_bala: 0
 --- !u!50 &8232224503503596249
 Rigidbody2D:
   serializedVersion: 4
@@ -149,15 +162,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3012600716412567991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5229489917348295320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4834d0e5c11c8e64dbeb75f5cd089657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

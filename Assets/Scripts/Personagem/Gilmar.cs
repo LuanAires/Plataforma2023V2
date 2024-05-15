@@ -16,10 +16,9 @@ public class Gilmar : MonoBehaviour
     public float velExtra = 0;
 
     bool pode_dano;
-
     //Ataque Distancia
     public float meuTempoTiro = 0;
-    public GameObject Carta;
+    public GameObject MeuAtkD;
     public GameObject PontoDeOrigem;
     public bool pode_atirar = true;
     //Ataque Perto
@@ -63,19 +62,26 @@ public class Gilmar : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             Disparo();
-            Animador.SetBool("Disparo", true);            
+            Animador.SetBool("Disparo", true);
+        }
+
+       if (Input.GetKeyUp(KeyCode.K))
+        {
+            Disparo();
+            Animador.SetBool("Disparo", false);
         }
     }
     public void Disparo()
     {
         Vector3 PontoDeOrigem = new Vector3(transform.position.x + 0.3f, transform.position.z);
-        GameObject Carta= Instantiate(Carta, PontoDeOrigem.transform.position, Quaternion.identity);
-        Destroy(Tiro, 3f);
+        GameObject CartaJogada= Instantiate(MeuAtkD, PontoDeOrigem, Quaternion.identity);
+        CartaJogada.GetComponent<BulletControl>().DiracaoBala(0.08f);
+        Destroy(MeuAtkD, 1f);
 
-        if (transform.localScale.x == -1)
+        /*if (transform.localScale.x == -1)
         {
-            Tiro.GetComponent<AtaqueDistancia>().MudaVelocidade(5);
-        }
+            Carta.GetComponent<AtaqueDistancia>().MudaVelocidade(5);
+        }*/
     }
     #endregion
 
@@ -128,8 +134,6 @@ public class Gilmar : MonoBehaviour
         }
 
     }
-
-
     void Pular()
     {
         if (qtd_pulos > 0)
