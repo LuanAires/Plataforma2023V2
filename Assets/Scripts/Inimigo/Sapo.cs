@@ -17,13 +17,26 @@ public class Sapo : MonoBehaviour
         hpMax = hp;
         Heroi = GameObject.FindGameObjectWithTag("Player");
         Animador = GetComponentInChildren<Animator>();
+
+        // Encontrar a barra de HP do inimigo no mesmo GameObject ou atribuí-la manualmente
+        hpini = GetComponentInChildren<HpBarraInimigo>();
+
+        if (hpini != null)
+        {
+            hpini.maxlife = hpMax;
+            hpini.currentylife = hp;
+        }
+        else
+        {
+            Debug.LogError("HpBarraInimigo não encontrado.");
+        }
     }
 
     private void Update()
     {
         if (Vector3.Distance(Heroi.transform.position, transform.position) < 5)
         {
-
+            // Lógica para quando o herói está perto do sapo
         }
 
         if (hp <= 0)
@@ -31,6 +44,7 @@ public class Sapo : MonoBehaviour
             Morrer();
         }
     }
+
     private void OnTriggerEnter2D(Collider2D tocar)
     {
         if (tocar.gameObject.tag == "Atk")
@@ -38,24 +52,29 @@ public class Sapo : MonoBehaviour
             AplicarDano(1);
         }
     }
+
     public void Morrer()
     {
-
         DroparAlma();
         Destroy(gameObject);
     }
+
     void DroparAlma()
     {
         Instantiate(dropPrefab, transform.position, Quaternion.identity);
     }
 
-
     public void AplicarDano(int dano)
     {
         hp -= dano;
+        if (hp < 0) hp = 0;
+
         Animador.SetTrigger("Dano");
-        
-        // Verifica se o inimigo está morto
-            
+
+        if (hpini != null)
+        {
+            hpini.currentylife = hp;
+        }   
     }
+
 }

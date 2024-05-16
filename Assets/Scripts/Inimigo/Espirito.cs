@@ -1,41 +1,52 @@
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Espirito : MonoBehaviour
 {
-    public float amplitude = 0.5f; // Amplitude do movimento de flutuação
-    public float velocidade = 1.0f; // Velocidade do movimento de flutuação
+    public float amplitude = 0.5f; 
+    public float velocidade = 1.0f; 
     public GameObject fantas;
     public GameObject PontoDeOrigem;
-    public float distanciaDeAtaque = 2.0f; // Distância de ataque do inimigo
-    public int danoDoAtaque = 10; // Dano causado pelo ataque do inimigo
-    public int hp = 50; // Pontos de vida do inimigo
-    public Animator animador; // Referência ao Animator do inimigo
+    public float distanciaDeAtaque = 2.0f; 
+    public int danoDoAtaque = 10; 
+    public int hp = 50; 
+    public int hpMax;
+    public Animator Animador; 
     Gilmar player;
+    private Vector3 posicaoInicial; 
 
-    private Vector3 posicaoInicial; // Posição inicial do inimigo
+    private HpBarraInimigo hpini;
+
 
     private void Start()
     {
-        posicaoInicial = transform.position; // Salva a posição inicial do inimigo
+        hpini = GetComponentInChildren<HpBarraInimigo>();
+        if (hpini != null)
+        {
+            hpini.maxlife = hpMax;
+            hpini.currentylife = hp;
+        }
+
+        posicaoInicial = transform.position;
         player = FindObjectOfType<Gilmar>();
     }
 
     private void Update()
     {
-        // Calcula a posição vertical usando a função seno para criar um movimento de flutuação
+        
         float movimentoVertical = Mathf.Sin(Time.time * velocidade) * amplitude;
 
-        // Atualiza a posição do inimigo com a posição inicial e o movimento vertical
+        
         transform.position = posicaoInicial + new Vector3(0, movimentoVertical, 0);
 
-        // Verifica a distância entre o inimigo e o jogador
+        
         float distanciaAoJogador = Vector3.Distance(transform.position, player.transform.position);
         if (distanciaAoJogador < distanciaDeAtaque)
         {
             
-            if (animador != null)
+            if (Animador != null)
             {
-                animador.SetTrigger("Atacar");
+                Animador.SetTrigger("Atacar");
             }
         }
     }
@@ -49,30 +60,24 @@ public class Espirito : MonoBehaviour
             Tiro.GetComponent<AtaqueDistancia>().MudaVelocidade(-5);
         }
     }
-    public void SofrerDano(int quantidade)
-        {
-         hp -= quantidade;
+    public void AplicarDano(int dano)
+    {
+        hp -= dano;
+        if (hp < 0) hp = 0;
 
-        // Verifica se o inimigo está morto
-        if (hp <= 0)
+        Animador.SetTrigger("Dano");
+
+        if (hpini != null)
         {
-            Morrer();
-        }
-        else
-        {
-            // Se ainda tem pontos de vida, executa a animação de dano (se houver)
-            if (animador != null)
-            {
-                animador.SetTrigger("Dano");
-            }
+            hpini.currentylife = hp;
         }
     }
     private void Morrer()
     {
        
-        if (animador != null)
+        if (Animador != null)
         {
-            animador.SetTrigger("Morrer");
+            Animador.SetTrigger("Morrer");
         }
         
         Destroy(gameObject);
