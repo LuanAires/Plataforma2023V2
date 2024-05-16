@@ -62,26 +62,24 @@ public class Gilmar : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             Disparo();
-            Animador.SetBool("Disparo", true);
-        }
-
-       if (Input.GetKeyUp(KeyCode.K))
-        {
-            Disparo();
-            Animador.SetBool("Disparo", false);
+            Animador.SetTrigger("Disparo");
         }
     }
     public void Disparo()
     {
-        Vector3 PontoDeOrigem = new Vector3(transform.position.x + 0.3f, transform.position.z);
-        GameObject CartaJogada= Instantiate(MeuAtkD, PontoDeOrigem, Quaternion.identity);
-        CartaJogada.GetComponent<BulletControl>().DiracaoBala(0.08f);
-        Destroy(MeuAtkD, 1f);
+        Vector3 pontoDeOrigem = PontoDeOrigem.transform.position;
+        GameObject CartaJogada= Instantiate(MeuAtkD, pontoDeOrigem, Quaternion.identity);
 
-        /*if (transform.localScale.x == -1)
+        if (transform.localScale.x == -1)
         {
-            Carta.GetComponent<AtaqueDistancia>().MudaVelocidade(5);
-        }*/
+            CartaJogada.GetComponent<BulletControl>().DiracaoBala(-0.08f);
+        }
+        else 
+        {
+            CartaJogada.GetComponent<BulletControl>().DiracaoBala(0.08f);
+        }
+
+        Destroy(CartaJogada, 1f);
     }
     #endregion
 
@@ -158,7 +156,7 @@ public class Gilmar : MonoBehaviour
         if (tocou.tag == "Morte")
         {
             PerderHp(1);
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
         }
         if (tocou.CompareTag("Player"))
         {

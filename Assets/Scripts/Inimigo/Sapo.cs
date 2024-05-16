@@ -8,6 +8,7 @@ public class Sapo : MonoBehaviour
     public GameObject Heroi;
     public Animator Animador;
     public GameObject dropPrefab;
+    private HpBarraInimigo hpini;
 
     private int hpMax;
 
@@ -15,7 +16,7 @@ public class Sapo : MonoBehaviour
     {
         hpMax = hp;
         Heroi = GameObject.FindGameObjectWithTag("Player");
-        Animador = GetComponent<Animator>();
+        Animador = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -23,6 +24,11 @@ public class Sapo : MonoBehaviour
         if (Vector3.Distance(Heroi.transform.position, transform.position) < 5)
         {
 
+        }
+
+        if (hp <= 0)
+        {
+            Morrer();
         }
     }
     private void OnTriggerEnter2D(Collider2D tocar)
@@ -47,12 +53,9 @@ public class Sapo : MonoBehaviour
     public void AplicarDano(int dano)
     {
         hp -= dano;
-
+        Animador.SetTrigger("Dano");
+        
         // Verifica se o inimigo está morto
-        if (hp <= 0)
-        {
-            Morrer();
-        }
+            
     }
-
 }
