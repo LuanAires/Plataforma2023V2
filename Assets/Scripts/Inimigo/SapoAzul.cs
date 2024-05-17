@@ -46,7 +46,7 @@ public class SapoAzul : MonoBehaviour
     {
         if (tocar.gameObject.tag == "Atk")
         {
-            AplicarDano(1);
+            AplicarDano(10);
         }
     }
 

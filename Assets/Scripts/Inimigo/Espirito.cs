@@ -82,4 +82,13 @@ public class Espirito : MonoBehaviour
         
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D tocar)
+    {
+        if (tocar.gameObject.tag == "Atk")
+        {
+            AplicarDano(1);
+        }
+    }
+
 }
