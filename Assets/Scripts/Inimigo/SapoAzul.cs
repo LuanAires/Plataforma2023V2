@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class SapoAzul : MonoBehaviour
 {
+    public Transform pontoOrigem;
     public int hp = 1;
     public GameObject Heroi;
     public Animator Animador;
     public GameObject dropPrefab;
+    public GameObject projetilPrefab;
+    public float velocidadeProjetil = 5f;
     private HpBarraInimigo hpini;
 
+    private float maxcooldown = 2;
+    private float contadortiro;
+
     private int hpMax;
+    private bool heroiDentroRaio = false;
 
     private void Start()
     {
         hpMax = hp;
         Heroi = GameObject.FindGameObjectWithTag("Player");
         Animador = GetComponentInChildren<Animator>();
-
-        // Encontrar a barra de HP do inimigo no mesmo GameObject ou atribuí-la manualmente
         hpini = GetComponentInChildren<HpBarraInimigo>();
 
         if (hpini != null)
@@ -26,27 +31,46 @@ public class SapoAzul : MonoBehaviour
             hpini.maxlife = hpMax;
             hpini.currentylife = hp;
         }
-    
     }
 
     private void Update()
     {
-        if (Vector3.Distance(Heroi.transform.position, transform.position) < 5)
-        {
-            // Lógica para quando o herói está perto do sapo
-        }
-
         if (hp <= 0)
         {
             Morrer();
         }
+        else
+        {
+            if (heroiDentroRaio && contadortiro >= maxcooldown)
+            {
+                LançarProjetil();
+                contadortiro = 0;
+            }
+
+            if (contadortiro <= maxcooldown)
+            {
+                contadortiro += Time.deltaTime;
+            }
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D tocar)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (tocar.gameObject.tag == "Atk")
+        if (other.gameObject.tag == "Atk")
         {
             AplicarDano(10);
+        }
+        else if (other.gameObject.tag == "Player")
+        {
+            heroiDentroRaio = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            heroiDentroRaio = false;
         }
     }
 
@@ -68,13 +92,29 @@ public class SapoAzul : MonoBehaviour
 
         Animador.SetTrigger("Dano");
 
-
-
-        // Atualizar a barra de HP do inimigo
         if (hpini != null)
         {
             hpini.currentylife = hp;
         }
     }
 
+    private void LançarProjetil()
+    {
+        if (projetilPrefab != null)
+        {
+            Animador.SetTrigger("Cuspe");
+
+            GameObject projetil = Instantiate(projetilPrefab, pontoOrigem.position, Quaternion.identity);
+
+            Vector2 direcao = (Heroi.transform.position - transform.position).normalized;
+
+            Rigidbody2D rb = projetil.GetComponent<Rigidbody2D>();
+
+            if (rb != null)
+            {
+                rb.velocity = direcao * velocidadeProjetil;
+            }
+            Destroy(projetil, 2f);
+        }
+    }
 }
