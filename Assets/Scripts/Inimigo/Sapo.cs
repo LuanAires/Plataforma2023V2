@@ -43,7 +43,7 @@ public class Sapo : MonoBehaviour
         {
             if (heroiDentroRaio && contadortiro >= maxcooldown)
             {
-                LançarProjetil();
+                StartCoroutine(LançarProjetil());
                 contadortiro = 0;
             }
 
@@ -98,12 +98,15 @@ public class Sapo : MonoBehaviour
         }
     }
 
-    private void LançarProjetil()
+    private IEnumerator LançarProjetil()
     {
+        Animador.GetBool("Cuspe");
+
+        // Espera até que a animação de "Cuspe" comece a ser reproduzida
+        yield return new WaitForSeconds(Animador.GetCurrentAnimatorStateInfo(0).length);
+
         if (projetilPrefab != null)
         {
-            Animador.SetTrigger("Cuspe");
-
             GameObject projetil = Instantiate(projetilPrefab, pontoOrigem.position, Quaternion.identity);
 
             Vector2 direcao = (Heroi.transform.position - transform.position).normalized;
@@ -114,7 +117,7 @@ public class Sapo : MonoBehaviour
             {
                 rb.velocity = direcao * velocidadeProjetil;
             }
-            Destroy(projetil , 2f );
+            Destroy(projetil, 2f);
         }
     }
 }

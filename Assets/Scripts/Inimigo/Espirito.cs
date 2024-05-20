@@ -5,8 +5,8 @@ public class Espirito : MonoBehaviour
 {
     public float amplitude = 0.5f; 
     public float velocidade = 1.0f; 
-    public GameObject fantas;
-    public GameObject PontoDeOrigem;
+    public GameObject fantasma;
+    public Transform pontoOrigem;
     public float distanciaDeAtaque = 2.0f; 
     public int danoDoAtaque = 10; 
     public int hp = 50; 
@@ -14,7 +14,6 @@ public class Espirito : MonoBehaviour
     public Animator Animador; 
     Gilmar player;
     private Vector3 posicaoInicial; 
-
     private HpBarraInimigo hpini;
 
 
@@ -52,7 +51,7 @@ public class Espirito : MonoBehaviour
     }
     public void Disparo()
     {
-        GameObject Tiro = Instantiate(fantas, PontoDeOrigem.transform.position, Quaternion.identity);
+        GameObject Tiro = Instantiate(fantasma, pontoOrigem.transform.position, Quaternion.identity);
         Destroy(Tiro, 3f);
 
         if (transform.localScale.x == -1)
@@ -78,6 +77,11 @@ public class Espirito : MonoBehaviour
         if (Animador != null)
         {
             Animador.SetTrigger("Morrer");
+        }
+        if (hp <=0) 
+        {
+            Animador.SetBool("Morrer", true);
+
         }
         
         Destroy(gameObject);

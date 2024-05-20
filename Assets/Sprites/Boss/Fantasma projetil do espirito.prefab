@@ -10,7 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: 0e2d393320a49b24abbbb5227bd1f5bf, type: 3}
       propertyPath: m_Name
-      value: Fantasma do boss
+      value: Fantasma projetil do espirito
+      objectReference: {fileID: 0}
+    - target: {fileID: -7552582706839291426, guid: 0e2d393320a49b24abbbb5227bd1f5bf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.23102
+      objectReference: {fileID: 0}
+    - target: {fileID: -7552582706839291426, guid: 0e2d393320a49b24abbbb5227bd1f5bf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.23102
+      objectReference: {fileID: 0}
+    - target: {fileID: -7552582706839291426, guid: 0e2d393320a49b24abbbb5227bd1f5bf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.23102
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 0e2d393320a49b24abbbb5227bd1f5bf, type: 3}
       propertyPath: m_LocalPosition.x
