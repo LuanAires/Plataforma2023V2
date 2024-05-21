@@ -77,11 +77,6 @@ public class Espirito : MonoBehaviour
     }
     private void Morrer()
     {
-       
-        if (Animador != null)
-        {
-            Animador.SetTrigger("Morrer");
-        }
         if (hp <=0) 
         {
             Animador.SetBool("Morrer", true);
@@ -90,7 +85,6 @@ public class Espirito : MonoBehaviour
         
         Destroy(gameObject);
     }
-
     private void OnTriggerEnter2D(Collider2D tocar)
     {
         if (tocar.gameObject.tag == "Atk")
@@ -98,5 +92,4 @@ public class Espirito : MonoBehaviour
             AplicarDano(1);
         }
     }
-
 }

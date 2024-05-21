@@ -34,7 +34,6 @@ public class Sapo : MonoBehaviour
             hpbarr.currentylife = hp;
         }
     }
-
     private void Update()
     {
         if (hp <= 0)
@@ -55,7 +54,6 @@ public class Sapo : MonoBehaviour
             }
         }
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Atk")
@@ -67,7 +65,6 @@ public class Sapo : MonoBehaviour
             heroiDentroRaio = true;
         }
     }
-
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -75,19 +72,16 @@ public class Sapo : MonoBehaviour
             heroiDentroRaio = false;
         }
     }
-
     public void Morrer()
     {
         Animador.SetBool("Morrendo", true);
         DroparAlma();
         Destroy(gameObject);
     }
-
     void DroparAlma()
     {
         Instantiate(dropPrefab, transform.position, Quaternion.identity);
     }
-
     public void AplicarDano(int dano)
     {
         hp -= dano;
@@ -100,7 +94,6 @@ public class Sapo : MonoBehaviour
             hpbarr.currentylife = hp;
         }
     }
-
     private IEnumerator LançarProjetil()
     {
         Animador.SetBool("Cuspe", true);
@@ -108,9 +101,6 @@ public class Sapo : MonoBehaviour
 
         
     }
-
-
-
     public void MeuTiro()
     {
         if (projetilPrefab != null)
