@@ -78,6 +78,7 @@ public class Sapo : MonoBehaviour
 
     public void Morrer()
     {
+        Animador.SetBool("Morrendo", true);
         DroparAlma();
         Destroy(gameObject);
     }
