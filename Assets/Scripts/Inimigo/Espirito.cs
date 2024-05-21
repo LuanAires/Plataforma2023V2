@@ -9,40 +9,44 @@ public class Espirito : MonoBehaviour
     public Transform pontoOrigem;
     public float distanciaDeAtaque = 2.0f; 
     public int danoDoAtaque = 10; 
-    public int hp = 50; 
+    public int hp =500; 
     public int hpMax;
-    public Animator Animador; 
-    Gilmar player;
+    public Animator Animador;
+    public GameObject Heroi;
     private Vector3 posicaoInicial; 
-    private HpBarraInimigo hpini;
+    private HpBarraInimigo hpbarr;
 
 
     private void Start()
     {
-        hpini = GetComponentInChildren<HpBarraInimigo>();
-        if (hpini != null)
-        {
-            hpini.maxlife = hpMax;
-            hpini.currentylife = hp;
-        }
+        hpMax = hp;
+        Heroi = GameObject.FindGameObjectWithTag("Player");
+        Animador = GetComponentInChildren<Animator>();
+        hpbarr = GetComponentInChildren<HpBarraInimigo>();
 
+        if (hpbarr != null)
+        {
+            hpbarr.maxlife = hpMax;
+            hpbarr.currentylife = hp;
+        }
+        
         posicaoInicial = transform.position;
-        player = FindObjectOfType<Gilmar>();
+        Heroi = FindObjectOfType<GameObject>();
     }
 
     private void Update()
     {
-        
+
+        if (hp <= 0)
+        {
+            Morrer();
+        }
+
         float movimentoVertical = Mathf.Sin(Time.time * velocidade) * amplitude;
-
-        
-        transform.position = posicaoInicial + new Vector3(0, movimentoVertical, 0);
-
-        
-        float distanciaAoJogador = Vector3.Distance(transform.position, player.transform.position);
+        transform.position = posicaoInicial + new Vector3(0, movimentoVertical, 0);   
+        float distanciaAoJogador = Vector3.Distance(transform.position, Heroi.transform.position);
         if (distanciaAoJogador < distanciaDeAtaque)
         {
-            
             if (Animador != null)
             {
                 Animador.SetTrigger("Atacar");
@@ -66,9 +70,9 @@ public class Espirito : MonoBehaviour
 
         Animador.SetTrigger("Dano");
 
-        if (hpini != null)
+        if (hpbarr != null)
         {
-            hpini.currentylife = hp;
+            hpbarr.currentylife = hp;
         }
     }
     private void Morrer()

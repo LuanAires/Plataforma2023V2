@@ -5,31 +5,33 @@ using UnityEngine;
 public class Sapo : MonoBehaviour
 {
     public Transform pontoOrigem;
-    public int hp = 1;
     public GameObject Heroi;
     public Animator Animador;
+
     public GameObject dropPrefab;
     public GameObject projetilPrefab;
     public float velocidadeProjetil = 5f;
-    private HpBarraInimigo hpini;
-
+    private bool heroiDentroRaio = false;
     private float maxcooldown = 2;
     private float contadortiro;
 
+    public int hp = 1;
     private int hpMax;
-    private bool heroiDentroRaio = false;
+    private HpBarraInimigo hpbarr;
+
+
 
     private void Start()
     {
         hpMax = hp;
         Heroi = GameObject.FindGameObjectWithTag("Player");
         Animador = GetComponentInChildren<Animator>();
-        hpini = GetComponentInChildren<HpBarraInimigo>();
+        hpbarr = GetComponentInChildren<HpBarraInimigo>();
 
-        if (hpini != null)
+        if (hpbarr != null)
         {
-            hpini.maxlife = hpMax;
-            hpini.currentylife = hp;
+            hpbarr.maxlife = hpMax;
+            hpbarr.currentylife = hp;
         }
     }
 
@@ -92,19 +94,24 @@ public class Sapo : MonoBehaviour
 
         Animador.SetTrigger("Dano");
 
-        if (hpini != null)
+        if (hpbarr != null)
         {
-            hpini.currentylife = hp;
+            hpbarr.currentylife = hp;
         }
     }
 
     private IEnumerator LançarProjetil()
     {
-        Animador.GetBool("Cuspe");
-
-        // Espera até que a animação de "Cuspe" comece a ser reproduzida
+        Animador.SetBool("Cuspe", true);
         yield return new WaitForSeconds(Animador.GetCurrentAnimatorStateInfo(0).length);
 
+        
+    }
+
+
+
+    public void MeuTiro()
+    {
         if (projetilPrefab != null)
         {
             GameObject projetil = Instantiate(projetilPrefab, pontoOrigem.position, Quaternion.identity);
