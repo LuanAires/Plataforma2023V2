@@ -1101,6 +1101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MeuSapo: {fileID: 1528436572}
+--- !u!95 &79155654 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1970259124717300935, guid: 1430f59aa382a8c4aba8112ad2648bfb, type: 3}
+  m_PrefabInstance: {fileID: 1218103008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &85466365
 GameObject:
   m_ObjectHideFlags: 0
@@ -4480,7 +4485,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.7194326, y: -0.62}
+  m_Offset: {x: -0.7194326, y: -0.75273514}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4491,7 +4496,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8111348, y: 0.6306813}
+  m_Size: {x: 2.8111348, y: 0.36521095}
   m_EdgeRadius: 0
 --- !u!1 &474114852
 GameObject:
@@ -7588,6 +7593,7 @@ GameObject:
   - component: {fileID: 721870143}
   - component: {fileID: 721870142}
   - component: {fileID: 721870141}
+  - component: {fileID: 721870147}
   m_Layer: 0
   m_Name: Espirito 1
   m_TagString: inimigo
@@ -7787,6 +7793,51 @@ Transform:
   - {fileID: 1616049304}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &721870147
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721870139}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 5.3798194, y: 1.8886058}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.759639, y: 3.8772116}
+  m_EdgeRadius: 0
 --- !u!1 &722236398
 GameObject:
   m_ObjectHideFlags: 0
@@ -20896,7 +20947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pontoOrigem: {fileID: 547664756}
   Heroi: {fileID: 243393268}
-  Animador: {fileID: 0}
+  Animador: {fileID: 79155654}
   dropPrefab: {fileID: 8078959313337667677, guid: 56fd5bc1766b6b64590518166533b8a4, type: 3}
   projetilPrefab: {fileID: 2978706522892129412, guid: d0b436ec0d6a88745a193565c337428a, type: 3}
   velocidadeProjetil: 5
