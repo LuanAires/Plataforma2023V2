@@ -6,7 +6,7 @@ public class SapoAzul : MonoBehaviour
 {
     public Transform pontoOrigem;
     public int hp = 1;
-    public GameObject Heroi;
+    public GameObject Gilmar;
     public Animator Animador;
     public GameObject dropPrefab;
     public GameObject projetilPrefab;
@@ -22,7 +22,7 @@ public class SapoAzul : MonoBehaviour
     private void Start()
     {
         hpMax = hp;
-        Heroi = GameObject.FindGameObjectWithTag("Player");
+        Gilmar = GameObject.FindGameObjectWithTag("Player");
         Animador = GetComponentInChildren<Animator>();
         hpini = GetComponentInChildren<HpBarraInimigo>();
 
@@ -106,7 +106,7 @@ public class SapoAzul : MonoBehaviour
 
             GameObject projetil = Instantiate(projetilPrefab, pontoOrigem.position, Quaternion.identity);
 
-            Vector2 direcao = (Heroi.transform.position - transform.position).normalized;
+            Vector2 direcao = (Gilmar.transform.position - transform.position).normalized;
 
             Rigidbody2D rb = projetil.GetComponent<Rigidbody2D>();
 

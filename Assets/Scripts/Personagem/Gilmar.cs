@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -151,7 +152,12 @@ public class Gilmar : MonoBehaviour
         }
         if (tocou.gameObject.tag == "Atk_inimigo")
         {
-           
+            hp--;
+            Animador.SetTrigger("Dano");
+        }
+        else 
+        {
+           Animador.SetBool("Dano", false);
         }
         if (tocou.tag == "Morte")
         {
@@ -206,6 +212,11 @@ public class Gilmar : MonoBehaviour
         colliderPlataforma.isTrigger= true;
         yield return new WaitForSeconds(0.5f);
         colliderPlataforma.isTrigger = false;
+    }
+
+    internal void hp(int healAmount)
+    {
+        throw new NotImplementedException();
     }
 }
     
