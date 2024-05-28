@@ -3484,6 +3484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 322848323}
   - component: {fileID: 322848322}
+  - component: {fileID: 322848324}
   m_Layer: 0
   m_Name: UpVida (1)
   m_TagString: Untagged
@@ -3523,7 +3524,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02, y: 0.55}
+  m_Offset: {x: 37.02, y: 16}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3553,6 +3554,19 @@ Transform:
   - {fileID: 838419132}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &322848324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322848321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b926d3637bd9894fa6295c7d5f94d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healAmount: 20
 --- !u!1 &328132250
 GameObject:
   m_ObjectHideFlags: 0
@@ -18062,6 +18076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1574380359}
   - component: {fileID: 1574380360}
+  - component: {fileID: 1574380361}
   m_Layer: 0
   m_Name: UpVida
   m_TagString: Untagged
@@ -18131,6 +18146,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1574380361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574380358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b926d3637bd9894fa6295c7d5f94d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healAmount: 20
 --- !u!1 &1576343103
 GameObject:
   m_ObjectHideFlags: 0
@@ -18477,6 +18505,7 @@ GameObject:
   - component: {fileID: 1606795419}
   - component: {fileID: 1606795418}
   - component: {fileID: 1606795417}
+  - component: {fileID: 1606795420}
   m_Layer: 0
   m_Name: Cobra do teto
   m_TagString: Untagged
@@ -18572,6 +18601,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1606795420
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606795416}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.48062918, y: 0.75999993}
+  serializedVersion: 2
+  m_Radius: 0.85381347
 --- !u!1 &1616049303
 GameObject:
   m_ObjectHideFlags: 0

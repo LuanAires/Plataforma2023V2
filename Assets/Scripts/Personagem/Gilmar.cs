@@ -214,7 +214,7 @@ public class Gilmar : MonoBehaviour
         colliderPlataforma.isTrigger = false;
     }
 
-    internal void hp(int healAmount)
+    internal void heal(int healAmount)
     {
         throw new NotImplementedException();
     }
