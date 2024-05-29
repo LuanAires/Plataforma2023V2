@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -5,18 +6,23 @@ public class Espirito : MonoBehaviour
 {
     public float amplitude = 0.5f; 
     public float velocidade = 1.0f; 
-    public GameObject fantasma;
     public Transform pontoOrigem;
+    public GameObject projetilPrefab;
     public float distanciaDeAtaque = 2.0f; 
     public int danoDoAtaque = 10; 
+
     public int hp =500; 
     public int hpMax;
+    private HpBarraInimigo hpbarr;
     public Animator Animador;
     public GameObject Heroi;
     private Vector3 posicaoInicial; 
-    private HpBarraInimigo hpbarr;
 
-
+    public GameObject dropPrefab;
+    public float velocidadeProjetil = 5f;
+    private bool heroiDentroRaio = false;
+    private float maxcooldown = 2;
+    private float contadortiro;
     private void Start()
     {
         hpMax = hp;
@@ -31,7 +37,6 @@ public class Espirito : MonoBehaviour
         }
         
         posicaoInicial = transform.position;
-        Heroi = FindObjectOfType<GameObject>();
     }
 
     private void Update()
@@ -40,6 +45,19 @@ public class Espirito : MonoBehaviour
         if (hp <= 0)
         {
             Morrer();
+        }
+        else
+        {
+            if (heroiDentroRaio && contadortiro >= maxcooldown)
+            {
+                StartCoroutine(LançarProjetil());
+                contadortiro = 0;
+            }
+
+            if (contadortiro <= maxcooldown)
+            {
+                contadortiro += Time.deltaTime;
+            }
         }
 
         float movimentoVertical = Mathf.Sin(Time.time * velocidade) * amplitude;
@@ -53,15 +71,29 @@ public class Espirito : MonoBehaviour
             }
         }
     }
-    public void Disparo()
+    
+    public void MeuTiro()
     {
-        GameObject Tiro = Instantiate(fantasma, pontoOrigem.transform.position, Quaternion.identity);
-        Destroy(Tiro, 3f);
-
-        if (transform.localScale.x == -1)
+        if (projetilPrefab != null)
         {
-            Tiro.GetComponent<AtaqueDistancia>().MudaVelocidade(-5);
+            GameObject projetil = Instantiate(projetilPrefab, pontoOrigem.position, Quaternion.identity);
+
+            Vector2 direcao = (Heroi.transform.position - transform.position).normalized;
+
+            Rigidbody2D rb = projetil.GetComponent<Rigidbody2D>();
+
+            if (rb != null)
+            {
+                rb.velocity = direcao * velocidadeProjetil;
+            }
+            Destroy(projetil, 2f);
         }
+    }
+    private IEnumerator LançarProjetil()
+    {
+        Animador.SetTrigger("Atacar");
+        MeuTiro();
+        yield return new WaitForSeconds(Animador.GetCurrentAnimatorStateInfo(0).length);
     }
     public void AplicarDano(int dano)
     {
@@ -87,9 +119,20 @@ public class Espirito : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D tocar)
     {
+        if (tocar.gameObject.tag == "Player") 
+        {
+            heroiDentroRaio = true;
+        }
         if (tocar.gameObject.tag == "Atk")
         {
-            AplicarDano(1);
+            AplicarDano(10);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            heroiDentroRaio = false;
         }
     }
 }

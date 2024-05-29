@@ -97,9 +97,7 @@ public class Sapo : MonoBehaviour
     private IEnumerator LançarProjetil()
     {
         Animador.SetBool("Cuspe", true);
-        yield return new WaitForSeconds(Animador.GetCurrentAnimatorStateInfo(0).length);
-
-        
+        yield return new WaitForSeconds(Animador.GetCurrentAnimatorStateInfo(0).length);      
     }
     public void MeuTiro()
     {
