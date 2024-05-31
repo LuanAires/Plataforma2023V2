@@ -12,6 +12,11 @@ public class Gilmar : MonoBehaviour
     [SerializeField] float velocidade;
     [SerializeField] private float jumpForce = 350f;
     [SerializeField] LayerMask segredoLayer;
+    [SerializeField] private ManaBarra mana;
+    public int maxlife;
+    public int currentylife;
+    public int MaxMana;
+    public int currentyMana;
 
     public int qtd_pulos = 2;
     public float velExtra = 0;
@@ -219,4 +224,3 @@ public class Gilmar : MonoBehaviour
         throw new NotImplementedException();
     }
 }
-    

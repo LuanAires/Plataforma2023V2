@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 858036877970385155}
+  - component: {fileID: 9004898210538987762}
   - component: {fileID: 6648270804093188338}
   - component: {fileID: 5291083827715463338}
-  - component: {fileID: 9004898210538987762}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -35,6 +35,39 @@ Transform:
   - {fileID: 4194009961622764172}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9004898210538987762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5111933223308220464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04a04728f4076d145b43a19d9f186a0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animador: {fileID: 2107449498004956768}
+  velocidade: 1000
+  jumpForce: 350
+  segredoLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  mana: {fileID: 0}
+  maxlife: 0
+  currentylife: 0
+  MaxMana: 0
+  currentyMana: 0
+  qtd_pulos: 2
+  velExtra: 0
+  meuTempoTiro: 0
+  MeuAtkD: {fileID: 0}
+  PontoDeOrigem: {fileID: 6004879050448794313}
+  pode_atirar: 1
+  CaixaCorreio: {fileID: 0}
+  Alma: {fileID: 8078959313337667677, guid: 56fd5bc1766b6b64590518166533b8a4, type: 3}
+  hp: 100
+  perderHp: 0
 --- !u!50 &6648270804093188338
 Rigidbody2D:
   serializedVersion: 4
@@ -107,26 +140,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.23, y: 3.6157079}
   m_EdgeRadius: 0
---- !u!114 &9004898210538987762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5111933223308220464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04a04728f4076d145b43a19d9f186a0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Animador: {fileID: 2107449498004956768}
-  velocidade: 1000
-  qtd_pulos: 2
-  velExtra: 0
-  Carta: {fileID: 5229489917348295320, guid: 1af511bdd00703c46b7574a5986335aa, type: 3}
-  PontoDeOrigem: {fileID: 6004879050448794313}
-  Alma: {fileID: 8078959313337667677, guid: 56fd5bc1766b6b64590518166533b8a4, type: 3}
-  hp: 100
 --- !u!1001 &721868563534809014
 PrefabInstance:
   m_ObjectHideFlags: 0
