@@ -5,15 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
-
-    public void CarregarCena(string nomeDaCena)
-    {
-        SceneManager.LoadScene(nomeDaCena);
-    }
-
     public void CarregarCena(int indice)
     {
-        SceneManager.LoadScene(indice);
+        SceneManager.LoadScene(2);
+        
     }
     
     public void ReiniciarCena()
@@ -27,4 +22,5 @@ public class SceneManagerScript : MonoBehaviour
         Application.Quit();
     }
 }
+ 
  
