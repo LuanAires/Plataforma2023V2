@@ -13,7 +13,7 @@ public class Gilmar : MonoBehaviour
     [SerializeField] private float jumpForce = 350f;
     [SerializeField] LayerMask segredoLayer;
     //barra de informação//
-    [SerializeField] private ManaBarra mana;
+    [SerializeField] private HpBarraGilmar barra;
     public int maxlife;
     public int currentylife;
     public int MaxMana;
@@ -23,15 +23,15 @@ public class Gilmar : MonoBehaviour
     public float velExtra = 0;
 
     bool pode_dano;
-    //Ataque Distancia
+    //Ataque Distancia\\
     public float meuTempoTiro = 0;
     public GameObject MeuAtkD;
     public GameObject PontoDeOrigem;
     public bool pode_atirar = true;
-    //Ataque Perto
+    //Ataque Perto\\
     public GameObject CaixaCorreio;
     public GameObject Alma;
-    //Quantidade de Sangue
+    //Quantidade de Sangue\\
     public int hp = 100;
     public int perderHp;
     private Vector3 originalScale;
@@ -97,7 +97,6 @@ public class Gilmar : MonoBehaviour
 
         Corpo.velocity = new Vector2(velX, velY);
     }
-
     void Mover()
     {
         hAxis = Input.GetAxis("Horizontal");
@@ -137,7 +136,6 @@ public class Gilmar : MonoBehaviour
         {
             Animador.SetBool("Correndo", false);
         }
-
     }
     void Pular()
     {
@@ -176,8 +174,6 @@ public class Gilmar : MonoBehaviour
         }
 
     }
-
-
     private void CollectItem()
     {       
         Destroy(gameObject);
@@ -212,14 +208,12 @@ public class Gilmar : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
-
     IEnumerator TriggerPlataformaSecreta(Collider2D colliderPlataforma) 
     {
         colliderPlataforma.isTrigger= true;
         yield return new WaitForSeconds(0.5f);
         colliderPlataforma.isTrigger = false;
     }
-
     internal void heal(int healAmount)
     {
         throw new NotImplementedException();

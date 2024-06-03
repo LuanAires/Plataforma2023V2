@@ -741,7 +741,6 @@ GameObject:
   - component: {fileID: 704564115}
   - component: {fileID: 704564117}
   - component: {fileID: 704564116}
-  - component: {fileID: 704564118}
   - component: {fileID: 704564119}
   m_Layer: 0
   m_Name: Proxima Fase
@@ -822,19 +821,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.8813686, y: 6.4810667}
   m_EdgeRadius: 0
---- !u!114 &704564118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704564114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92d687a75b6fcc84597fe097b10cf2f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TransitionAnim: {fileID: 1121883299}
 --- !u!114 &704564119
 MonoBehaviour:
   m_ObjectHideFlags: 0
