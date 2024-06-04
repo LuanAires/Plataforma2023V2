@@ -21,8 +21,6 @@ public class Gilmar : MonoBehaviour
 
     public int qtd_pulos = 2;
     public float velExtra = 0;
-
-    bool pode_dano;
     //Ataque Distancia\\
     public float meuTempoTiro = 0;
     public GameObject MeuAtkD;

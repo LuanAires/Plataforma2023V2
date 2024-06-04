@@ -115,6 +115,7 @@ public class SapoAzul : MonoBehaviour
                 rb.velocity = direcao * velocidadeProjetil;
             }
             Destroy(projetil, 2f);
+           
         }
     }
 }
