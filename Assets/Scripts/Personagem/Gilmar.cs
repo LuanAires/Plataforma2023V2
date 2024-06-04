@@ -18,7 +18,6 @@ public class Gilmar : MonoBehaviour
     public int currentylife;
     public int MaxMana;
     public int currentyMana;
-
     public int qtd_pulos = 2;
     public float velExtra = 0;
     //Ataque Distancia\\
@@ -26,6 +25,7 @@ public class Gilmar : MonoBehaviour
     public GameObject MeuAtkD;
     public GameObject PontoDeOrigem;
     public bool pode_atirar = true;
+    public AtaqueEspecial especial;
     //Ataque Perto\\
     public GameObject CaixaCorreio;
     public GameObject Alma;
@@ -33,7 +33,6 @@ public class Gilmar : MonoBehaviour
     public int hp = 100;
     public int perderHp;
     private Vector3 originalScale;
-
     float hAxis, vAxis, velX, velY;
     private void OnDrawGizmos()
     {
@@ -55,6 +54,8 @@ public class Gilmar : MonoBehaviour
             Mover();
             //  originalScale = transform.localScale;
             AtaqueDistancia();
+            AtivarEspecial();
+
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -85,6 +86,14 @@ public class Gilmar : MonoBehaviour
         }
 
         Destroy(CartaJogada, 1f);
+    }
+    private void AtivarEspecial()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            
+            Animador.SetTrigger("AttackSpecial");
+        }
     }
     #endregion
 

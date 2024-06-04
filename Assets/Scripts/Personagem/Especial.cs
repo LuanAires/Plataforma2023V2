@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AtaqueEspecial : MonoBehaviour
+public class Especial : MonoBehaviour
 {
     public int almasNecessariasNivel1 = 5;
     public int almasNecessariasNivel2 = 10;
@@ -12,7 +12,7 @@ public class AtaqueEspecial : MonoBehaviour
     public int danoDoAtaqueNivel2 = 100;
     public GameObject fissuraPrefab;
     public int custoManaNivel1 = 20;
-    public int custoManaNivel2 = 40;
+    public int custoManaNivel2 = 40; 
     private HpBarraGilmar barraDeVidaMana;
 
     void Start()
@@ -77,4 +77,3 @@ public class AtaqueEspecial : MonoBehaviour
         }
     }*/
 }
-
