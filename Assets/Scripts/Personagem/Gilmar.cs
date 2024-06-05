@@ -14,9 +14,9 @@ public class Gilmar : MonoBehaviour
     [SerializeField] LayerMask segredoLayer;
     //barra de informação//
     [SerializeField] private HpBarraGilmar barra;
-    public int maxlife;
+    public int maxlife = 100;
     public int currentylife;
-    public int MaxMana;
+    public int MaxMana = 100;
     public int currentyMana;
     public int qtd_pulos = 2;
     public float velExtra = 0;
