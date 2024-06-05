@@ -14,7 +14,7 @@ public class Sapo : MonoBehaviour
     private bool heroiDentroRaio = false;
     private float maxcooldown = 2;
     private float contadortiro;
-
+    public int dano;
     public int hp = 1;
     private int hpMax;
     private HpBarraInimigo hpbarr;

@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class HpBarraGilmar : MonoBehaviour
 {
-    public int maxlife;
-    public int currentylife;
-    public int maxMana;
-    public int currentmana;
+    public Gilmar gilmar;
+    
+    
     [SerializeField] private float lifeMultiplier;
     [SerializeField] private float manaMultiplier;
     public Image BarraVerde;
@@ -22,22 +21,10 @@ public class HpBarraGilmar : MonoBehaviour
     }
     void AtualizarBarraDeVida()
     {
-        BarraVerde.fillAmount = (float)currentylife / maxlife;
+        BarraVerde.fillAmount = (float)gilmar.currentylife /(float) gilmar.maxLife;
     }
     void AtualizarBarraDeMana()
     {
-        BarraAzul.fillAmount = (float)currentmana / maxMana;
-    }
-    public void UsarMana(int quantidade)
-    {
-        currentmana -= quantidade;
-        if (currentmana < 0) currentmana = 0;
-        AtualizarBarraDeMana();
-    }
-    public void RecuperarMana(int quantidade)
-    {
-        currentmana += quantidade;
-        if (currentmana > maxMana) currentmana = maxMana;
-        AtualizarBarraDeMana();
+        BarraAzul.fillAmount = (float)gilmar.currentyMana / (float) gilmar.maxMana;
     }
 }

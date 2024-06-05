@@ -13,14 +13,14 @@ public class AtaqueEspecial : MonoBehaviour
     public GameObject fissuraPrefab;
     public int custoManaNivel1 = 20;
     public int custoManaNivel2 = 40;
-    private HpBarraGilmar barraDeVidaMana;
+    private Gilmar barraDeMana;
 
     void Start()
     {
-        barraDeVidaMana = GetComponent<HpBarraGilmar>();
-        if (barraDeVidaMana == null)
+        barraDeMana = GetComponent<Gilmar>();
+        if (barraDeMana == null)
         {
-            Debug.LogError("HpBarraGilmar script is missing on the player!");
+           
         }
     }
 
@@ -35,7 +35,7 @@ public class AtaqueEspecial : MonoBehaviour
     void ColetarAlma()
     {
         almasColetadas++;
-        if (almasColetadas >= almasNecessariasNivel1 && barraDeVidaMana.currentmana >= custoManaNivel1)
+        if (almasColetadas >= almasNecessariasNivel1 && barraDeMana.currentyMana >= custoManaNivel1)
         {
             AtivarAtaqueEspecial();
         }
@@ -58,10 +58,10 @@ public class AtaqueEspecial : MonoBehaviour
 
     void AtivarAtaqueEspecial()
     {
-        if (barraDeVidaMana.currentmana >= custoManaNivel1)
+        if (barraDeMana.currentyMana >= custoManaNivel1)
         {
             Instantiate(efeitoAtaqueEspecial, transform.position, Quaternion.identity);
-            barraDeVidaMana.UsarMana(custoManaNivel1); // Deduz o custo de mana usando o método da HpBarraGilmar
+            barraDeMana.UsarMana(custoManaNivel1); // Deduz o custo de mana usando o método da HpBarraGilmar
             almasColetadas = 0;
         }
     }

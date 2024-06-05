@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,10 +14,10 @@ public class Gilmar : MonoBehaviour
     [SerializeField] private float jumpForce = 350f;
     [SerializeField] LayerMask segredoLayer;
     //barra de informação//
-    [SerializeField] private HpBarraGilmar barra;
-    public int maxlife = 100;
+    private HpBarraGilmar barra;
+    public int maxLife = 100;
     public int currentylife;
-    public int MaxMana = 100;
+    public int maxMana = 100;
     public int currentyMana;
     public int qtd_pulos = 2;
     public float velExtra = 0;
@@ -46,13 +47,15 @@ public class Gilmar : MonoBehaviour
         
         Corpo = GetComponent<Rigidbody2D>();
         Animador = GetComponentInChildren<Animator>();
+        barra = GetComponentInChildren<HpBarraGilmar>();
+
     }
     void Update()
     {
+        currentylife = hp;
         if (hp > 0)
         {
             Mover();
-            //  originalScale = transform.localScale;
             AtaqueDistancia();
             AtivarEspecial();
 
@@ -70,6 +73,24 @@ public class Gilmar : MonoBehaviour
             Disparo();
             Animador.SetTrigger("Disparo");
         }
+    }
+    public void UsarMana(int quantidade)
+    {
+        currentyMana -= quantidade;
+        if (currentyMana < 0) currentyMana = 0;
+        
+    }
+    public void RecuperarMana(int quantidade)
+    {
+        currentyMana += quantidade;
+        if (currentyMana > maxMana) currentyMana = maxMana;
+       
+    }
+    public void RecuperarVida(int quantidade)
+    {
+        currentylife += quantidade;
+        if (currentylife > maxLife) currentylife = maxLife;
+        
     }
     public void Disparo()
     {
@@ -172,7 +193,7 @@ public class Gilmar : MonoBehaviour
         }
         if (tocou.tag == "Morte")
         {
-            PerderHp(1);
+            PerderHp(10);
             SceneManager.LoadScene(4);
         }
         if (tocou.CompareTag("Player"))
@@ -201,13 +222,6 @@ public class Gilmar : MonoBehaviour
             if (hp <= 0)
             {
               Morrer();
-            }
-            else
-            {
-                if (Animador != null)
-                {
-                    //Animador.SetBoll("Dano");
-                }
             }
         }
     }
