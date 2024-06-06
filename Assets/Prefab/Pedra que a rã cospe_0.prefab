@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6777447702305177719}
   - component: {fileID: 1250068294467215296}
   - component: {fileID: -4276583665679159844}
+  - component: {fileID: -6378303701800392193}
   m_Layer: 0
   m_Name: "Pedra que a r\xE3 cospe_0"
   m_TagString: Atk_inimigo
@@ -148,3 +149,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-6378303701800392193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2978706522892129412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d8589028bc469b4f9124069cbabc70b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dano: 10

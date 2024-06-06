@@ -5,7 +5,7 @@ using UnityEngine;
 public class AtaqueEspecial : MonoBehaviour
 {
     public int almasNecessariasNivel1 = 5;
-    public int almasNecessariasNivel2 = 10;
+    public int almasNecessariasNivel2 = 5;
     private int almasColetadas = 0;
     public GameObject efeitoAtaqueEspecial;
     public int danoDoAtaqueNivel1 = 50;
@@ -20,7 +20,7 @@ public class AtaqueEspecial : MonoBehaviour
         barraDeMana = GetComponent<Gilmar>();
         if (barraDeMana == null)
         {
-           
+            AtivarAtaqueEspecial();  
         }
     }
 

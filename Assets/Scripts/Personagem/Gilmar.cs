@@ -112,7 +112,7 @@ public class Gilmar : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            
+            currentyMana--;            
             Animador.SetTrigger("AttackSpecial");
         }
     }
@@ -184,8 +184,17 @@ public class Gilmar : MonoBehaviour
         }
         if (tocou.gameObject.tag == "Atk_inimigo")
         {
-            hp--;
-            Animador.SetTrigger("Dano");
+            AtkInimigoController atkInimigo = tocou.GetComponent<AtkInimigoController>();
+            if (atkInimigo)
+            {
+                int dano = atkInimigo.Dano;
+                hp -= dano;
+                Animador.SetTrigger("Dano");
+            }
+            else 
+            {
+                Debug.LogWarning("Ataque sem AtkInimigoController");
+            }
         }
         else 
         {

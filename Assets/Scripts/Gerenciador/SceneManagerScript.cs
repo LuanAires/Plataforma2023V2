@@ -7,10 +7,10 @@ public class SceneManagerScript : MonoBehaviour
 {
     public void CarregarCena(int indice)
     {
-        SceneManager.LoadScene(2);   
+        SceneManager.LoadScene(indice);   
     }
  
-    public void ReiniciarCena(int indice)
+    public void ReiniciarCena()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
