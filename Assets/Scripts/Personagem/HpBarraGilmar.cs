@@ -26,5 +26,6 @@ public class HpBarraGilmar : MonoBehaviour
     void AtualizarBarraDeMana()
     {
         BarraAzul.fillAmount = (float)gilmar.currentyMana / (float) gilmar.maxMana;
+        Debug.Log((float)gilmar.currentyMana / (float)gilmar.maxMana);
     }
 }

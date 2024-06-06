@@ -11,28 +11,29 @@ public class BulletControl : MonoBehaviour
     {
         
     }
-
     // Update is called once per frame
     void Update()
     {
         MoverBala();
     }
-
-
-
     void MoverBala()
     {
        
       transform.position = new Vector3(transform.position.x + velocidade_bala, transform.position.y, transform.position.z);
         
     }
-
     public void DiracaoBala(float direcao) 
     {
-
         velocidade_bala = direcao; 
-    
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
 
+      if (collision.CompareTag("inimigo"))
+      {
+            print("colidiu");
+            Destroy(gameObject);
+      }
 
+    }
 }
