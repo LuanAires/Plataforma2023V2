@@ -21,7 +21,12 @@ public class Gilmar : MonoBehaviour
     public int currentyMana;
     public int qtd_pulos = 2;
     public float velExtra = 0;
-    public AudioSource audio;
+    public AudioSource pulo;
+    public AudioSource carta;
+    public AudioSource andando;
+    public AudioSource morrer;
+    public AudioSource AtkEspecial;
+    public AudioSource dano;
     private bool isPlaying = false;
 
     //Ataque Distancia\\
@@ -65,9 +70,9 @@ public class Gilmar : MonoBehaviour
             AtivarEspecial();
 
         }
-        if (Input.GetKeyDown(KeyCode.Space) && !isPlaying)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            audio.Play();
+            
             isPlaying = true;
             Pular();
         }
@@ -75,13 +80,17 @@ public class Gilmar : MonoBehaviour
     #region ataque
     void AtaqueDistancia()
     {
-        if (Input.GetKeyDown(KeyCode.K) && !isPlaying )
+        if (Input.GetKeyDown(KeyCode.K))
         {
-            audio.Play();
+            
             isPlaying = true;
             Disparo();
             Animador.SetTrigger("Disparo");
-            
+
+            carta.Play();
+            Debug.Log("eSTA ARITANDO");
+
+
         }
     }
     public void UsarMana(int quantidade)
@@ -104,6 +113,7 @@ public class Gilmar : MonoBehaviour
     }
     public void Disparo()
     {
+       
         Vector3 pontoDeOrigem = PontoDeOrigem.transform.position;
         GameObject CartaJogada= Instantiate(MeuAtkD, pontoDeOrigem, Quaternion.identity);
 
@@ -120,9 +130,9 @@ public class Gilmar : MonoBehaviour
     }
     private void AtivarEspecial()
     {
-        if (Input.GetKeyDown(KeyCode.P) && !isPlaying)
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            audio.Play();
+            
             isPlaying = true;
 
             currentyMana--;            
