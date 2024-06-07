@@ -21,15 +21,20 @@ public class Gilmar : MonoBehaviour
     public int currentyMana;
     public int qtd_pulos = 2;
     public float velExtra = 0;
+    public AudioSource audio;
+    private bool isPlaying = false;
+
     //Ataque Distancia\\
     public float meuTempoTiro = 0;
     public GameObject MeuAtkD;
     public GameObject PontoDeOrigem;
     public bool pode_atirar = true;
     public AtaqueEspecial especial;
+
     //Ataque Perto\\
     public GameObject CaixaCorreio;
     public GameObject Alma;
+
     //Quantidade de Sangue\\
     public int hp = 100;
     public int perderHp;
@@ -60,18 +65,23 @@ public class Gilmar : MonoBehaviour
             AtivarEspecial();
 
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isPlaying)
         {
+            audio.Play();
+            isPlaying = true;
             Pular();
         }
     }
     #region ataque
     void AtaqueDistancia()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K) && !isPlaying )
         {
+            audio.Play();
+            isPlaying = true;
             Disparo();
             Animador.SetTrigger("Disparo");
+            
         }
     }
     public void UsarMana(int quantidade)
@@ -110,8 +120,11 @@ public class Gilmar : MonoBehaviour
     }
     private void AtivarEspecial()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && !isPlaying)
         {
+            audio.Play();
+            isPlaying = true;
+
             currentyMana--;            
             Animador.SetTrigger("AttackSpecial");
         }
