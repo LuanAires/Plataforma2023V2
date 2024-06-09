@@ -13,7 +13,7 @@ public class Gilmar : MonoBehaviour
     [SerializeField] float velocidade;
     [SerializeField] private float jumpForce = 350f;
     [SerializeField] LayerMask segredoLayer;
-    //barra de informação//
+    //barra de informação\\
     private HpBarraGilmar barra;
     public int maxLife = 100;
     public int currentylife;
@@ -21,13 +21,12 @@ public class Gilmar : MonoBehaviour
     public int currentyMana;
     public int qtd_pulos = 2;
     public float velExtra = 0;
+    //Audio\\
     public AudioSource pulo;
     public AudioSource carta;
-    public AudioSource andando;
     public AudioSource morrer;
     public AudioSource AtkEspecial;
     public AudioSource dano;
-    private bool isPlaying = false;
 
     //Ataque Distancia\\
     public float meuTempoTiro = 0;
@@ -72,8 +71,7 @@ public class Gilmar : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            
-            isPlaying = true;
+            pulo.Play();
             Pular();
         }
     }
@@ -82,8 +80,6 @@ public class Gilmar : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            
-            isPlaying = true;
             Disparo();
             Animador.SetTrigger("Disparo");
 
@@ -132,9 +128,7 @@ public class Gilmar : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            
-            isPlaying = true;
-
+            AtkEspecial.Play();
             currentyMana--;            
             Animador.SetTrigger("AttackSpecial");
         }
@@ -259,6 +253,11 @@ public class Gilmar : MonoBehaviour
     }
     public void Morrer()
     {
+        hp--;
+        if (hp <= 0)
+        {
+            Animador.SetBool("Morreu", true);
+        }
         Destroy(this.gameObject);
     }
     IEnumerator TriggerPlataformaSecreta(Collider2D colliderPlataforma) 
