@@ -391,7 +391,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f08cb80bf54c6ea4e81d04c54df58c97, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 996f436192d97ba46bacb953490019b8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -6426,7 +6426,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f08cb80bf54c6ea4e81d04c54df58c97, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -12159,7 +12159,7 @@ Transform:
   m_GameObject: {fileID: 901140374}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.530888, y: -18.30389, z: -11.84}
+  m_LocalPosition: {x: -94.616135, y: -18.211037, z: -11.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19551,7 +19551,7 @@ Transform:
   m_GameObject: {fileID: 1577979799}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.54258, y: -21.8354, z: -11.84}
+  m_LocalPosition: {x: -94.61258, y: -21.8354, z: -11.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -27405,7 +27405,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 858036877970385155, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -46.13
+      value: -103.2
       objectReference: {fileID: 0}
     - target: {fileID: 858036877970385155, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27547,6 +27547,10 @@ PrefabInstance:
       propertyPath: velocidade
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 9004898210538987762, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
+      propertyPath: AtkEspecial
+      value: 
+      objectReference: {fileID: 9240852}
     - target: {fileID: 9004898210538987762, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
       propertyPath: pode_atirar
       value: 1

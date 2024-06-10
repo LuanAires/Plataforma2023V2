@@ -27,18 +27,15 @@ public class Gilmar : MonoBehaviour
     public AudioSource morrer;
     public AudioSource AtkEspecial;
     public AudioSource dano;
-
     //Ataque Distancia\\
     public float meuTempoTiro = 0;
     public GameObject MeuAtkD;
     public GameObject PontoDeOrigem;
     public bool pode_atirar = true;
     public AtaqueEspecial especial;
-
     //Ataque Perto\\
     public GameObject CaixaCorreio;
     public GameObject Alma;
-
     //Quantidade de Sangue\\
     public int hp = 100;
     public int perderHp;
@@ -231,6 +228,7 @@ public class Gilmar : MonoBehaviour
     private void CollectItem()
     {       
         Destroy(gameObject);
+        currentyMana= 20;
     }
     public void Dano()
     {
