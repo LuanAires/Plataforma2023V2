@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CabecaBoss : MonoBehaviour
 {
+    public bool ativo = false;
+
+    [SerializeField] Transform pontoOrigem;
+    [SerializeField] Transform pontoDestino;
+
     [SerializeField] public SalaBoss gatilho;
     public int hp = 1;
     private int hpMax;
@@ -26,14 +31,16 @@ public class CabecaBoss : MonoBehaviour
         //Animador = GetComponent<Animator>();
 
         // Iniciar um ataque aleatório quando o chefe é iniciado
-        InvokeRepeating("AtaqueAleatorio", 2f, 3f);
+        //InvokeRepeating("AtaqueAleatorio", 2f, 3f);
     }
 
     private void Update()
     {
-        
-        
-        
+        if (ativo) 
+        {
+            Vector3 newPosition = Vector3.MoveTowards(transform.position, pontoDestino.position, Time.deltaTime * 5);
+            transform.position = newPosition;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D tocar)
@@ -116,7 +123,7 @@ public class CabecaBoss : MonoBehaviour
     }
     public void BossAp()
     {
- Animador.SetTrigger("BossAP");
+        Animador.SetTrigger("BossAP");
     }
     void AtaqueAleatorioV()
     {       
@@ -164,4 +171,11 @@ public class CabecaBoss : MonoBehaviour
             
         }
     }
+
+    public void AtivarBoss() 
+    {
+        InvokeRepeating("AtaqueAleatorio", 2f, 3f);
+        ativo = true;
+    }
+
 }

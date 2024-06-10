@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class Gilmar : MonoBehaviour
 {
-
     private Rigidbody2D Corpo;
     [SerializeField] private Animator Animador;
     [SerializeField] float velocidade;
@@ -49,12 +48,10 @@ public class Gilmar : MonoBehaviour
     }
 
     void Start()
-    {
-        
+    { 
         Corpo = GetComponent<Rigidbody2D>();
         Animador = GetComponentInChildren<Animator>();
         barra = GetComponentInChildren<HpBarraGilmar>();
-
     }
     void Update()
     {
@@ -64,7 +61,6 @@ public class Gilmar : MonoBehaviour
             Mover();
             AtaqueDistancia();
             AtivarEspecial();
-
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -82,31 +78,25 @@ public class Gilmar : MonoBehaviour
 
             carta.Play();
             Debug.Log("eSTA ARITANDO");
-
-
         }
     }
     public void UsarMana(int quantidade)
     {
         currentyMana -= quantidade;
-        if (currentyMana < 0) currentyMana = 0;
-        
+        if (currentyMana < 0) currentyMana = 0; 
     }
     public void RecuperarMana(int quantidade)
     {
         currentyMana += quantidade;
         if (currentyMana > maxMana) currentyMana = maxMana;
-       
     }
     public void RecuperarVida(int quantidade)
     {
         currentylife += quantidade;
-        if (currentylife > maxLife) currentylife = maxLife;
-        
+        if (currentylife > maxLife) currentylife = maxLife;      
     }
     public void Disparo()
-    {
-       
+    {       
         Vector3 pontoDeOrigem = PontoDeOrigem.transform.position;
         GameObject CartaJogada= Instantiate(MeuAtkD, pontoDeOrigem, Quaternion.identity);
 
@@ -118,7 +108,6 @@ public class Gilmar : MonoBehaviour
         {
             CartaJogada.GetComponent<BulletControl>().DiracaoBala(0.08f);
         }
-
         Destroy(CartaJogada, 1f);
     }
     private void AtivarEspecial()
@@ -136,19 +125,14 @@ public class Gilmar : MonoBehaviour
     {
         velX = hAxis * Time.fixedDeltaTime * (velocidade + velExtra);
         velY = Corpo.velocity.y;
-
         Corpo.velocity = new Vector2(velX, velY);
     }
     void Mover()
     {
         hAxis = Input.GetAxis("Horizontal");
         vAxis = Input.GetAxis("Vertical");
-
-
         RaycastHit2D hitDown = Physics2D.CircleCast(transform.position, 1, Vector2.down, 0, segredoLayer);
-
         RaycastHit2D hitUp = Physics2D.CircleCast(new Vector2(transform.position.x, transform.position.y + 3), 1, Vector2.up, 0, segredoLayer);
-
         if (hitDown) 
         {
             if (vAxis < 0 && qtd_pulos < 2) 
@@ -157,13 +141,11 @@ public class Gilmar : MonoBehaviour
                 StartCoroutine("TriggerPlataformaSecreta",plataformaCollider);
             }
         }
-
         if(hitUp) 
         {
             Collider2D plataformaCollider = hitUp.collider;
             StartCoroutine("TriggerPlataformaSecreta", plataformaCollider);
         }
-
         if (velX > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);

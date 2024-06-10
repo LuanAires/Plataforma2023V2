@@ -397,7 +397,7 @@ Transform:
   m_GameObject: {fileID: 291927931}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 185.0216, y: 0.3383689, z: -3.8400002}
+  m_LocalPosition: {x: 185.01598, y: 0.29157734, z: -3.8400002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1189,6 +1189,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &846867600 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5628953203777449395, guid: 1a6c682f3b287c54ea82d3edf76a772a, type: 3}
+  m_PrefabInstance: {fileID: 1814640559}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &861711930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,6 +1294,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b68db89435f9644954b8a5431acfca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ativo: 0
+  pontoOrigem: {fileID: 909649531}
+  pontoDestino: {fileID: 1818353154}
   gatilho: {fileID: 0}
   hp: 150
   Cuspe: {fileID: 7045328886782762531, guid: 4d44565cbeeab3a4abff850a665c11ac, type: 3}
@@ -1336,6 +1344,37 @@ CircleCollider2D:
   m_Offset: {x: -0.24896407, y: 0.45000005}
   serializedVersion: 2
   m_Radius: 0.93739486
+--- !u!1 &909649530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 909649531}
+  m_Layer: 0
+  m_Name: CabecaOrigem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &909649531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909649530}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 215.24265, y: 2.229, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &981194626
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,7 +2233,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5628953203777449395, guid: 1a6c682f3b287c54ea82d3edf76a772a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1814640562}
   m_SourcePrefab: {fileID: 100100000, guid: 1a6c682f3b287c54ea82d3edf76a772a, type: 3}
 --- !u!4 &1814640560 stripped
 Transform:
@@ -2206,6 +2248,49 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5607349826836642924, guid: 1a6c682f3b287c54ea82d3edf76a772a, type: 3}
   m_PrefabInstance: {fileID: 1814640559}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1814640562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846867600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af44a4a7edc2b284c92c2f2b4f229848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1818353153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1818353154}
+  m_Layer: 0
+  m_Name: CabecaDestino
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1818353154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818353153}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 208.28, y: -1.49, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2050360108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,3 +2766,5 @@ SceneRoots:
   - {fileID: 477578391}
   - {fileID: 837572893}
   - {fileID: 2050360111}
+  - {fileID: 909649531}
+  - {fileID: 1818353154}
