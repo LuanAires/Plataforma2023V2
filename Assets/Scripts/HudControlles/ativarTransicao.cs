@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class ProximaFase : MonoBehaviour
+public class ativarTransicao : MonoBehaviour
 {
     [SerializeField] GameObject canvastrans;
-    [SerializeField] int proximaFase;
+    public Animator animator;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -23,14 +22,10 @@ public class ProximaFase : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-
-            //SceneManager.LoadScene(proximaFase);
             canvastrans.SetActive(true);
-            Invoke("teleportDelay", 2f);
+            animator.SetBool("Fade Out", true);
+            animator.SetBool("Fade Out", false);
+
         }
-    }
-    void teleportDelay() 
-    {
-        SceneManager.LoadScene(proximaFase);
     }
 }

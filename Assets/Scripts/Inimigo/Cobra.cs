@@ -7,7 +7,6 @@ public class Cobra : MonoBehaviour
     public Transform pontoOrigem;
     public GameObject Heroi;
     public Animator Animador;
-
     public int dropPrefefab = 10;
     public GameObject dropPrefab;
     private bool heroiDentroRaio = false;
@@ -43,7 +42,6 @@ public class Cobra : MonoBehaviour
         {
             if (heroiDentroRaio && contadortiro >= maxcooldown)
             {
-                StartCoroutine(LançarProjetil());
                 contadortiro = 0;
             }
 
@@ -94,10 +92,4 @@ public class Cobra : MonoBehaviour
             hpbarr.currentylife = hp;
         }
     }
-    private IEnumerator LançarProjetil()
-    {
-        Animador.SetBool("Bote", true);
-        yield return new WaitForSeconds(Animador.GetCurrentAnimatorStateInfo(0).length);
-    }
-   
 }

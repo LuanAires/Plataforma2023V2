@@ -8,6 +8,7 @@ public class SalaBoss : MonoBehaviour
     [SerializeField] CabecaBoss boss;
     public Animator Animation;
     public GameObject Parede;
+    public GameObject HpBarraBoss;
     public AudioClip ImpactoPilastra;
     public CinemachineVirtualCamera vmCam;
     [SerializeField]private AudioSource audioSource; 
@@ -29,7 +30,8 @@ public class SalaBoss : MonoBehaviour
         {
             // Ative a parede
             Parede.SetActive(true);
-            
+            HpBarraBoss.SetActive(true);
+
             //Pega o componente camerashake e inicia o tremilique da camera
             vmCam.GetComponent<CameraShake>().StartShake();
             
