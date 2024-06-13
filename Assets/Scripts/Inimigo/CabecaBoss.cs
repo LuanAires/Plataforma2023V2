@@ -28,10 +28,7 @@ public class CabecaBoss : MonoBehaviour
     {
         hpMax = hp;
         Heroi = GameObject.FindGameObjectWithTag("Player");
-        //Animador = GetComponent<Animator>();
-
-        // Iniciar um ataque aleatório quando o chefe é iniciado
-        //InvokeRepeating("AtaqueAleatorio", 2f, 3f);
+        
     }
 
     private void Update()

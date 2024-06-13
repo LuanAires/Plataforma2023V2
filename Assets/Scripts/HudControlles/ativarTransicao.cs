@@ -23,9 +23,7 @@ public class ativarTransicao : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             canvastrans.SetActive(true);
-            animator.SetBool("Fade Out", true);
-            animator.SetBool("Fade Out", false);
-
+            animator.SetTrigger("Transicao in");
         }
     }
 }

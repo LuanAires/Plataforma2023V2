@@ -61,7 +61,7 @@ public class AtaqueEspecial : MonoBehaviour
         if (barraDeMana.currentyMana >= custoManaNivel1)
         {
             Instantiate(efeitoAtaqueEspecial, transform.position, Quaternion.identity);
-            barraDeMana.UsarMana(custoManaNivel1); // Deduz o custo de mana usando o método da HpBarraGilmar
+            barraDeMana.UsarMana(custoManaNivel1);
             almasColetadas = 0;
         }
     }
