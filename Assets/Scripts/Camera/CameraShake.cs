@@ -19,6 +19,8 @@ public class CameraShake : MonoBehaviour
     }
     private void Start()
     {
+        Debug.Log(gameObject);
+        Cine = GetComponent<CinemachineVirtualCamera>();
         StopShake();
     }
     public void ShakeCamera()

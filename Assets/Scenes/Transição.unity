@@ -2599,7 +2599,6 @@ GameObject:
   - component: {fileID: 1437771158}
   - component: {fileID: 1437771157}
   - component: {fileID: 1437771159}
-  - component: {fileID: 1437771160}
   m_Layer: 0
   m_Name: Gatilho Fechar
   m_TagString: Untagged
@@ -2683,22 +2682,7 @@ MonoBehaviour:
   Grades: {fileID: 2131491786}
   animator: {fileID: 2131491787}
   portaFechando: {fileID: 582267546}
-  vmCam: {fileID: 1789711208}
   shakeValidade: 0
---- !u!114 &1437771160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437771155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b7cb4cd18d4fbc4cbec64ead8825251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShakeIntensity: 1
-  ShakeTime: 0.2
 --- !u!1 &1477915840
 GameObject:
   m_ObjectHideFlags: 0

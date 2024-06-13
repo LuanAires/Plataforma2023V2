@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FX : MonoBehaviour
+public class CameraShakeFX : MonoBehaviour
 {
     private GatilhoFechar gatilhoFechar;
     private CameraShake shake;
@@ -10,8 +10,8 @@ public class FX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gatilhoFechar = GetComponent<GatilhoFechar>();
-        shake = GetComponent<CameraShake>();
+        //gatilhoFechar = GetComponent<GatilhoFechar>();
+        shake = FindObjectOfType<CameraShake>();
     }
 
     // Update is called once per frame
@@ -20,9 +20,9 @@ public class FX : MonoBehaviour
         
     }
 
-    private void GetShake()
+    private void StartShake()
     {
-        gatilhoFechar.shakeValidade = true;
+        shake.StartShake();
     }
     
 }

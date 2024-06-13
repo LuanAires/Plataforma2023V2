@@ -47,7 +47,7 @@ public class GatilhoFechar : MonoBehaviour
         }
 
         // Inicia o shake da câmera após a animação terminar
-        if (shakeValidade)
+       if (shakeValidade)
         {
             vmCam.GetComponent<CameraShake>().StartShake();
             Debug.Log("Shake");
