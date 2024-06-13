@@ -23,7 +23,7 @@ public class ativarTransicao : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             canvastrans.SetActive(true);
-            animator.SetTrigger("Transicao in");
+            animator.SetTrigger("Transicao out");
         }
     }
 }
