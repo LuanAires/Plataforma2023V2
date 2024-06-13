@@ -44,11 +44,11 @@ public class Gilmar : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position, 1);
         Gizmos.DrawWireSphere(new Vector2(transform.position.x, transform.position.y + 3), 1);
-        
+
     }
 
     void Start()
-    { 
+    {
         Corpo = GetComponent<Rigidbody2D>();
         Animador = GetComponentInChildren<Animator>();
         barra = GetComponentInChildren<HpBarraGilmar>();
@@ -75,15 +75,13 @@ public class Gilmar : MonoBehaviour
         {
             Disparo();
             Animador.SetTrigger("Disparo");
-
             carta.Play();
-            Debug.Log("eSTA ARITANDO");
         }
     }
     public void UsarMana(int quantidade)
     {
         currentyMana -= quantidade;
-        if (currentyMana < 0) currentyMana = 0; 
+        if (currentyMana < 0) currentyMana = 0;
     }
     public void RecuperarMana(int quantidade)
     {
@@ -93,18 +91,18 @@ public class Gilmar : MonoBehaviour
     public void RecuperarVida(int quantidade)
     {
         currentylife += quantidade;
-        if (currentylife > maxLife) currentylife = maxLife;      
+        if (currentylife > maxLife) currentylife = maxLife;
     }
     public void Disparo()
-    {       
+    {
         Vector3 pontoDeOrigem = PontoDeOrigem.transform.position;
-        GameObject CartaJogada= Instantiate(MeuAtkD, pontoDeOrigem, Quaternion.identity);
+        GameObject CartaJogada = Instantiate(MeuAtkD, pontoDeOrigem, Quaternion.identity);
 
         if (transform.localScale.x == -1)
         {
             CartaJogada.GetComponent<BulletControl>().DiracaoBala(-0.08f);
         }
-        else 
+        else
         {
             CartaJogada.GetComponent<BulletControl>().DiracaoBala(0.08f);
         }
@@ -115,8 +113,13 @@ public class Gilmar : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             AtkEspecial.Play();
-            currentyMana--;            
+            currentyMana -= 20;
             Animador.SetTrigger("AttackSpecial");
+        }
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            currentyMana <= 0 , AtivarEspecial()(false);
+
         }
     }
     #endregion
@@ -205,7 +208,6 @@ public class Gilmar : MonoBehaviour
         {
             CollectItem();
         }
-
     }
     private void CollectItem()
     {       
