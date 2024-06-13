@@ -998,6 +998,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShakeIntensity: 1
   ShakeTime: 0.2
+  timer: 0
+  _cbmcp: {fileID: 0}
 --- !u!1 &369719596
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,6 +3903,7 @@ SceneRoots:
   - {fileID: 1537050257}
   - {fileID: 909649531}
   - {fileID: 1818353154}
+  - {fileID: 1213480792}
   - {fileID: 61598877}
   - {fileID: 291927934}
   - {fileID: 325039930}
@@ -3908,7 +3911,6 @@ SceneRoots:
   - {fileID: 981194627}
   - {fileID: 122122158}
   - {fileID: 704809755}
-  - {fileID: 1213480792}
   - {fileID: 861711932}
   - {fileID: 477578391}
   - {fileID: 837572893}

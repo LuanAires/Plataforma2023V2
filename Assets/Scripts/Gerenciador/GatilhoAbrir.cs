@@ -7,8 +7,6 @@ public class GatilhoAbrir : MonoBehaviour
     [SerializeField] GameObject Grades;
     public Animator animator;
     [SerializeField] private AudioSource portaAbrindo;
-    [SerializeField] private AudioSource portaFechando;
-
     void Start()
     {
     

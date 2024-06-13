@@ -32,18 +32,13 @@ public class SalaBoss : MonoBehaviour
             Parede.SetActive(true);
             HpBarraBoss.SetActive(true);
 
-            //Pega o componente camerashake e inicia o tremilique da camera
             vmCam.GetComponent<CameraShake>().StartShake();
-            
             // Reproduza o áudio
             if (audioSource != null && ImpactoPilastra != null)
             {
                 audioSource.Play();
             }
-
             boss.BossAp();
-
-            // Destrua este objeto
             Destroy(gameObject);
         }
     }

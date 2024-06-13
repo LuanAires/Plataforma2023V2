@@ -8,13 +8,12 @@ public class ProximaFase : MonoBehaviour
 {
     [SerializeField] GameObject canvastrans;
     [SerializeField] int proximaFase;
-    // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
 
@@ -23,10 +22,8 @@ public class ProximaFase : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-
-            //SceneManager.LoadScene(proximaFase);
             canvastrans.SetActive(true);
-            Invoke("teleportDelay", 2f);
+            Invoke("teleportDelay", 3f);
         }
     }
     void teleportDelay() 
