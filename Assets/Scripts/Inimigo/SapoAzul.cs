@@ -32,7 +32,6 @@ public class SapoAzul : MonoBehaviour
             hpini.currentylife = hp;
         }
     }
-
     private void Update()
     {
         if (hp <= 0)

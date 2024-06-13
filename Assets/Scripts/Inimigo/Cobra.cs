@@ -5,33 +5,36 @@ using UnityEngine;
 public class Cobra : MonoBehaviour
 {
     public Transform pontoOrigem;
-    public GameObject Heroi;
+    public int hp = 1;
+    public GameObject Player;
     public Animator Animador;
-    public int dropPrefefab = 10;
     public GameObject dropPrefab;
-    private bool heroiDentroRaio = false;
+    public float velocidadeProjetil = 5f;
+    private HpBarraInimigo hpini;
+
     private float maxcooldown = 2;
     private float contadortiro;
-    public int dano;
-    public int hp = 1;
+
     private int hpMax;
-    private HpBarraInimigo hpbarr;
+    private bool heroiDentroRaio = false;
 
-
+    // Novas variáveis para dano por área
+    public int danoArea = 20;
+    public float raioDano = 5f;
 
     private void Start()
     {
-        hpMax = hp;
-        Heroi = GameObject.FindGameObjectWithTag("Player");
+        Player = GameObject.FindGameObjectWithTag("Player");
         Animador = GetComponentInChildren<Animator>();
-        hpbarr = GetComponentInChildren<HpBarraInimigo>();
+        hpini = GetComponentInChildren<HpBarraInimigo>();
 
-        if (hpbarr != null)
+        if (hpini != null)
         {
-            hpbarr.maxlife = hpMax;
-            hpbarr.currentylife = hp;
+            hpini.maxlife = hpMax;
+            hpini.currentylife = hp;
         }
     }
+
     private void Update()
     {
         if (hp <= 0)
@@ -42,6 +45,7 @@ public class Cobra : MonoBehaviour
         {
             if (heroiDentroRaio && contadortiro >= maxcooldown)
             {
+                
                 contadortiro = 0;
             }
 
@@ -49,8 +53,12 @@ public class Cobra : MonoBehaviour
             {
                 contadortiro += Time.deltaTime;
             }
+
+            // Verificar se o herói está dentro do raio de dano
+            VerificarHeroiDentroRaio();
         }
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Atk")
@@ -62,6 +70,7 @@ public class Cobra : MonoBehaviour
             heroiDentroRaio = true;
         }
     }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -69,16 +78,28 @@ public class Cobra : MonoBehaviour
             heroiDentroRaio = false;
         }
     }
+
+    private void VerificarHeroiDentroRaio()
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, raioDano);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("Player"))
+            {
+                Gilmar player = hitCollider.gameObject.GetComponent<Gilmar>();
+                if (player != null)
+                {
+                    Gilmar.AplicarDano(danoArea);
+
+                }
+            }
+        }
+    }
+
     public void Morrer()
     {
         Animador.SetBool("Morrendo", true);
-        DroparAlma();
         Destroy(gameObject);
-    }
-    void DroparAlma()
-    {
-        Instantiate(dropPrefab, transform.position, Quaternion.identity);
-        dropPrefefab = 10;
     }
     public void AplicarDano(int dano)
     {
@@ -87,9 +108,14 @@ public class Cobra : MonoBehaviour
 
         Animador.SetTrigger("Dano");
 
-        if (hpbarr != null)
+        if (hpini != null)
         {
-            hpbarr.currentylife = hp;
+            hpini.currentylife = hp;
         }
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, raioDano);
     }
 }

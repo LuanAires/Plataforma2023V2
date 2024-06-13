@@ -112,16 +112,20 @@ public class Gilmar : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            AtkEspecial.Play();
-            currentyMana -= 20;
-            Animador.SetTrigger("AttackSpecial");
-        }
-        else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            currentyMana <= 0 , AtivarEspecial()(false);
-
+            // Verifica se a mana é suficiente para ativar a habilidade especial
+            if (currentyMana >= 20)
+            {
+                AtkEspecial.Play();
+                currentyMana -= 20;
+                Animador.SetTrigger("AttackSpecial");
+            }
+            else
+            {
+                Debug.Log("Mana insuficiente para ativar a habilidade especial!");
+            }
         }
     }
+
     #endregion
 
     private void FixedUpdate()
@@ -210,10 +214,17 @@ public class Gilmar : MonoBehaviour
         }
     }
     private void CollectItem()
-    {       
-        Destroy(gameObject);
-        currentyMana= 20;
+    {
+        
+        int amountToHeal = 20;
+
+        
+        Heal(amountToHeal);
+
+        
+        currentyMana = 20;  
     }
+
     public void Dano()
     {
         hp--;
@@ -248,7 +259,18 @@ public class Gilmar : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         colliderPlataforma.isTrigger = false;
     }
-    internal void heal(int healAmount)
+    public void Heal(int amount)
+    {
+        currentylife += amount;
+        if (currentylife > maxLife)
+        {
+            currentylife = maxLife;
+        }
+        Debug.Log("Player healed. Current health: " + currentylife);
+    }
+
+
+    internal static void AplicarDano(int danoArea)
     {
         throw new NotImplementedException();
     }
