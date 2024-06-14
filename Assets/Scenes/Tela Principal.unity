@@ -4304,7 +4304,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 20
-  Hp: {fileID: 243393277}
 --- !u!1 &328132250
 GameObject:
   m_ObjectHideFlags: 0
@@ -8515,9 +8514,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678724883}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.010102343, w: 0.99994904}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 43.771206, y: 43.771206, z: 43.771206}
+  m_LocalScale: {x: 28.683708, y: 28.683708, z: 28.683708}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1862536355}
@@ -8525,10 +8524,10 @@ RectTransform:
   - {fileID: 2109250371}
   - {fileID: 188327849}
   m_Father: {fileID: 1849058131}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.158}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -740, y: 425}
+  m_AnchoredPosition: {x: -371, y: 223}
   m_SizeDelta: {x: 9.18, y: 4.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &678724885
@@ -18982,7 +18981,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 20
-  Hp: {fileID: 243393277}
 --- !u!1 &1576343103
 GameObject:
   m_ObjectHideFlags: 0
@@ -25803,13 +25801,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109250370}
-  m_LocalRotation: {x: 0, y: 0, z: 0.0030717952, w: 0.9999953}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.00606, y: 0.9293817, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 678724884}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.352}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1.02, y: 0.29}

@@ -125,9 +125,7 @@ public class Gilmar : MonoBehaviour
             }
         }
     }
-
     #endregion
-
     private void FixedUpdate()
     {
         velX = hAxis * Time.fixedDeltaTime * (velocidade + velExtra);
@@ -214,17 +212,11 @@ public class Gilmar : MonoBehaviour
         }
     }
     private void CollectItem()
-    {
+    {       
         
-        int amountToHeal = 20;
-
-        
-        Heal(amountToHeal);
-
-        
-        currentyMana = 20;  
+        Destroy(gameObject);
+        currentyMana= 20;
     }
-
     public void Dano()
     {
         hp--;
@@ -261,12 +253,12 @@ public class Gilmar : MonoBehaviour
     }
     public void Heal(int amount)
     {
-        currentylife += amount;
-        if (currentylife > maxLife)
-        {
-            currentylife = maxLife;
-        }
-        Debug.Log("Player healed. Current health: " + currentylife);
+    currentylife += amount;
+    if (currentylife > maxLife)
+    {
+        currentylife = maxLife;
+    }
+    Debug.Log("Player healed. Current health: " + currentylife);
     }
 
 
