@@ -63,13 +63,21 @@ public class Gilmar : MonoBehaviour
             AtaqueDistancia();
             AtivarEspecial();
         }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             pulo.Play();
             Pular();
         }
+
+        currentylife = hp;
+        if (hp < 0)
+        {
+            Morrer();
+        }
+
     }
-    #region ataque
+ #region ataque
     void AtaqueDistancia()
     {
         if (Input.GetKeyDown(KeyCode.K))
@@ -217,31 +225,35 @@ public class Gilmar : MonoBehaviour
     public void Dano()
     {
         hp--;
-        if (hp <= 0)
+        if (hp <= currentylife)
         {
-            Animador.SetBool("Morreu", true);
+            Animador.SetTrigger("Dano");
         }
     }
     public void PerderHp(int quantidade)
     {
-        if (hp > 0)
+        if (hp < 0)
         {
-            hp -= quantidade; 
+            hp -= quantidade;
             if (hp <= 0)
             {
-              Morrer();
+                Morrer();
             }
         }
     }
+    #region MORTE
     public void Morrer()
     {
-        hp--;
-        if (hp <= 0)
+        currentylife--;
+        if (currentylife <= 0)
         {
-            Animador.SetBool("Morreu", true);
+            Animador.SetTrigger("Morreu");
+            SceneManager.LoadScene(4);
+            print("morreu");
         }
         Destroy(this.gameObject);
     }
+    #endregion
     IEnumerator TriggerPlataformaSecreta(Collider2D colliderPlataforma) 
     {
         colliderPlataforma.isTrigger= true;

@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de3c3e723230604b841d52046cb30b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade_bala: 0
+  dano: 10
+  velocidade_bala: 2
 --- !u!50 &8232224503503596249
 Rigidbody2D:
   serializedVersion: 4
@@ -108,7 +109,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5229489917348295320}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -126,7 +127,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &-5241713786837489162
 BoxCollider2D:
   m_ObjectHideFlags: 0

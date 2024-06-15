@@ -18,7 +18,7 @@ public class CabecaBoss : MonoBehaviour
     public int danoAvanco = 13;
     public int danoCartola = 10;
     public float velocidadeAvanco = 5f;
-    
+
     public GameObject Heroi;
     public Animator Animador;
     public GameObject dropPrefab;
@@ -28,26 +28,35 @@ public class CabecaBoss : MonoBehaviour
     {
         hpMax = hp;
         Heroi = GameObject.FindGameObjectWithTag("Player");
-        
     }
 
     private void Update()
     {
-        if (ativo) 
+        if (ativo)
         {
             Vector3 newPosition = Vector3.MoveTowards(transform.position, pontoDestino.position, Time.deltaTime * 5);
             transform.position = newPosition;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D tocar)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (tocar.gameObject.tag == "Atk")
+        if (other.CompareTag("Atk"))
         {
             int rand = Random.Range(danoCuspe, danoCartola + 1);
             AplicarDano(rand);
         }
+        else if (other.CompareTag("Carta"))  // Mudança aqui para verificar "Carta" em vez de "Atk"
+        {
+            BulletControl bullet = other.GetComponent<BulletControl>();
+            if (bullet != null)
+            {
+                AplicarDano(bullet.dano);
+                Destroy(other.gameObject);
+            }
+        }
     }
+
     public void Disparo()
     {
         GameObject Tiro = Instantiate(Cuspe, PontoDeOrigem.transform.position, Quaternion.identity);
@@ -58,6 +67,7 @@ public class CabecaBoss : MonoBehaviour
             Tiro.GetComponent<AtaqueDistancia>().MudaVelocidade(-5);
         }
     }
+
     void AtaqueAleatorio()
     {
         DesativarAnimacoes();
@@ -81,7 +91,7 @@ public class CabecaBoss : MonoBehaviour
 
     }
 
-    void DesativarAnimacoes() 
+    void DesativarAnimacoes()
     {
         Animador.SetBool("Cuspir", false);
         Animador.SetBool("Avancar", false);
@@ -123,7 +133,7 @@ public class CabecaBoss : MonoBehaviour
         Animador.SetTrigger("BossAP");
     }
     void AtaqueAleatorioV()
-    {       
+    {
         DesativarAnimacoes();
         int ataqueSelecionado = Random.Range(0, 3);
 
@@ -157,22 +167,21 @@ public class CabecaBoss : MonoBehaviour
     {
         hp -= dano;
 
+        if (hp <= 75)
+        {
+            Animador.SetTrigger("MetadeHP");
+        }
         if (hp <= 0)
         {
             Animador.SetTrigger("Morrer");
             Morrer();
         }
-        if (hp <= 75)
-        {
-            Animador.SetTrigger("MetadeHP");
-            
-        }
+       
     }
 
-    public void AtivarBoss() 
+    public void AtivarBoss()
     {
         InvokeRepeating("AtaqueAleatorio", 2f, 3f);
         ativo = true;
     }
-
 }

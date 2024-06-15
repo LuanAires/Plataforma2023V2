@@ -4,36 +4,42 @@ using UnityEngine;
 
 public class BulletControl : MonoBehaviour
 {
-    [SerializeField] private float velocidade_bala = 0;
+    public int dano = 10; // Valor do dano causado pela carta
+    [SerializeField] public float velocidade_bala = 0.2f;
 
-    // Start is called before the first frame update
+    private Rigidbody2D rb2d;
+
     void Start()
     {
-        
+        rb2d = GetComponent<Rigidbody2D>();
     }
-    // Update is called once per frame
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Inimigo"))
+        {
+            CabecaBoss boss = other.GetComponent<CabecaBoss>();
+            if (boss != null)
+            {
+                boss.AplicarDano(dano);
+                Destroy(gameObject); 
+            }
+        }
+    }
+
     void Update()
     {
         MoverBala();
     }
+
     void MoverBala()
     {
-       
-      transform.position = new Vector3(transform.position.x + velocidade_bala, transform.position.y, transform.position.z);
-        
+        transform.position = new Vector3(transform.position.x + velocidade_bala, transform.position.y, transform.position.z);
     }
-    public void DiracaoBala(float direcao) 
-    {
-        velocidade_bala = direcao; 
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
 
-      if (collision.CompareTag("inimigo"))
-      {
-            
-            Destroy(gameObject);
-      }
-
+    public void DiracaoBala(float direcao)
+    {
+        velocidade_bala = direcao;
     }
 }
+
