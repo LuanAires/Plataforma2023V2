@@ -27,6 +27,7 @@ public class Gilmar : MonoBehaviour
     public AudioSource AtkEspecial;
     public AudioSource dano;
     //Ataque Distancia\\
+    public GameObject reset;
     public float meuTempoTiro = 0;
     public GameObject MeuAtkD;
     public GameObject PontoDeOrigem;
@@ -192,10 +193,6 @@ public class Gilmar : MonoBehaviour
                 hp -= dano;
                 Animador.SetTrigger("Dano");
             }
-            else 
-            {
-                Debug.LogWarning("Ataque sem AtkInimigoController");
-            }
         }
         else 
         {
@@ -260,10 +257,9 @@ public class Gilmar : MonoBehaviour
     }
     Debug.Log("Player healed. Current health: " + currentylife);
     }
-
-
     internal static void AplicarDano(int danoArea)
     {
-        throw new NotImplementedException();
+        // throw new NotImplementedException();
+        print(danoArea);
     }
 }

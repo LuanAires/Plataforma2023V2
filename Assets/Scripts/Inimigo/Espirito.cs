@@ -67,7 +67,7 @@ public class Espirito : MonoBehaviour
         {
             if (Animador != null)
             {
-                Animador.SetTrigger("Atacar");
+                Animador.SetTrigger("Cuspe");
             }
         }
     }
@@ -91,8 +91,9 @@ public class Espirito : MonoBehaviour
     }
     private IEnumerator LançarProjetil()
     {
-        Animador.SetTrigger("Atacar");
-        MeuTiro();
+        Animador.SetTrigger("Cuspe");
+        //MeuTiro();
+        Invoke("MeuTiro", 0.9f);
         yield return new WaitForSeconds(Animador.GetCurrentAnimatorStateInfo(0).length);
     }
     public void AplicarDano(int dano)

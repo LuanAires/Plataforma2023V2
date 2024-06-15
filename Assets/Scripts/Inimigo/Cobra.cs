@@ -20,7 +20,7 @@ public class Cobra : MonoBehaviour
 
     // Novas variáveis para dano por área
     public int danoArea = 20;
-    public float raioDano = 5f;
+    public float CubeDano = 5f;
 
     private void Start()
     {
@@ -48,14 +48,11 @@ public class Cobra : MonoBehaviour
                 
                 contadortiro = 0;
             }
-
             if (contadortiro <= maxcooldown)
             {
                 contadortiro += Time.deltaTime;
             }
-
-            // Verificar se o herói está dentro do raio de dano
-            VerificarHeroiDentroRaio();
+            //VerificarHeroiDentroRaio();
         }
     }
 
@@ -64,8 +61,9 @@ public class Cobra : MonoBehaviour
         if (other.gameObject.tag == "Atk")
         {
             AplicarDano(10);
+            print("colidiu");
         }
-        else if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             heroiDentroRaio = true;
         }
@@ -79,9 +77,9 @@ public class Cobra : MonoBehaviour
         }
     }
 
-    private void VerificarHeroiDentroRaio()
+   /* private void VerificarHeroiDentroRaio()
     {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, raioDano);
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(transform.position, CubeDano);
         foreach (var hitCollider in hitColliders)
         {
             if (hitCollider.CompareTag("Player"))
@@ -94,7 +92,7 @@ public class Cobra : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
     public void Morrer()
     {
@@ -106,7 +104,7 @@ public class Cobra : MonoBehaviour
         hp -= dano;
         if (hp < 0) hp = 0;
 
-        Animador.SetTrigger("Dano");
+        Animador.SetTrigger("Atk");
 
         if (hpini != null)
         {
@@ -116,6 +114,6 @@ public class Cobra : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, raioDano);
+        Gizmos.DrawWireSphere (transform.position, CubeDano);
     }
 }

@@ -31,7 +31,7 @@ public class BulletControl : MonoBehaviour
 
       if (collision.CompareTag("inimigo"))
       {
-            print("colidiu");
+            
             Destroy(gameObject);
       }
 
