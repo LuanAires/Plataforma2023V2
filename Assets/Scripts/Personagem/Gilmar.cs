@@ -41,6 +41,9 @@ public class Gilmar : MonoBehaviour
     public int perderHp;
     private Vector3 originalScale;
     float hAxis, vAxis, velX, velY;
+
+    bool morto;
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, 1);
@@ -57,23 +60,25 @@ public class Gilmar : MonoBehaviour
     void Update()
     {
         currentylife = hp;
-        if (hp > 0)
-        {
-            Mover();
-            AtaqueDistancia();
-            AtivarEspecial();
-        }
+        if (!morto)
+        { 
+            if (hp > 0)
+            {
+                Mover();
+                AtaqueDistancia();
+                AtivarEspecial();
+            }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            pulo.Play();
-            Pular();
-        }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                pulo.Play();
+                Pular();
+            }
 
-        currentylife = hp;
-        if (hp < 0)
-        {
-            Morrer();
+            if (hp < 0)
+            {
+                Morrer();
+            }
         }
 
     }
@@ -137,10 +142,14 @@ public class Gilmar : MonoBehaviour
     #endregion
     private void FixedUpdate()
     {
-        velX = hAxis * Time.fixedDeltaTime * (velocidade + velExtra);
-        velY = Corpo.velocity.y;
-        Corpo.velocity = new Vector2(velX, velY);
+        if (!morto)
+        {
+            velX = hAxis * Time.fixedDeltaTime * (velocidade + velExtra);
+            velY = Corpo.velocity.y;
+            Corpo.velocity = new Vector2(velX, velY);
+        }
     }
+
     void Mover()
     {
         hAxis = Input.GetAxis("Horizontal");
@@ -197,9 +206,7 @@ public class Gilmar : MonoBehaviour
             AtkInimigoController atkInimigo = tocou.GetComponent<AtkInimigoController>();
             if (atkInimigo)
             {
-                int dano = atkInimigo.Dano;
-                hp -= dano;
-                Animador.SetTrigger("Dano");
+                PerderHp(atkInimigo.Dano);
             }
         }
         else 
@@ -216,62 +223,70 @@ public class Gilmar : MonoBehaviour
             CollectItem();
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "inimigo") 
+        { 
+            PerderHp(10);
+        }
+    }
+
     private void CollectItem()
     {       
         
         Destroy(gameObject);
         currentyMana= 20;
     }
-    public void Dano()
-    {
-        hp--;
-        if (hp <= currentylife)
-        {
-            Animador.SetTrigger("Dano");
-        }
-    }
+
     public void PerderHp(int quantidade)
     {
-        if (hp < 0)
-        {
+        if (!morto) 
+        { 
             hp -= quantidade;
+            Animador.SetTrigger("Dano");
             if (hp <= 0)
             {
                 Morrer();
             }
         }
     }
+    
     #region MORTE
     public void Morrer()
     {
         currentylife--;
-        if (currentylife <= 0)
+        if (currentylife <= 0 && morto == false)
         {
-            Animador.SetTrigger("Morreu");
-            SceneManager.LoadScene(4);
-            print("morreu");
+            Animador.SetBool("Correndo", false);
+            Animador.SetBool("Morreu", true);
+            morto = true;
+            StartCoroutine(CarregarCenaDeMorte());
         }
-        Destroy(this.gameObject);
     }
     #endregion
+
+    IEnumerator CarregarCenaDeMorte() 
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(4);
+    }
+
     IEnumerator TriggerPlataformaSecreta(Collider2D colliderPlataforma) 
     {
         colliderPlataforma.isTrigger= true;
         yield return new WaitForSeconds(0.5f);
         colliderPlataforma.isTrigger = false;
     }
+
     public void Heal(int amount)
     {
-    currentylife += amount;
-    if (currentylife > maxLife)
-    {
-        currentylife = maxLife;
+        currentylife += amount;
+        if (currentylife > maxLife)
+        {
+            currentylife = maxLife;
+        }
+        Debug.Log("Player healed. Current health: " + currentylife);
     }
-    Debug.Log("Player healed. Current health: " + currentylife);
-    }
-    internal static void AplicarDano(int danoArea)
-    {
-        // throw new NotImplementedException();
-        print(danoArea);
-    }
+
 }

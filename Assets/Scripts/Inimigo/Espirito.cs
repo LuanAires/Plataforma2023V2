@@ -124,11 +124,22 @@ public class Espirito : MonoBehaviour
         {
             heroiDentroRaio = true;
         }
-        if (tocar.gameObject.tag == "Atk")
+        /*if (tocar.gameObject.tag == "Atk")
         {
             AplicarDano(10);
+            Destroy(tocar.gameObject);
+        }*/
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Atk")
+        {
+            AplicarDano(10);
+            Destroy(collision.gameObject);
         }
     }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")

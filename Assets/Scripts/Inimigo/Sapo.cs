@@ -56,15 +56,12 @@ public class Sapo : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Atk")
-        {
-            AplicarDano(10);
-        }
-        else if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             heroiDentroRaio = true;
         }
     }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -72,6 +69,16 @@ public class Sapo : MonoBehaviour
             heroiDentroRaio = false;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Atk") 
+        {
+            AplicarDano(10);
+            Destroy(collision.gameObject);
+        }
+    }
+
     public void Morrer()
     {
         Animador.SetBool("Morrendo", true);

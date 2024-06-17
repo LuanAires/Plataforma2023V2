@@ -286,7 +286,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 1.22, y: 3.6710448}
@@ -321,7 +321,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -1.05, y: 1.5262411}
@@ -366,7 +366,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.46015167, y: 2.500522}
@@ -475,7 +475,7 @@ MonoBehaviour:
   hp: 100
   hpMax: 0
   Animador: {fileID: 7117289503936920151}
-  Heroi: {fileID: 5111933223308220464, guid: 4f8696804f26edd4185440c56f58246a, type: 3}
+  Heroi: {fileID: 0}
   dropPrefab: {fileID: 8078959313337667677, guid: 56fd5bc1766b6b64590518166533b8a4, type: 3}
   velocidadeProjetil: 5
 --- !u!1 &8845997126597087475

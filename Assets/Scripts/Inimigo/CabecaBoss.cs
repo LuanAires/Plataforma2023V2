@@ -43,10 +43,10 @@ public class CabecaBoss : MonoBehaviour
     {
         if (other.CompareTag("Atk"))
         {
-            int rand = Random.Range(danoCuspe, danoCartola + 1);
-            AplicarDano(rand);
+            /*int rand = Random.Range(danoCuspe, danoCartola + 1);
+            AplicarDano(rand);*/
         }
-        else if (other.CompareTag("Carta"))  // Mudança aqui para verificar "Carta" em vez de "Atk"
+        if (other.CompareTag("Carta"))  // Mudança aqui para verificar "Carta" em vez de "Atk"
         {
             BulletControl bullet = other.GetComponent<BulletControl>();
             if (bullet != null)
@@ -54,6 +54,16 @@ public class CabecaBoss : MonoBehaviour
                 AplicarDano(bullet.dano);
                 Destroy(other.gameObject);
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Atk")
+        {
+            int rand = Random.Range(danoCuspe, danoCartola + 1);
+            AplicarDano(rand);
+            Destroy(collision.gameObject);
         }
     }
 

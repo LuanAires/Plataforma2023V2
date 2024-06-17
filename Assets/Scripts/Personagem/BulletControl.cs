@@ -16,15 +16,20 @@ public class BulletControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Inimigo"))
+        Debug.Log(other.gameObject);
+        if (other.CompareTag("inimigo"))
         {
             CabecaBoss boss = other.GetComponent<CabecaBoss>();
             if (boss != null)
             {
                 boss.AplicarDano(dano);
-                Destroy(gameObject); 
             }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
     }
 
     void Update()
