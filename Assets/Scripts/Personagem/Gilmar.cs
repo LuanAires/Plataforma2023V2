@@ -258,6 +258,7 @@ public class Gilmar : MonoBehaviour
         currentylife--;
         if (currentylife <= 0 && morto == false)
         {
+            
             Animador.SetBool("Correndo", false);
             Animador.SetBool("Morreu", true);
             morto = true;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AtaqueDistancia : MonoBehaviour
+public class AtaqueBoss : MonoBehaviour
 {
     private Rigidbody2D CorpoBala;
     private float ladoVelocidade = 5;

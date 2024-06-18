@@ -14,15 +14,18 @@ public class CabecaBoss : MonoBehaviour
     private int hpMax;
     public GameObject Cuspe;
     public GameObject PontoDeOrigem;
-    public int danoCuspe = 9;
-    public int danoAvanco = 13;
-    public int danoCartola = 10;
+    public int danoCuspe =10;
+    public int danoAvanco =20 ;
+    public int danoCartola = 15;
     public float velocidadeAvanco = 5f;
-
     public GameObject Heroi;
     public Animator Animador;
     public GameObject dropPrefab;
     public GameObject CartolaPrefab;
+    //audio\\
+    public AudioSource avanco;
+    public AudioSource cuspe;
+    public AudioSource risada;
 
     private void Start()
     {
@@ -43,10 +46,9 @@ public class CabecaBoss : MonoBehaviour
     {
         if (other.CompareTag("Atk"))
         {
-            /*int rand = Random.Range(danoCuspe, danoCartola + 1);
-            AplicarDano(rand);*/
+            // Código anterior para detectar ataque
         }
-        if (other.CompareTag("Carta"))  // Mudança aqui para verificar "Carta" em vez de "Atk"
+        if (other.CompareTag("Carta"))
         {
             BulletControl bullet = other.GetComponent<BulletControl>();
             if (bullet != null)
@@ -55,7 +57,18 @@ public class CabecaBoss : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
+
+        // Lógica para aplicar dano ao jogador
+        if (other.CompareTag("Player"))
+        {
+            Gilmar playerGilmar = other.GetComponent<Gilmar>();
+            if (playerGilmar != null)
+            {
+                playerGilmar.PerderHp(danoAvanco);  
+            }
+        }
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -65,17 +78,24 @@ public class CabecaBoss : MonoBehaviour
             AplicarDano(rand);
             Destroy(collision.gameObject);
         }
+
+        // Lógica para aplicar dano ao jogador
+        if (collision.gameObject.tag == "Player")
+        {
+            Gilmar playerGilmar = collision.gameObject.GetComponent<Gilmar>();
+            if (playerGilmar != null)
+            {
+                playerGilmar.PerderHp(danoAvanco);  
+            }
+        }
     }
 
     public void Disparo()
     {
         GameObject Tiro = Instantiate(Cuspe, PontoDeOrigem.transform.position, Quaternion.identity);
+        Vector3 direction = (Heroi.transform.position - Tiro.transform.position).normalized;
+        Tiro.GetComponent<AtaqueDistancia>().SetDirection(direction);
         Destroy(Tiro, 3f);
-
-        if (transform.localScale.x == -1)
-        {
-            Tiro.GetComponent<AtaqueDistancia>().MudaVelocidade(-5);
-        }
     }
 
     void AtaqueAleatorio()
@@ -98,7 +118,6 @@ public class CabecaBoss : MonoBehaviour
             default:
                 break;
         }
-
     }
 
     void DesativarAnimacoes()
@@ -119,29 +138,41 @@ public class CabecaBoss : MonoBehaviour
 
     void Avancar()
     {
+        avanco.Play();
         Animador.SetBool("Avancar", true);
     }
 
     void LancarCartola()
     {
         Animador.SetBool("LancarCartola", true);
+        GameObject Cartola = Instantiate(CartolaPrefab, transform.position, Quaternion.identity);
+        Vector3 direction = (Heroi.transform.position - Cartola.transform.position).normalized;
+        Cartola.GetComponent<CartolaControl>().SetDirection(direction);
+        Destroy(Cartola, 3f);
     }
+
     void CuspirV()
     {
         Animador.SetBool("CuspirV", true);
     }
+
     void AvancarV()
     {
+        avanco.Play();
         Animador.SetBool("AvancarV", true);
     }
+
     void LancarCartolaV()
     {
         Animador.SetBool("LancarCartolaV", true);
     }
+
     public void BossAp()
     {
+        risada.Play();
         Animador.SetTrigger("BossAP");
     }
+
     void AtaqueAleatorioV()
     {
         DesativarAnimacoes();
@@ -162,6 +193,7 @@ public class CabecaBoss : MonoBehaviour
                 break;
         }
     }
+
     public void Morrer()
     {
         DroparAlma();
@@ -186,7 +218,6 @@ public class CabecaBoss : MonoBehaviour
             Animador.SetTrigger("Morrer");
             Morrer();
         }
-       
     }
 
     public void AtivarBoss()
