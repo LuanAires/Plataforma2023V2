@@ -5,7 +5,7 @@ using UnityEngine;
 public class AtaqueEspecial : MonoBehaviour
 {
     public int almasNecessariasNivel1 = 5;
-    public int almasNecessariasNivel2 = 5;
+    public int almasNecessariasNivel2 = 10;
     private int almasColetadas = 0;
     public GameObject eAtaqueEspecial;
     public int danoDoAtaqueNivel1 = 50;
@@ -20,7 +20,7 @@ public class AtaqueEspecial : MonoBehaviour
         barraDeMana = GetComponent<Gilmar>();
         if (barraDeMana == null)
         {
-            Debug.LogError("Gilmar component not found on the same GameObject as AtaqueEspecial.");
+
         }
     }
 
@@ -31,26 +31,27 @@ public class AtaqueEspecial : MonoBehaviour
             ColetarAlma();
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Inimigo"))
         {
             collision.GetComponent<Inimigo>().AplicarDano(ObterDanoAtual());
-            print("deudano");
+            print("deu dano");
         }
     }
 
     void ColetarAlma()
     {
         almasColetadas++;
-        if (almasColetadas >= almasNecessariasNivel1 && barraDeMana.currentyMana >= custoManaNivel1)
+        if (almasColetadas >= almasNecessariasNivel2 && barraDeMana.currentyMana >= custoManaNivel2)
+        {
+            AtivarAtaqueEspecialNivel2();
+        }
+        else if (almasColetadas >= almasNecessariasNivel1 && barraDeMana.currentyMana >= custoManaNivel1)
         {
             AtivarAtaqueEspecial();
         }
-       /* else if (almasColetadas >= almasNecessariasNivel2 && barraDeMana.currentyMana >= custoManaNivel2)
-        {
-            AtivarAtaqueEspecialNivel2();
-        }*/
     }
 
     int ObterDanoAtual()
@@ -71,21 +72,21 @@ public class AtaqueEspecial : MonoBehaviour
         {
             Instantiate(eAtaqueEspecial, transform.position, Quaternion.identity);
             barraDeMana.UsarMana(custoManaNivel1);
-            almasColetadas = 0;
             AplicarDanoAInimigos(danoDoAtaqueNivel1);
+            almasColetadas = 0;
         }
     }
 
-    /*void AtivarAtaqueEspecialNivel2()
+    void AtivarAtaqueEspecialNivel2()
     {
         if (barraDeMana.currentyMana >= custoManaNivel2)
         {
             Instantiate(fissuraPrefab, transform.position + transform.forward * 2, Quaternion.identity);
             barraDeMana.UsarMana(custoManaNivel2);
-            almasColetadas = 0;
             AplicarDanoAInimigos(danoDoAtaqueNivel2);
+            almasColetadas = 0;
         }
-    }*/
+    }
 
     void AplicarDanoAInimigos(int dano)
     {

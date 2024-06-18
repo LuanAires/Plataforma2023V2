@@ -60,6 +60,10 @@ public class Sapo : MonoBehaviour
         {
             heroiDentroRaio = true;
         }
+        if (other.gameObject.tag == "Atk")
+        {
+            AplicarDano(10);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)

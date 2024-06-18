@@ -69,7 +69,7 @@ public class Gilmar : MonoBehaviour
                 AtivarEspecial();
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("Fire3"))
             {
                 pulo.Play();
                 Pular();
@@ -85,7 +85,7 @@ public class Gilmar : MonoBehaviour
  #region ataque
     void AtaqueDistancia()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K) || Input.GetButtonDown("Fire1"))
         {
             Disparo();
             Animador.SetTrigger("Disparo");
@@ -124,7 +124,7 @@ public class Gilmar : MonoBehaviour
     }
     private void AtivarEspecial()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Fire2"))
         {
             // Verifica se a mana é suficiente para ativar a habilidade especial
             if (currentyMana >= 20)
@@ -281,12 +281,12 @@ public class Gilmar : MonoBehaviour
 
     public void Heal(int amount)
     {
-        currentylife += amount;
-        if (currentylife > maxLife)
+        hp += amount;
+        if (hp > maxLife)
         {
-            currentylife = maxLife;
+            hp = maxLife;
         }
-        Debug.Log("Player healed. Current health: " + currentylife);
+        Debug.Log("Player healed. Current health: " + hp);
     }
 
 }
