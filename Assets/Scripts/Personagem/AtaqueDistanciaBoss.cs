@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AtaqueBoss : MonoBehaviour
+public class AtaqueDistanciaBoss : MonoBehaviour
 {
     private Rigidbody2D CorpoBala;
-    private float ladoVelocidade = 5;
+    Vector3 direcao;
+    private float velocidade = 1000;
 
     // Start is called before the first frame update
     void Start()
@@ -13,14 +14,13 @@ public class AtaqueBoss : MonoBehaviour
         CorpoBala = GetComponent<Rigidbody2D>();
     }
 
-    public void MudaVelocidade(float direcao)
+    public void MudaVelocidade(Vector3 direcao)
     {
-        ladoVelocidade = direcao;
+        this.direcao = direcao;
     }
-
 
     void Update()
     {
-        CorpoBala.velocity = new Vector2(ladoVelocidade, 0);
+        CorpoBala.velocity = direcao * Time.deltaTime * velocidade;
     }
 }

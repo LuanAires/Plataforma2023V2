@@ -25,4 +25,9 @@ public class BossAnimatorController : MonoBehaviour
         cabecaBoss.AtivarBoss();
     }
 
+    public void Cuspir() 
+    { 
+        cabecaBoss.Disparo();
+    }
+
 }

@@ -9,8 +9,6 @@ public class HudBossController : MonoBehaviour
     [SerializeField] private float multiplier;
     private Vector3 initialScale;
 
-    private Gilmar player;
-
     void Start()
     {
         // Salva a escala inicial da barra

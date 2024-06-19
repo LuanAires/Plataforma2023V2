@@ -69,7 +69,7 @@ public class Gilmar : MonoBehaviour
                 AtivarEspecial();
             }
 
-            if (Input.GetButtonDown("Fire3"))
+            if (Input.GetButtonDown("Jump"))
             {
                 pulo.Play();
                 Pular();
@@ -126,7 +126,6 @@ public class Gilmar : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Fire2"))
         {
-            // Verifica se a mana é suficiente para ativar a habilidade especial
             if (currentyMana >= 20)
             {
                 AtkEspecial.Play();
@@ -201,6 +200,7 @@ public class Gilmar : MonoBehaviour
             jumpForce = 500;
             Animador.SetBool("Jump", false);
         }
+        
         if (tocou.gameObject.tag == "Atk_inimigo")
         {
             AtkInimigoController atkInimigo = tocou.GetComponent<AtkInimigoController>();
@@ -209,15 +209,13 @@ public class Gilmar : MonoBehaviour
                 PerderHp(atkInimigo.Dano);
             }
         }
-        else 
-        {
-           Animador.SetBool("Dano", false);
-        }
+
         if (tocou.tag == "Morte")
         {
             PerderHp(10);
             SceneManager.LoadScene(4);
         }
+
         if (tocou.CompareTag("Player"))
         {
             CollectItem();
@@ -245,13 +243,6 @@ public class Gilmar : MonoBehaviour
         {
             hp -= quantidade;
             Animador.SetTrigger("Dano");
-
-            // Atualizar a HUD
-            HudBossController hudBoss = FindObjectOfType<HudBossController>();
-            if (hudBoss != null)
-            {
-                hudBoss.currentylife = hp;
-            }
 
             if (hp <= 0)
             {
