@@ -7,13 +7,23 @@ public class HudBossController : MonoBehaviour
     public float maxlife;
     public float currentylife;
     [SerializeField] private float multiplier;
-
     private Vector3 initialScale;
+
+    private Gilmar player;
 
     void Start()
     {
         // Salva a escala inicial da barra
         initialScale = transform.localScale;
+
+        // Encontra o jogador na cena
+        player = FindObjectOfType<Gilmar>();
+
+        if (player != null)
+        {
+            maxlife = player.maxLife;
+            currentylife = player.hp;
+        }
 
         // Configura a barra com base na vida máxima
         UpdateHealthBar();
@@ -21,8 +31,12 @@ public class HudBossController : MonoBehaviour
 
     void Update()
     {
-        // Atualiza a barra de vida com base na vida atual
-        UpdateHealthBar();
+        if (player != null)
+        {
+            currentylife = player.hp;
+            // Atualiza a barra de vida com base na vida atual
+            UpdateHealthBar();
+        }
     }
 
     private void UpdateHealthBar()

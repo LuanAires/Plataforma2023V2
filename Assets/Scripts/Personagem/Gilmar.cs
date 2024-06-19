@@ -241,17 +241,26 @@ public class Gilmar : MonoBehaviour
 
     public void PerderHp(int quantidade)
     {
-        if (!morto) 
-        { 
+        if (!morto)
+        {
             hp -= quantidade;
             Animador.SetTrigger("Dano");
+
+            // Atualizar a HUD
+            HudBossController hudBoss = FindObjectOfType<HudBossController>();
+            if (hudBoss != null)
+            {
+                hudBoss.currentylife = hp;
+            }
+
             if (hp <= 0)
             {
                 Morrer();
             }
         }
     }
-    
+
+
     #region MORTE
     public void Morrer()
     {
