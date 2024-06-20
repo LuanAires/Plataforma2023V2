@@ -27,6 +27,7 @@ public class Gilmar : MonoBehaviour
     public AudioSource AtkEspecial;
     public AudioSource dano;
     //Ataque Distancia\\
+    public int limite;
     public GameObject reset;
     public float meuTempoTiro = 0;
     public GameObject MeuAtkD;
@@ -87,10 +88,23 @@ public class Gilmar : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K) || Input.GetButtonDown("Fire1"))
         {
-            Disparo();
-            Animador.SetTrigger("Disparo");
-            carta.Play();
+            limite++;
+            if ( limite < 4 ) 
+            {
+                Disparo();
+                Animador.SetTrigger("Disparo");
+                carta.Play();
+            }
+            if (limite == 3 )
+            {
+                Invoke ("Count", 2f);
+            
+            }
         }
+    }
+    public void Count() 
+    {
+        limite = 0;    
     }
     public void UsarMana(int quantidade)
     {

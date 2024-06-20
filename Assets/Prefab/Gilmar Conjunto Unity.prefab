@@ -753,7 +753,7 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &2819073594652296420
@@ -923,14 +923,14 @@ PrefabInstance:
     - {fileID: 2011471719558414926, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 3719669779512663953}
+    - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3953323695315147029}
     - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 43119856483580514}
-    - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3719669779512663953}
     - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: a4d06e498b97a894e924e3954915afe4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8696241911057704391}

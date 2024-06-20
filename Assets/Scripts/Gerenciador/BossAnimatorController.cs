@@ -6,28 +6,37 @@ public class BossAnimatorController : MonoBehaviour
 {
     CabecaBoss cabecaBoss;
     Animator animator;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         cabecaBoss = GetComponentInParent<CabecaBoss>();
+         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void AtivarCabecaBoss() 
+    public void AtivarCabecaBoss()
     {
         cabecaBoss.AtivarBoss();
     }
 
-    public void Cuspir() 
-    { 
+    public void Cuspir()
+    {
         cabecaBoss.Disparo();
     }
 
+    public void Morrer()
+    {
+        cabecaBoss.Morrer();
+        Destroy(cabecaBoss);
+   
+    }
 }
+

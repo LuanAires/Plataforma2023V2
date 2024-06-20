@@ -7,7 +7,8 @@ public class CabecaBoss : MonoBehaviour
 {
     [SerializeField] Image imgBossLife;
     public bool ativo = false;
-
+    [SerializeField] private GameObject Cabeca;
+    [SerializeField] private GameObject corpo;
     [SerializeField] Transform pontoOrigem;
     [SerializeField] Transform pontoDestino;
 
@@ -141,11 +142,11 @@ public class CabecaBoss : MonoBehaviour
     void DesativarAnimacoes()
     {
         Animador.SetBool("Cuspir", false);
-        Animador.SetBool("Avancar", false);
+       // Animador.SetBool("Avancar", false);
         Animador.SetBool("LancarCartola", false);
         //desativa animações do modo vermelho
         Animador.SetBool("CuspirV", false);
-        Animador.SetBool("AvancarV", false);
+        //Animador.SetBool("AvancarV", false);
         Animador.SetBool("LancarCartolaV", false);
         
     }
@@ -155,19 +156,16 @@ public class CabecaBoss : MonoBehaviour
         Animador.SetBool("Cuspir", true);
     }
 
-    void Avancar()
+    /*void Avancar()
     {
         avanco.Play();
         Animador.SetBool("Avancar", true);
-    }
+    }*/
 
     void LancarCartola()
     {
         Animador.SetBool("LancarCartola", true);
-        //GameObject Cartola = Instantiate(CartolaPrefab, transform.position, Quaternion.identity);
-        //Vector3 direction = (Heroi.transform.position - Cartola.transform.position).normalized;
-        //Cartola.GetComponent<CartolaControl>().SetDirection(direction);
-        //Destroy(Cartola, 3f);
+        
     }
 
     void CuspirV()
@@ -175,16 +173,16 @@ public class CabecaBoss : MonoBehaviour
         Animador.SetBool("CuspirV", true);
     }
 
-    void AvancarV()
+    /*void AvancarV()
     {
         avanco.Play();
         Animador.SetBool("AvancarV", true);
-    }
+    }*/
 
-    void LancarCartolaV()
+    /*void LancarCartolaV()
     {
         Animador.SetBool("LancarCartolaV", true);
-    }
+    }*/
 
     public void BossAp()
     {
@@ -203,10 +201,10 @@ public class CabecaBoss : MonoBehaviour
                 CuspirV();
                 break;
             case 1:
-                AvancarV();
+               // AvancarV();
                 break;
             case 2:
-                LancarCartolaV();
+               // LancarCartolaV();
                 break;
             default:
                 break;
@@ -215,10 +213,13 @@ public class CabecaBoss : MonoBehaviour
 
     public void Morrer()
     {
-        DroparAlma();
-        Animador.SetTrigger("Morrer");
-
-        //Destroy(gameObject);
+        //DroparAlma();
+        Animador.SetTrigger("Morrer"); 
+            Cabeca.SetActive(false);
+            print("Cabeca desativado");
+      
+            corpo.SetActive(false);
+            print("corpo desativado");
     }
 
     void DroparAlma()
