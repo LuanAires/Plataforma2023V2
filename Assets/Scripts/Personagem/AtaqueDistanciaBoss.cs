@@ -6,7 +6,7 @@ public class AtaqueDistanciaBoss : MonoBehaviour
 {
     private Rigidbody2D CorpoBala;
     Vector3 direcao;
-    private float velocidade = 1000;
+    private float velocidade = 100;
 
     // Start is called before the first frame update
     void Start()

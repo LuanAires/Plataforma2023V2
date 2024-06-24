@@ -89,13 +89,13 @@ public class Gilmar : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K) || Input.GetButtonDown("Fire1"))
         {
             limite++;
-            if ( limite < 4 ) 
+            if ( limite < 5 ) 
             {
                 Disparo();
                 Animador.SetTrigger("Disparo");
                 carta.Play();
             }
-            if (limite == 3 )
+            if (limite == 4 )
             {
                 Invoke ("Count", 2f);
             

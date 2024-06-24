@@ -88,12 +88,7 @@ public class CabecaBoss : MonoBehaviour
          
         if (collision.gameObject.CompareTag("Atk"))
         {
-            /*BulletControl bullet = collision.gameObject.GetComponent<BulletControl>();
-            if (bullet != null)
-            {
-                AplicarDano(bullet.dano);
-                Destroy(collision.gameObject);
-            }*/
+            
             AplicarDano(100);
         }
         // dano ao jogador\\
